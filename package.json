@@ -1,0 +1,15 @@
+{
+  "name": "lineshop-gaming",
+  "version": "1.0.0",
+  "description": "MERN shopping cart app",
+  "main": "server.js",
+  "scripts":{
+    "start": "node backend/server"
+  },
+  "repository": "https://github.com/Eric-Juquel/LineShop-Gaming.git",
+  "author": "Eric J <ejuquel@yahoo.fr>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
