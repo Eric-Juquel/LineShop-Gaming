@@ -1,7 +1,8 @@
 @import './sass/variables.scss';
+@import './sass/base.scss';
 
 .app {
   text-align: center;
-  color: $primary-color;
-  background-color: $secondary-color;
+  color: $color-grey-light-1;
+  background-color: $color-primary;
 }
