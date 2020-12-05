@@ -1,8 +1,8 @@
 import React from 'react'
-import classes from './App.module.scss'
+import './App.scss'
 
 const App = () => {
-  return <div className={classes.app}>AppScss</div>
+  return <div className='app'>AppScss</div>
 }
 
 export default App
