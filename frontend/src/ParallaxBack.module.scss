@@ -4,34 +4,35 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
+  overflow: none;
 
-.card1,
-.card2,
-.card3 {
-  position: absolute;
-  border-radius: 5px;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  will-change: transform;
-}
+  & .card1,
+  .card2,
+  .card3 {
+    position: absolute;
+    border-radius: 5px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    will-change: transform;
+  }
 
-.card1 {
-  width: 90%;
-  height: 90%;
-  background-image: url(./images/background/orion-1920-1.png);
-  opacity: 0.5;
-}
+  & .card1 {
+    width: 90%;
+    height: 90%;
+    background-image: url(./images/background/orion-1920-1.png);
+    opacity: 0.5;
+  }
 
-.card2 {
-  width: 90%;
-  height: 90%;
-  background-image: url(./images/background/midground.png);
-}
+  & .card2 {
+    width: 80%;
+    height: 80%;
+    background-image: url(./images/background/midground.png);
+  }
 
-.card3 {
-  width: 70%;
-  height: 70%;
-  background-image: url(./images/background/midground.png);
+  & .card3 {
+    width: 80%;
+    height: 80%;
+    background-image: url(./images/background/midground.png);
+  }
 }

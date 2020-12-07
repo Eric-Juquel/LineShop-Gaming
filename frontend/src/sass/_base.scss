@@ -22,4 +22,13 @@ body {
   color: $color-grey-dark-2;
   font-weight: 300;
   line-height: 1.6;
+
+  background: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
 }
