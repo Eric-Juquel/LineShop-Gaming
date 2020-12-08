@@ -1,13 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import classes from './Logo.module.scss'
 
 import logo from '../../images/logo/logo.png'
 
 const Logo = () => {
   return (
-    <figure className={classes.logo}>
+    <Link to='/' className={classes.logo}>
       <img className='logo' src={logo} alt='LineShopGaming' />
-    </figure>
+    </Link>
   )
 }
 

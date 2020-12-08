@@ -1,4 +1,5 @@
 import React from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import './App.scss'
 
 import { useSpring, animated } from 'react-spring'
@@ -21,36 +22,38 @@ const App = () => {
     config: { mass: 10, tension: 550, friction: 140 },
   }))
   return (
-    <div className='App'>
-      <div
-        className={classes.container}
-        onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}
-      >
-        <animated.div
-          className={classes.card1}
-          style={{ transform: props.xy.interpolate(trans1) }}
-        />
-        <animated.div
-          className={classes.card2}
-          style={{ transform: props.xy.interpolate(trans2) }}
-        />
-        <animated.div
-          className={classes.card3}
-          style={{ transform: props.xy.interpolate(trans3) }}
-        />
-        <div className='container'>
-          <header className='header'>
-            <Header />
-          </header>
-          <main className='main'>
-            <Carousel3d />
-          </main>
-          <footer className='footer'>
-            <Footer />
-          </footer>
+    <Router>
+      <div className='App'>
+        <div
+          className={classes.container}
+          onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}
+        >
+          <animated.div
+            className={classes.card1}
+            style={{ transform: props.xy.interpolate(trans1) }}
+          />
+          <animated.div
+            className={classes.card2}
+            style={{ transform: props.xy.interpolate(trans2) }}
+          />
+          <animated.div
+            className={classes.card3}
+            style={{ transform: props.xy.interpolate(trans3) }}
+          />
+          <div className='container'>
+            <header className='header'>
+              <Header />
+            </header>
+            <main className='main'>
+              <Route exact path='/' component={Carousel3d} />
+            </main>
+            <footer className='footer'>
+              <Footer />
+            </footer>
+          </div>
         </div>
       </div>
-    </div>
+    </Router>
   )
 }
 

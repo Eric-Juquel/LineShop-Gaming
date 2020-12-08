@@ -1,5 +1,6 @@
 .logo {
   & img {
+    width: 20rem;
     filter: invert(1) brightness(150%)
       drop-shadow(8px 3px 10px rgb(255, 252, 252));
     -webkit-filter: invert(1) brightness(150%)

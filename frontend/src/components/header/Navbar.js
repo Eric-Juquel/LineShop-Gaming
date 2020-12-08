@@ -1,7 +1,29 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import classes from './Navbar.module.scss'
 
 const Navbar = () => {
-  return <div>Navigation</div>
+  return (
+    <nav className={classes.navigation}>
+      <ul className={classes.list}>
+        <li className={classes.item}>
+          <Link className={classes.link} to='#'>
+            SHOP
+          </Link>
+        </li>
+        <li className={classes.item}>
+          <Link className={classes.link} to='#'>
+            REGISTER
+          </Link>
+        </li>
+        <li className={classes.item}>
+          <Link className={classes.link} to='#'>
+            LOGIN
+          </Link>
+        </li>
+      </ul>
+    </nav>
+  )
 }
 
 export default Navbar
