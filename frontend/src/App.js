@@ -1,13 +1,13 @@
 import React from 'react'
 import './App.scss'
-import Header from './components/header/Header'
-
-import Carousel3d from './components/content/Carousel3d'
-
-import Footer from './components/footer/Footer'
 
 import { useSpring, animated } from 'react-spring'
 import classes from './ParallaxBack.module.scss'
+import Carousel3d from './components/content/Carousel3d'
+
+import Header from './components/header/Header'
+
+import Footer from './components/footer/Footer'
 
 const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2]
 const trans1 = (x, y) => `translate3d(${-x / 10}px,${-y / 10}px,0)`

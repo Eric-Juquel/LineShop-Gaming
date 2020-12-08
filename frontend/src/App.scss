@@ -30,24 +30,26 @@ body,
 
   height: 100vh;
   width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+
+  display: grid;
+  grid-template-rows: [header-start] 10% [header-end main-start]repeat(4, 1fr) [main-end footer-start] 5% [footer-end];
+  grid-template-columns: [full-start] repeat(10, 10%) [full-end];
+
+  grid-row-gap: 2rem;
 
   & .header {
-    border: $border-dev;
-    width: 100%;
-    height: 10%;
-    background-color: transparent;
+    grid-row: header-start / header-end;
+    grid-column: 1 / -1;
   }
+
   & .main {
     border: $border-dev;
-    width: 100%;
-    height: 80%;
+    grid-row: main-start / main-end;
+    grid-column: 1 / -1;
   }
+
   & .footer {
-    border: $border-dev;
-    width: 100%;
-    height: 5%;
+    grid-row: footer-start / footer-end;
+    grid-column: 1 / -1;
   }
 }
