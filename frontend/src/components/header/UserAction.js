@@ -2,18 +2,19 @@ import React from 'react'
 import classes from './UserAction.module.scss'
 import { Link } from 'react-router-dom'
 import avatar from '../../images/avatars/index.jpg'
-import { FaCaretDown } from 'react-icons/fa'
+import DropdownButton from './DropdownButton'
 
 const UserAction = () => {
   return (
     <div className={classes.container}>
       <div className={classes.action}>
-        <button className={classes.btn}>
-          Hello Name <FaCaretDown />
-        </button>
+        <DropdownButton label={'Hello User'} options={['Profile', 'Logout']} />
       </div>
       <div className={classes.admin}>
-        <button className={classes.admin__btn}>A</button>
+        <DropdownButton
+          label={'Admin'}
+          options={['Users', 'Orders', 'Products']}
+        />
       </div>
       <div className={classes.avatar}>
         <img src={avatar} alt='avatar' />
