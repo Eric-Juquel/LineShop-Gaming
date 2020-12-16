@@ -1,0 +1,59 @@
+@import '../../sass/variables.scss';
+
+.search {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & .input {
+    font-family: inherit;
+    font-size: 1.5rem;
+    color: white;
+    background-color: $color-secondary-light;
+    border: none;
+    padding: 0.7rem 2rem;
+    border-radius: 100px;
+    width: 50%;
+    transition: all 0.2s;
+    margin-right: -3.15rem;
+
+    &:focus {
+      outline: none;
+      width: 70%;
+      background-color: $color-grey-light-1;
+      color: $color-secondary;
+
+      & + .btn {
+        & .icon {
+          fill: $color-secondary;
+        }
+      }
+    }
+
+    // &::-moz-placeholder,
+    // &::-webkit-input-placeholder {
+    //   font-weight: 100;
+    //   color: $color-grey-light-1;
+    // }
+  }
+
+  & .btn {
+    border: none;
+    background-color: transparent;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      transform: translateY(2px);
+    }
+  }
+
+  & .icon {
+    height: 2rem;
+    width: 2rem;
+    fill: $color-grey-light-1;
+  }
+}

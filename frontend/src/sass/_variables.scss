@@ -27,20 +27,22 @@
 }
 
 // COLOR VARIABLES
-$color-link: rgb(248, 223, 163, 0.3);
 
-$color-primary: #c69963;
-$color-primary-dark: #b28451;
+$color-brown-dark: rgb(248, 223, 163, 0.3);
+$color-brown-mid: #b28451;
+$color-brown-light: #c6996350;
 
 $color-secondary: #101d2c;
-$color-secondary-light: #363a3f;
+$color-secondary-trans: rgba(16, 29, 44, 0.801);
+$color-secondary-light: rgba(31, 20, 78, 0.767);
 
 $color-grey-light-1: #f9f7f6;
 $color-grey-light-2: #aaa;
+$color-grey-dark: #363a3f;
 
-$color-grey-dark-1: #54483a;
-$color-grey-dark-2: #6d5d4b;
-
+$color-purple-dark: #370e47;
+$color-purple-mid: #ac4e9a;
+$color-purple-light: #eabfd6;
 //BORDER
 $border-dev: 1px solid white;
 

@@ -1,0 +1,57 @@
+@import '../../sass/variables.scss';
+
+.container {
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  & .action {
+    & .btn {
+      cursor: pointer;
+      border: none;
+      height: 3rem;
+      padding: 0 1rem;
+      font-size: 1.5rem;
+      text-align: center;
+      border-radius: 10px;
+      background-image: linear-gradient(
+        to top left,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.2) 30%,
+        rgba(0, 0, 0, 0)
+      );
+      box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+        inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+      transition: all 0.2s;
+
+      &:hover {
+        filter: invert(1);
+        border: none;
+      }
+    }
+  }
+
+  & .admin {
+    width: 25%;
+
+    &__btn {
+      cursor: pointer;
+      border: none;
+      background-color: transparent;
+      font-family: $font-starwars-i;
+      font-size: 3.5rem;
+      font-weight: 300;
+      color: white;
+    }
+  }
+
+  & .avatar {
+    width: 20%;
+    & img {
+      width: 80%;
+      border-radius: 100px;
+    }
+  }
+}

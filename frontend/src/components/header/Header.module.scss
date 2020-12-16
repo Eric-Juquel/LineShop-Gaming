@@ -1,13 +1,12 @@
 @import '../../sass/variables.scss';
 
 .container {
-  border: $border-dev;
   height: 100%;
   background-color: transparent;
   padding: 2rem;
 
   display: grid;
-  grid-template-columns: [logo-start] 15% [logo-end nav-start] 40% [nav-end search-start] 30% [search-end action-start] 15% [action-end];
+  grid-template-columns: [logo-start] 15% [logo-end nav-start] 40% [nav-end search-start] 26% [search-end action-start] 20% [action-end];
 
   align-content: center;
 }
