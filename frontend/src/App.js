@@ -8,6 +8,8 @@ import Carousel3d from './components/content/Carousel3d'
 
 import Header from './components/header/Header'
 
+import ProductsScreen from './components/content/ProductsScreen'
+
 import Footer from './components/footer/Footer'
 
 const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2]
@@ -46,6 +48,7 @@ const App = () => {
             </header>
             <main className='main'>
               <Route exact path='/' component={Carousel3d} />
+              <Route path='/products' component={ProductsScreen} />
             </main>
             <footer className='footer'>
               <Footer />

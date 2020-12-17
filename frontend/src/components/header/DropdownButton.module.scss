@@ -8,7 +8,7 @@
   &,
   &:link,
   &:visited {
-    width: 10rem;
+    width: 12rem;
     cursor: pointer;
     border: none;
     height: 3rem;
@@ -22,12 +22,15 @@
       rgba(0, 0, 0, 0.2) 30%,
       rgba(0, 0, 0, 0)
     );
+    background-color: $color-secondary-light;
+    color: $color-grey-light-1;
     box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
       inset -2px -2px 3px rgba(0, 0, 0, 0.6);
     transition: all 0.2s;
   }
   &:hover {
-    filter: invert(1);
+    background-color: $color-grey-light-1;
+    color: $color-secondary;
     border: none;
     transform: translateY(-2px);
   }
@@ -35,10 +38,15 @@
   &:active {
     transform: translateY(0);
   }
+
+  & svg {
+    margin-left: 1rem;
+    transform: translateY(2px);
+  }
 }
 
 .menu {
-  background: white;
+  background: $color-grey-light-1;
   border-radius: 8px;
   position: absolute;
   top: 40px;

@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import classes from './DropdownButton.module.scss'
 import { FaCaretDown } from 'react-icons/fa'
-import { useDetectOutsideClick } from '../../utils/useDetectOutsideClick'
+import { useDetectOutsideClick } from '../../tools/useDetectOutsideClick'
 
 const DropdownButton = ({ label, options }) => {
   const dropdownRef = useRef(null)
