@@ -5,27 +5,35 @@
 }
 
 .btn {
-  width: 10rem;
-  cursor: pointer;
-  border: none;
-  height: 3rem;
-  padding: 0 1rem;
-  font-size: 1.5rem;
-  text-align: center;
-  border-radius: 10px;
-  background-image: linear-gradient(
-    to top left,
-    rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0.2) 30%,
-    rgba(0, 0, 0, 0)
-  );
-  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
-    inset -2px -2px 3px rgba(0, 0, 0, 0.6);
-  transition: all 0.2s;
-
+  &,
+  &:link,
+  &:visited {
+    width: 10rem;
+    cursor: pointer;
+    border: none;
+    height: 3rem;
+    padding: 0 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+    border-radius: 10px;
+    background-image: linear-gradient(
+      to top left,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2) 30%,
+      rgba(0, 0, 0, 0)
+    );
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+      inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+    transition: all 0.2s;
+  }
   &:hover {
     filter: invert(1);
     border: none;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
   }
 }
 
@@ -37,7 +45,7 @@
   right: 0;
   width: 100%;
 
-  box-shadow: 0 1px 8px rgba(252, 250, 250, 0.89);
+  box-shadow: 0 1px 4px rgba(252, 250, 250, 0.89);
   opacity: 0;
   visibility: hidden;
   transform: translateY(-20px);
