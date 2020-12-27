@@ -8,10 +8,16 @@
   justify-content: space-evenly;
 
   & .avatar {
-    width: 20%;
+    width: 16%;
     & img {
+      cursor:pointer;
       width: 80%;
       border-radius: 100px;
+      transition:all 0.2s;
+
+      &:hover {
+        transform:scale(1.1);
+      }
     }
   }
 }

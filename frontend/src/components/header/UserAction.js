@@ -5,10 +5,11 @@ import avatar from '../../images/avatars/index.jpg'
 import DropdownButton from './DropdownButton'
 
 const UserAction = () => {
+  const user='Eric'
   return (
     <div className={classes.container}>
       <div className={classes.action}>
-        <DropdownButton label={'Hello User'} options={['Profile', 'Logout']} />
+        <DropdownButton label={`Hello ${user}`} options={['Profile', 'Logout']} />
       </div>
       <div className={classes.admin}>
         <DropdownButton
@@ -17,7 +18,7 @@ const UserAction = () => {
         />
       </div>
       <div className={classes.avatar}>
-        <img src={avatar} alt='avatar' />
+        <img src={avatar} alt='avatar' title={`${user} profile`}/>
       </div>
     </div>
   )
