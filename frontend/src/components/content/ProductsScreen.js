@@ -23,11 +23,15 @@ const ProductsScreen = () => {
       ) : error ? (
         <h3>{error}</h3>
       ) : (
-        products.map((product) => (
-          <div key={product._id} className={classes.cardContainer}>
-            <ProductCard product={product} />
-          </div>
-        ))
+        <>
+          <div className={classes.prev}>{'<'}</div>
+          {products.map((product) => (
+            <div key={product._id} className={classes.cardContainer}>
+              <ProductCard product={product} />
+            </div>
+          ))}
+          <div className={classes.next}>{'>'}</div>
+        </>
       )}
     </div>
   );

@@ -3,14 +3,30 @@
 .container {
   height: 100%;
   width: 90%;
-  padding: 1.5rem;
-  margin:auto;
+  padding: 2rem 0;
+  margin: auto;
 
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 5rem repeat(4, 1fr) 5rem;
   grid-template-rows: repeat(2, 50%);
 }
 
+.prev,
+.next {
+  grid-row: 1 / -1;
+  font-size: 5rem;
+  align-self:center;
+  cursor:pointer;
+}
+
+.prev {
+  grid-column: 1 / 2;
+}
+
+.next {
+  grid-column: 6 / 7;
+}
+
 .cardContainer {
-  padding:1rem;
+  padding: 1rem;
 }
