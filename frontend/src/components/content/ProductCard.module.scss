@@ -1,0 +1,89 @@
+@import "../../sass/variables.scss";
+
+.card {
+  background-color: $color-background-secondary;
+  border-radius: 4px;
+  height: 100%;
+  margin: 1rem;
+  padding: 1rem;
+  box-shadow: -4px 4px 15px -2px rgba(237, 213, 180, 0.63);
+
+  display: grid;
+  grid-template-rows: [title-start] 15% [title-end body-start] repeat(3, 28%) [body-end];
+  grid-template-columns: repeat(5, 18%);
+  align-items: center;
+  grid-column-gap:3%;
+  
+}
+
+.title {
+  grid-row: title-start / title-end;
+  grid-column: 1 / -1;
+}
+
+.flipCard {
+  grid-row: body-start / body-end;
+  grid-column: 1 / 4;
+
+  height: 100%;
+  box-shadow: -2px 2px 10px 0px rgba(0, 0, 0, 0.644);
+
+  & img {
+    border-radius: 4px;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.price {
+  grid-row: body-start / 3;
+  grid-column: 4 / 6;
+
+  font-size: 1.5rem;
+}
+
+.rating {
+  grid-row: 3 / 4;
+  grid-column: 4 / 6;
+}
+
+.btn {
+  grid-row: 4 / body-end;
+  grid-column: 4 / 6;
+
+  margin: auto;
+
+  &,
+  &:link,
+  &:visited {
+    width: 10rem;
+    cursor: pointer;
+    height: 4rem;
+    padding: 0 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+    border-radius: 10px;
+    background-image: linear-gradient(
+      to top left,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2) 30%,
+      rgba(0, 0, 0, 0)
+    );
+    background-color: transparent;
+    border: 1px $color-yellow-light solid;
+    color: $color-grey-light-1;
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+      inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+    transition: all 0.2s;
+  }
+  &:hover {
+    background-color: $color-yellow-light;
+    color: $color-secondary;
+    border: none;
+    transform: translateY(0px);
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+}

@@ -6,6 +6,7 @@ body,
 #root {
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
 #root {
@@ -43,7 +44,6 @@ body,
   }
 
   & .main {
-    border: $border-dev;
     grid-row: main-start / main-end;
     grid-column: 1 / -1;
   }

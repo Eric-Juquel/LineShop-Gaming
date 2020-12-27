@@ -23,7 +23,11 @@ const ProductsScreen = () => {
       ) : error ? (
         <h3>{error}</h3>
       ) : (
-        products.map((product) => <ProductCard product={product} />)
+        products.map((product) => (
+          <div key={product._id} className={classes.cardContainer}>
+            <ProductCard product={product} />
+          </div>
+        ))
       )}
     </div>
   );

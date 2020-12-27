@@ -1,3 +1,16 @@
+@import "../../sass/variables.scss";
+
 .container {
   height: 100%;
+  width: 90%;
+  padding: 1.5rem;
+  margin:auto;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 50%);
+}
+
+.cardContainer {
+  padding:1rem;
 }
