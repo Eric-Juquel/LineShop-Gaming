@@ -1,21 +1,32 @@
 import React, { useEffect } from "react";
-import {useDispatch, useSelector} from 'react-redux'
+import { useDispatch, useSelector } from "react-redux";
 import classes from "./ProductsScreen.module.scss";
 import ProductCard from "./ProductCard";
-import { listProducts } from '../../actions/productActions'
+import Spinner from "../Spinner";
+import { listProducts } from "../../actions/productActions";
 
 const ProductsScreen = () => {
- const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
- useEffect(() => {
-   dispatch(listProducts())
- }, [dispatch])
+  useEffect(() => {
+    dispatch(listProducts());
+  }, [dispatch]);
+
+  const productList = useSelector((state) => state.productList);
+  const { loading, error, products } = productList;
+  console.log(products);
 
   return (
     <div className={classes.container}>
-      <ProductCard />
+      {loading ? (
+        <Spinner />
+      ) : error ? (
+        <h3>{error}</h3>
+      ) : (
+        products.map((product) => <ProductCard product={product} />)
+      )}
     </div>
   );
 };
 
-export default ProductsScreen
+export default ProductsScreen;
