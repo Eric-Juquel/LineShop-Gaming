@@ -8,7 +8,8 @@ import Carousel3d from './components/content/Carousel3d'
 
 import Header from './components/header/Header'
 
-import ProductsScreen from './components/content/ProductsScreen'
+import ProductsScreen from './components/content/shop/ProductsScreen'
+import ProductDetail from './components/content/shop/ProductDetail'
 
 import Footer from './components/footer/Footer'
 
@@ -49,6 +50,7 @@ const App = () => {
             <main className='main'>
               <Route exact path='/' component={Carousel3d} />
               <Route path='/products' component={ProductsScreen} />
+              <Route path='/product/:id' component={ProductDetail} />
             </main>
             <footer className='footer'>
               <Footer />

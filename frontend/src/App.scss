@@ -1,6 +1,7 @@
 @import './sass/variables.scss';
 @import './sass/base.scss';
 
+
 html,
 body,
 #root {
@@ -12,6 +13,11 @@ body,
 #root {
   overflow: hidden;
   background: #000108;
+}
+
+a {
+  text-decoration:none;
+  color:inherit;
 }
 
 .App {

@@ -1,24 +1,32 @@
-@import "../../sass/variables.scss";
+@import "../../../sass/variables.scss";
 
 .card {
   background-color: $color-background-secondary;
   border-radius: 4px;
   height: 100%;
   margin: 1rem;
-  padding: 1rem;
+  padding: 1.5rem;
   box-shadow: -4px 4px 15px -2px rgba(237, 213, 180, 0.63);
 
   display: grid;
-  grid-template-rows: [title-start] 15% [title-end body-start] repeat(3, 28%) [body-end];
+  grid-template-rows: [title-start] 15% [title-end body-start] repeat(4, 22%) [body-end];
   grid-template-columns: repeat(5, 18%);
   align-items: center;
-  grid-column-gap:3%;
-  
+  grid-column-gap: 3%;
+
+  // & p:not(:last-child) {
+  //   border-bottom: 1px $color-yellow-light solid;
+  // }
 }
 
 .title {
   grid-row: title-start / title-end;
   grid-column: 1 / -1;
+  align-self: flex-start;
+  font-family: "Audiowide", cursive;
+  margin-top:-4px;
+  color:$color-yellow-light;
+
 }
 
 .flipCard {
@@ -35,27 +43,45 @@
   }
 }
 
-.price {
-  grid-row: body-start / 3;
+.detail {
+  grid-row: body-start / 5;
   grid-column: 4 / 6;
 
-  font-size: 1.5rem;
-}
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items:center;
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
 
-.rating {
-  grid-row: 3 / 4;
-  grid-column: 4 / 6;
+  & hr {
+    color:$color-yellow-light;
+    width:70%;
+  }
+
+  & .price {
+    font-size: 1.5rem;
+  }
+
+  & .stock {
+    font-size: 1.1rem;
+  }
+
+  & .rating {
+  }
 }
 
 .btn {
-  grid-row: 4 / body-end;
+  grid-row: 5 / body-end;
   grid-column: 4 / 6;
 
   margin: auto;
 
+  
   &,
   &:link,
   &:visited {
+    outline:none;
     width: 10rem;
     cursor: pointer;
     height: 4rem;
@@ -71,11 +97,14 @@
     );
     background-color: transparent;
     border: 1px $color-yellow-light solid;
-    color: $color-grey-light-1;
+    color: $color-yellow-light;
     box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
-      inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+    inset -2px -2px 3px rgba(0, 0, 0, 0.6);
     transition: all 0.2s;
   }
+
+  
+
   &:hover {
     background-color: $color-yellow-light;
     color: $color-secondary;
@@ -86,4 +115,16 @@
   &:active {
     transform: translateY(2px);
   }
+
+  &:disabled {
+    background:grey;
+    border:none;
+    color:$color-grey-dark;
+
+    &:active {
+      transform: translateY(0px)
+    }
+  }
+
+
 }
