@@ -17,7 +17,7 @@
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);*/
+  // box-shadow: -2px 4px 20px 0 rgba(0, 0, 0, 0.5);
 }
 
 .flipcard:hover .flipcardinner {
@@ -38,7 +38,7 @@
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   border-radius:10px/5px;
-  filter: drop-shadow(5px 5px 5px black);
+  filter: drop-shadow(2px 2px 4px black);
  
 
 }

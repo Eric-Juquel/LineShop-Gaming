@@ -24,17 +24,18 @@
   grid-column: 1 / -1;
   align-self: flex-start;
   font-family: "Audiowide", cursive;
-  margin-top:-4px;
-  color:$color-yellow-light;
+  margin-top: -4px;
+  color: $color-yellow-light;
 
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .flipCard {
   grid-row: body-start / body-end;
   grid-column: 1 / 4;
-
   height: 100%;
-  box-shadow: -2px 2px 10px 0px rgba(0, 0, 0, 0.644);
 
   & img {
     border-radius: 4px;
@@ -50,13 +51,13 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items:center;
+  align-items: center;
   height: 100%;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 
   & hr {
-    color:$color-yellow-light;
-    width:70%;
+    color: $color-yellow-light;
+    width: 70%;
   }
 
   & .price {
@@ -77,11 +78,10 @@
 
   margin: auto;
 
-  
   &,
   &:link,
   &:visited {
-    outline:none;
+    outline: none;
     width: 10rem;
     cursor: pointer;
     height: 4rem;
@@ -99,11 +99,9 @@
     border: 1px $color-yellow-light solid;
     color: $color-yellow-light;
     box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
-    inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+      inset -2px -2px 3px rgba(0, 0, 0, 0.6);
     transition: all 0.2s;
   }
-
-  
 
   &:hover {
     background-color: $color-yellow-light;
@@ -117,14 +115,12 @@
   }
 
   &:disabled {
-    background:grey;
-    border:none;
-    color:$color-grey-dark;
+    background: grey;
+    border: none;
+    color: $color-grey-dark;
 
     &:active {
-      transform: translateY(0px)
+      transform: translateY(0px);
     }
   }
-
-
 }
