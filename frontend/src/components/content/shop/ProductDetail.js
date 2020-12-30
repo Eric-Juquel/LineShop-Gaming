@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import classes from "./ProductDetail.module.scss";
 import { IoIosReturnLeft } from "react-icons/io";
-import Select from "react-select";
 import Rating from "./Rating";
 import { listProductDetails } from "../../../actions/productActions";
 
@@ -54,12 +53,23 @@ const ProductDetail = ({ match }) => {
           <p>Status:</p>
           <p>{product.countInStock > 0 ? "In Stock" : "Out of Stock"}</p>
         </div>
+
         <div className={classes.qty}>
-          <label htmlFor={"qty"}>Qty</label>
-          <input type="select" />
+          <label htmlFor={"quantity"}>Qty</label>
+          <div className={classes.select}>
+            <select disabled={product.countInStock === 0}>
+              {[...Array(product.countInStock).keys()].map((x) => (
+                <option key={x + 1} value={x + 1}>
+                  {x + 1}
+                </option>
+              ))}
+            </select>
+            <span className="focus"></span>
+          </div>
         </div>
+
         <div className={classes.addBtn}>
-          <button>Add to Cart</button>
+          <button disabled={product.countInStock === 0}>Add to Cart</button>
         </div>
       </div>
       <div className={classes.write}>
