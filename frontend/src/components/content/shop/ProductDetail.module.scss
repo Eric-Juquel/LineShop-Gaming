@@ -1,0 +1,131 @@
+@import "../../../sass/variables.scss";
+
+.container {
+  width: 80%;
+  height: 90%;
+  background-color: $color-background-secondary;
+  margin: 2% auto 0 auto;
+  padding: 1.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+
+  display: grid;
+  grid-template-columns: [image-start] repeat(2, 20%) [image-end detail-start] 26% [detail-end add-start] 26% [add-end];
+  grid-template-rows: [back-start] 10% [back-end image-start] repeat(4, 20%) [image-end ];
+  grid-gap: 2%;
+}
+
+.btn {
+  grid-column: 1 / 2;
+  grid-row: back-start / back-end;
+
+  border: 1px solid $color-grey-light-1;
+  background-color: $color-grey-dark;
+  color: $color-grey-light-1;
+  width: 50%;
+  height: 80%;
+  transform: translateY(0px);
+  transition: all 0.2s ease;
+  & a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  & .text {
+    font-family: "Montserrat", sans-serif;
+  }
+
+  & svg {
+    font-size: 3rem;
+  }
+
+  &:hover {
+    filter: invert(1);
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+}
+
+.image {
+  grid-column: image-start / image-end;
+  grid-row: image-start/ image-end;
+
+  & img {
+    width: 80%;
+    height: 100%;
+  }
+}
+
+.details {
+  grid-column: detail-start / detail-end;
+  grid-row: 1 / 5;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  & h1 {
+    font-family: "Audiowide", cursive;
+    font-size: 3rem;
+    color: $color-yellow-light;
+  }
+
+  & hr {
+    width: 70%;
+    color: $color-purple-mid;
+  }
+}
+
+.add {
+  grid-column: add-start / add-end;
+  grid-row: 1/ 4;
+
+  width:80%;
+  height:85%;
+  margin:auto;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $color-yellow-light;
+  
+
+  & div {
+    width:100%;
+    height:25%;
+    padding:2rem;
+    display:flex;
+    justify-content:space-between;
+
+    &:not(:last-child) {
+      border-bottom:1px solid $color-yellow-light;
+    }
+
+    & button {
+      width:100%;
+      height:4rem;
+      margin:-1rem auto 0 auto;
+    }
+
+    
+  }
+
+  & .addBtn {
+    width:100%;
+  }
+  
+
+  
+}
+
+.review {
+  grid-column: detail-start / detail-end;
+  grid-row: 5 / image-end;
+}
+
+.write {
+  grid-column: add-start / add-end;
+  grid-row: 4 / image-end;
+}

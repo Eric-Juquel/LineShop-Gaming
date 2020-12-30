@@ -19,12 +19,12 @@ const ProductCard = ({ product }) => {
   return (
     <div className={classes.card}>
       <div className={classes.title}>
-        <Link to={`product/${_id}`}>
-          <h2>{name}</h2>
+        <Link to={`/product/${_id}`}>
+          <p>{name}</p>
         </Link>
       </div>
       <div className={classes.flipCard}>
-        <Link to={`product/${_id}`}>
+        <Link to={`/product/${_id}`}>
           <FlipCard product={product} />
         </Link>
       </div>
