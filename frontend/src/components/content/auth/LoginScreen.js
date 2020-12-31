@@ -19,8 +19,8 @@ const LoginScreen = () => {
   const userLogin = useSelector((state) => state.userLogin);
   const { loading, error, userInfo } = userLogin;
 
-  const onSubmit = () => {
-    console.log("submit");
+  const onSubmit = (data) => {
+    console.log(data);
   };
 
   return (

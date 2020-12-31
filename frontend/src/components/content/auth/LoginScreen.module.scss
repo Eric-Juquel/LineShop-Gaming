@@ -1,4 +1,4 @@
-@import '../../../sass//variables.scss';
+@import "../../../sass//variables.scss";
 
 .container {
   width: 30%;
@@ -8,22 +8,74 @@
   padding: 1.5rem;
   font-family: "Montserrat", sans-serif;
   font-size: 1.5rem;
-  border-radius:4px;
+  border-radius: 4px;
 
   & h1 {
-      height:20%;
+    height: 20%;
   }
-  
 }
 
 .form {
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    height:80%;
-    padding:2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 80%;
+  padding: 2rem;
 
-    & .formGroup:not(:last-child) {
-        margin-bottom: 2rem;
+  & .formGroup:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  & button {
+    grid-row: 5 / body-end;
+    grid-column: 4 / 6;
+
+    margin: auto;
+
+    &,
+    &:link,
+    &:visited {
+      outline: none;
+      width: 10rem;
+      cursor: pointer;
+      height: 4rem;
+      padding: 0 1rem;
+      font-size: 1.5rem;
+      text-align: center;
+      border-radius: 10px;
+      background-image: linear-gradient(
+        to top left,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.2) 30%,
+        rgba(0, 0, 0, 0)
+      );
+      background-color: transparent;
+      border: 1px $color-yellow-light solid;
+      color: $color-yellow-light;
+      box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+        inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+      transition: all 0.2s;
     }
+
+    &:hover {
+      background-color: $color-yellow-light;
+      color: $color-secondary;
+      border: none;
+      transform: translateY(0px);
+    }
+
+    &:active {
+      transform: translateY(2px);
+    }
+
+    &:disabled {
+      background: grey;
+      border: none;
+      color: $color-grey-dark;
+
+      &:active {
+        transform: translateY(0px);
+      }
+    }
+  }
 }
