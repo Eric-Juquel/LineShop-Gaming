@@ -1,0 +1,44 @@
+@import '../sass/variables.scss';
+
+.modalWrapper {
+    position: fixed;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    font-family: "Montserrat", sans-serif;
+  
+  }
+  
+  .modalBackdrop {
+    position: fixed;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    z-index: 3;
+    background-color: rgba(97, 84, 84, 0.5)
+  
+  }
+  
+  .modalBox {
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* height:40%;
+    width:50%; */
+    background-color:var(--white);
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.25);
+    z-index: 4;
+    
+  }
+  
+  
+  
+  
+  
+  

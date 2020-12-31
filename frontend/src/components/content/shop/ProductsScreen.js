@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import classes from "./ProductsScreen.module.scss";
 import ProductCard from "./ProductCard";
 import Spinner from "../../Spinner";
+import ErrorComponent from '../../ErrorComponent'
 import { listProducts } from "../../../actions/productActions";
 
 const ProductsScreen = () => {
@@ -21,7 +22,7 @@ const ProductsScreen = () => {
       {loading ? (
         <Spinner />
       ) : error ? (
-        <h3>{error}</h3>
+        <ErrorComponent err={error} />
       ) : (
         <div className={classes.container}>
           <div className={classes.prev}>{"<"}</div>
