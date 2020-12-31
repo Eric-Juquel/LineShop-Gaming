@@ -52,6 +52,8 @@ a {
   & .main {
     grid-row: main-start / main-end;
     grid-column: 1 / -1;
+
+    display:flex;
   }
 
   & .footer {

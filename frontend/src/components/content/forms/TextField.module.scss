@@ -1,0 +1,44 @@
+@import "../../../sass//variables.scss";
+
+.input {
+  font-size: 1.5rem;
+  font-family: inherit;
+  color: $color-secondary;
+  padding: 1.5rem 2rem;
+  border-radius: 2px;
+  background-color: rgba($color-grey-light-1, 0.6);
+  border: none;
+  border-bottom: 2px solid transparent;
+  display: block;
+  transition: all 0.4s;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(white, 0.2);
+    border-bottom: 2px solid $color-success;
+
+    &:invalid {
+      border-bottom: 2px solid $color-danger;
+    }
+  }
+
+  &::-webkit-input-placeholder {
+    color: $color-grey-dark;
+  }
+}
+
+.input:placeholder-shown + .label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem);
+}
+
+.label {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align:start;
+  margin-left: 2rem;
+  margin-top: 0.7rem;
+  display: block;
+  transition: all 0.3s;
+}

@@ -34,7 +34,7 @@ const ProductDetail = ({ match }) => {
             </Link>
           </button>
           <div className={classes.image}>
-            <img src={product.image} />
+            <img src={product.image} alt={product.name} />
           </div>
           <div className={classes.review}>
             <h1>Reviews</h1>

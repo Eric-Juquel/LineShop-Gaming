@@ -15,7 +15,6 @@ const ProductCard = ({ product }) => {
     countInStock,
   } = product;
 
-  console.log(countInStock);
   return (
     <div className={classes.card}>
       <div className={classes.title}>

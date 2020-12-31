@@ -12,8 +12,6 @@ const DropdownButton = ({ label, options }) => {
     setIsActive(!isActive)
   }
 
-  console.log(isActive)
-
   return (
     <div className={classes.container}>
       <button className={classes.btn} onClick={onClick}>

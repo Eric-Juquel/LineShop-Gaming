@@ -17,7 +17,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li className={classes.item}>
-          <Link className={classes.link} to='#'>
+          <Link className={classes.link} to='/login'>
             LOGIN
           </Link>
         </li>
