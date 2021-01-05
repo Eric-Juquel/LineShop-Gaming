@@ -11,7 +11,7 @@ const UserAction = () => {
 
   return (
     <div className={classes.container}>
-      <div className={classes.action}>
+      <div className={classes.user}>
         {userInfo ? (
           <DropdownButton
             label={`Hello ${userInfo.firstName}`}
@@ -32,11 +32,13 @@ const UserAction = () => {
         )}
       </div>
       <div className={classes.avatar}>
-        <img
-          src={avatar}
-          alt="avatar"
-          title={`${userInfo.firstName} profile`}
-        />
+        {userInfo && (
+          <img
+            src={avatar}
+            alt="avatar"
+            title={`${userInfo.firstName} profile`}
+          />
+        )}
       </div>
     </div>
   );

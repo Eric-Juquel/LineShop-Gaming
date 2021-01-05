@@ -1,4 +1,4 @@
-@import '../../sass/variables.scss';
+@import "../../sass/variables.scss";
 
 .container {
   height: 100%;
@@ -10,14 +10,14 @@
   & .avatar {
     width: 16%;
     & img {
-      cursor:pointer;
+      cursor: pointer;
       width: 80%;
       border-radius: 100px;
-      transform:scale(1);
-      transition:all 0.2s;
+      transform: scale(1);
+      transition: all 0.2s;
 
       &:hover {
-        transform:scale(1.1);
+        transform: scale(1.1);
       }
     }
   }

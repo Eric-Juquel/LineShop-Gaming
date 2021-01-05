@@ -9,6 +9,7 @@ import Carousel3d from './components/content/Carousel3d'
 import Header from './components/header/Header'
 
 import LoginScreen from './components/content/auth/LoginScreen'
+import logout from './components/content/auth/Logout'
 
 import ProductsScreen from './components/content/shop/ProductsScreen'
 import ProductDetail from './components/content/shop/ProductDetail'
@@ -54,6 +55,7 @@ const App = () => {
               <Route path='/products' component={ProductsScreen} />
               <Route path='/product/:id' component={ProductDetail} />
               <Route path='/login' component={LoginScreen} />
+              <Route path='/logout' component={logout} />
             </main>
             <footer className='footer'>
               <Footer />
