@@ -2,7 +2,7 @@
 
 .container {
   width: 30%;
-  height: 60%;
+  height: 75%;
   background-color: $color-background-secondary;
   margin: auto;
   padding: 1.5rem;
@@ -13,6 +13,11 @@
   & h1 {
     height: 20%;
   }
+}
+
+.message {
+  height:10%;
+  color:$color-danger;
 }
 
 .form {
@@ -27,10 +32,7 @@
   }
 
   & button {
-    grid-row: 5 / body-end;
-    grid-column: 4 / 6;
-
-    margin: auto;
+    margin: 0 auto;
 
     &,
     &:link,
@@ -75,6 +77,17 @@
 
       &:active {
         transform: translateY(0px);
+      }
+    }
+  }
+
+  & .new {
+    margin-top:2rem;
+
+    & a {
+      color:$color-yellow-light;
+      &:hover {
+        text-decoration:underline;
       }
     }
   }

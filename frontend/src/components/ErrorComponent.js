@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import classes from "./ErrorComponent.module.scss";
 import Modal from "../components/Modal";
 
-const ErrorComponent = ({ err }) => {
+const ErrorComponent = ({ err, height="30%", width="50%" }) => {
   const history = useHistory();
 
   if (!err) {
@@ -22,7 +22,7 @@ const ErrorComponent = ({ err }) => {
   };
 
   return (
-    <Modal ref={modalRef} height={"30%"} width={"50%"}>
+    <Modal ref={modalRef} height={height} width={width}>
       <div className={classes.Error}>
         <h3>Error</h3>
         <div className={classes.message}>

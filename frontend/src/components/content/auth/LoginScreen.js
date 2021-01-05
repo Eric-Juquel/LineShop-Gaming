@@ -8,9 +8,8 @@ import ErrorComponent from "../../ErrorComponent";
 import Spinner from "../../Spinner";
 import { login } from "../../../actions/userActions";
 
-const LoginScreen = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+const LoginScreen = ({ location, history }) => {
+  const redirect = location.search ? location.search.split("=")[1] : "/";
 
   const { register, handleSubmit, errors, control } = useForm();
 
@@ -19,49 +18,63 @@ const LoginScreen = () => {
   const userLogin = useSelector((state) => state.userLogin);
   const { loading, error, userInfo } = userLogin;
 
+  useEffect(() => {
+    if (userInfo) {
+      history.push(redirect);
+    }
+  }, [history, userInfo, redirect]);
+
   const onSubmit = (data) => {
-    console.log(data);
+    dispatch(login(data.email, data.password));
   };
 
   return (
     <div className={classes.container}>
       <h1>Sign In</h1>
-      {loading ? (
-        <Spinner />
-      ) : error ? (
-        <ErrorComponent err={error} />
-      ) : (
-        <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
-          <div className={classes.formGroup}>
-            <TextField
-              type="email"
-              register={register}
-              error={errors}
-              inputwidth="100%"
-              inputheight="4rem"
-              label="Email"
-              name="email"
-              placeholder="Email"
-              mandatory={true}
-            />
-          </div>
-          <div  className={classes.formGroup}>
-            <TextField 
+      <div className={classes.message}>
+        {loading && <Spinner />}
+        {error && <p>{error}</p>}
+      </div>
+      <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
+        <div className={classes.formGroup}>
+          <TextField
+            type="email"
+            register={register}
+            error={errors}
+            inputwidth="100%"
+            inputheight="4rem"
+            label="Email"
+            name="email"
+            placeholder="Email"
+            mandatory={true}
+          />
+        </div>
+        <div className={classes.formGroup}>
+          <TextField
             type="password"
             register={register}
-              error={errors}
-              inputwidth="100%"
-              inputheight="4rem"
-              label="Password"
-              name="password"
-              placeholder="Password"
-              mandatory={true}
-            />
-          </div>
-          <button type="submit">Sign In</button>
-        </form>
-      )}
-    </div >
+            error={errors}
+            inputwidth="100%"
+            inputheight="4rem"
+            label="Password"
+            name="password"
+            placeholder="Password"
+            mandatory={true}
+          />
+        </div>
+        <button type="submit">Sign In</button>
+        <div className={classes.new}>
+          <p>
+            New Customer ?{" "}
+            <Link
+              to={redirect ? `/register?redirect=${redirect}` : "/register"}
+            >
+              Register
+            </Link>
+          </p>
+        </div>
+      </form>
+    </div>
   );
 };
 

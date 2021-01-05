@@ -1,4 +1,4 @@
-@import '../../sass/variables.scss';
+@import "../../sass/variables.scss";
 
 .navigation {
   width: 100%;
@@ -46,4 +46,20 @@
       transform: translateY(-0.3rem);
     }
   }
+}
+
+.cart {
+  height: 3rem;
+  margin-left:-4rem;
+
+  filter: invert(1) brightness(150%)
+    drop-shadow(8px 8px 10px rgb(255, 252, 252));
+  -webkit-filter: invert(1) brightness(150%)
+    drop-shadow(8px 8px 10px rgb(255, 253, 253));
+}
+
+.qty {
+  font-family: "Quantity";
+  color: orange;
+  margin: auto;
 }
