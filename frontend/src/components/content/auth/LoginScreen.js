@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import classes from "./LoginScreen.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import TextField from "../forms/TextField";
-import ErrorComponent from "../../ErrorComponent";
 import Spinner from "../../Spinner";
 import { login } from "../../../actions/userActions";
 
@@ -62,7 +61,7 @@ const LoginScreen = ({ location, history }) => {
             mandatory={true}
           />
         </div>
-        <button type="submit">Sign In</button>
+        <button type="submit">Login</button>
         <div className={classes.new}>
           <p>
             New Customer ?{" "}

@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import classes from "./Logout.module.scss";
 import Modal from "../../Modal";
-import { logout } from '../../../actions/userActions'
+import { logout } from "../../../actions/userActions";
 
 const Logout = ({ history }) => {
   const dispatch = useDispatch();
@@ -13,8 +13,8 @@ const Logout = ({ history }) => {
   }, []);
 
   const onLogout = () => {
-    dispatch(logout())
-    history.push('/')
+    dispatch(logout());
+    history.push("/");
   };
 
   const onBack = () => {

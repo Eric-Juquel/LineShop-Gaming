@@ -10,6 +10,7 @@ import Header from './components/header/Header'
 
 import LoginScreen from './components/content/auth/LoginScreen'
 import logout from './components/content/auth/Logout'
+import RegisterScreen from './components/content/auth/RegisterScreen'
 
 import ProductsScreen from './components/content/shop/ProductsScreen'
 import ProductDetail from './components/content/shop/ProductDetail'
@@ -56,6 +57,7 @@ const App = () => {
               <Route path='/product/:id' component={ProductDetail} />
               <Route path='/login' component={LoginScreen} />
               <Route path='/logout' component={logout} />
+              <Route path='/register' component={RegisterScreen} />
             </main>
             <footer className='footer'>
               <Footer />

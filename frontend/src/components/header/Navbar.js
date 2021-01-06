@@ -19,7 +19,7 @@ const Navbar = () => {
         {!userInfo ? (
           <>
             <li className={classes.item}>
-              <Link className={classes.link} to="#">
+              <Link className={classes.link} to="/register">
                 REGISTER
               </Link>
             </li>

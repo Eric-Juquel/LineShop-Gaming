@@ -1,8 +1,8 @@
 @import "../../../sass//variables.scss";
 
 .container {
-  width: 25%;
-  height: 60%;
+  width: 45%;
+  height: 80%;
   background-color: $color-background-secondary;
   margin: auto;
   padding: 1.5rem;
@@ -11,7 +11,7 @@
   border-radius: 4px;
 
   & h1 {
-    height: 15%;
+    height: 10%;
   }
 }
 
@@ -21,19 +21,21 @@
 }
 
 .form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(2, 47.5%);
+  grid-template-rows: repeat(4, 20%) 10%;
+  grid-gap: 5%;
   height: 80%;
   padding: 2rem;
 
   & .formGroup:not(:last-child) {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 
   & button {
-    margin: 0 auto;
-    min-height: 4rem;
+    grid-column: 1 / -1;
+    grid-row: 4 / 5;
+    margin: auto;
 
     &,
     &:link,
@@ -41,6 +43,7 @@
       outline: none;
       width: 10rem;
       cursor: pointer;
+      height: 4rem;
       padding: 0 1rem;
       font-size: 1.5rem;
       text-align: center;
@@ -81,18 +84,21 @@
     }
   }
 
-  & .new {
-    margin-top: 2rem;
+  & .account {
+    grid-column: 1 / -1;
+    grid-row: 5 / 6;
+    margin: auto;
 
     & a {
       color: $color-yellow-light;
       transition: all 0.2s ease;
       display: inline-block;
-      margin-left: 1rem;
+      margin-left:1rem;
+      
 
       &:hover,
       &:active {
-        box-shadow: 0 1rem 1rem $color-secondary;
+        box-shadow: 0 1rem 2rem $color-secondary;
         transform: scale(1.3);
       }
     }

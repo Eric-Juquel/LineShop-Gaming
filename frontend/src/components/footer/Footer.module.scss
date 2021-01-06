@@ -6,3 +6,12 @@
   align-items: center;
   justify-content: center;
 }
+
+.copyright {
+  display:flex;
+  align-items:center;
+  & svg{
+    margin-right:3px;
+    font-size:1.8rem;
+  }
+}
