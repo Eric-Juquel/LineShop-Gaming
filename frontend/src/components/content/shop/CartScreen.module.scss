@@ -1,0 +1,222 @@
+@import "../../../sass//variables.scss";
+
+.container {
+  width: 80%;
+  height: 90%;
+  background-color: $color-background-secondary;
+  margin: 2% auto 0 auto;
+  padding: 2rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+
+  display: grid;
+  grid-template-columns: 70% 25%;
+  grid-template-rows: 40% 10% 40%;
+  grid-gap: 5%;
+}
+
+.cart {
+  grid-column: 1 / 2;
+  grid-row: 1 / -1;
+
+  & h1 {
+    width: 100%;
+    height: 8%;
+    margin-bottom:5px;
+    font-family: "Audiowide", cursive;
+    color: $color-yellow-light;
+    text-align: start;
+    text-transform: uppercase;
+  }
+
+  & .items {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    height: 92%;
+    width:90%;
+    overflow-y: auto;
+  }
+
+  & .item {
+    display:flex;
+    justify-content:space-evenly;
+    align-items:center;
+    max-width:100%;
+    height:20%;
+    padding:1rem;
+
+    &:not(:last-child) {
+      border-bottom:1px solid $color-blue-mid;
+    }
+
+    & img {
+      height:100%;
+      min-width:8%;
+      max-width:8%;
+    }
+
+    & h3 {
+      width:35%;
+
+      & a {
+        color: $color-yellow-light;
+        transition: all 0.2s ease;
+        display: inline-block;
+        margin-left:1rem;
+        
+  
+        &:hover,
+        &:active {
+          box-shadow: 0 1rem 2rem $color-secondary;
+          transform: scale(1.2);
+        }
+      }
+    }
+
+    & p {
+      width:20%;
+    }
+
+    & .qty {
+      width:10%;
+
+      & .select {
+        height: 3.5rem;
+        width: 5rem;
+        align-self: center;
+        display: flex;
+        align-items: center;
+        position: relative;
+  
+        border: none;
+        border-radius: 0.25em;
+        padding: 0.25em 0.5em;
+  
+        font-size: 1.25rem;
+        cursor: pointer;
+        line-height: 1.1;
+  
+        // Optional styles
+        // remove for transparency
+        background-color: #fff;
+        background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+  
+        // Custom arrow
+        &::after {
+          content: "";
+          margin-left: -1rem;
+          width: 0.8em;
+          height: 0.5em;
+          background-color: $color-grey-dark;
+          clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+        }
+      }
+    }
+
+    & svg {
+      cursor:pointer;
+      width:5%;
+      fill:$color-danger;
+    }
+  }
+}
+
+.checkout {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid $color-purple-mid;
+
+  & h3 {
+    width: 100%;
+    font-family: "Audiowide", cursive;
+    color: $color-yellow-light;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  & div {
+    width: 100%;
+    height: 22%;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:last-child {
+      height: 34%;
+      border-top: 1px solid $color-purple-mid;
+      justify-content: center;
+      padding: 0;
+    }
+
+    & button {
+      text-transform: uppercase;
+      cursor: pointer;
+      width: 90%;
+      height: 4rem;
+      margin: auto;
+      background: transparent;
+      color: $color-yellow-light;
+      font-size: 1.5rem;
+      border: 1px solid $color-yellow-light;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background-color: $color-yellow-light;
+        color: $color-secondary;
+        border: none;
+        transform: translateY(0px);
+      }
+
+      &:active {
+        transform: translateY(2px);
+      }
+    }
+  }
+}
+
+.shopping {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & a {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    text-transform: capitalize;
+    cursor: pointer;
+    width: 70%;
+    height: 4rem;
+    margin: auto;
+    background: transparent;
+    color: $color-blue-light;
+    font-size: 1.5rem;
+    border: 1px solid $color-blue-mid;
+    transition: all 0.2s ease;
+
+    & svg {
+      font-size:2.5rem;
+      margin: 2px 5px 0 -2px;
+    }
+
+    &:hover {
+      background-color: $color-blue-mid;
+      color: $color-secondary;
+      transform: translateY(0px);
+    }
+
+    &:active {
+      transform: translateY(2px);
+    }
+  }
+}

@@ -1,14 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import classes from "./ProductDetail.module.scss";
 import { IoIosReturnLeft } from "react-icons/io";
-import Spinner from '../../Spinner'
-import ErrorComponent from '../../ErrorComponent'
+import Spinner from "../../Spinner";
+import ErrorComponent from "../../ErrorComponent";
 import Rating from "./Rating";
 import { listProductDetails } from "../../../actions/productActions";
 
-const ProductDetail = ({ match }) => {
+const ProductDetail = ({ history, match }) => {
+  const [qty, setQty] = useState(1);
+
   const dispatch = useDispatch();
 
   const productDetails = useSelector((state) => state.productDetails);
@@ -18,6 +20,14 @@ const ProductDetail = ({ match }) => {
     dispatch(listProductDetails(match.params.id));
   }, [dispatch, match]);
 
+  const goBackHandler = () => {
+    history.goBack();
+  };
+
+  const addToCartHandler = () => {
+    history.push(`/cart/${match.params.id}?qty=${qty}`);
+  };
+
   return (
     <>
       {loading ? (
@@ -25,13 +35,11 @@ const ProductDetail = ({ match }) => {
       ) : error ? (
         <ErrorComponent err={error} />
       ) : (
-        <div className={classes.container}>
+        <div className={classes.container} onClick={goBackHandler}>
           <button className={classes.btn}>
-            <Link to="/products">
-              <IoIosReturnLeft />
-              &nbsp;
-              <span className={classes.text}> Go Back</span>
-            </Link>
+            <IoIosReturnLeft />
+            &nbsp;
+            <span className={classes.text}> Go Back</span>
           </button>
           <div className={classes.image}>
             <img src={product.image} alt={product.name} />
@@ -54,18 +62,22 @@ const ProductDetail = ({ match }) => {
           </div>
           <div className={classes.add}>
             <div className={classes.price}>
-              <p>Price:</p>
+              <p>Price :</p>
               <strong>{product.price} €</strong>
             </div>
             <div className={classes.stock}>
-              <p>Status:</p>
+              <p>Status :</p>
               <p>{product.countInStock > 0 ? "In Stock" : "Out of Stock"}</p>
             </div>
 
             <div className={classes.qty}>
-              <label htmlFor={"quantity"}>Qty</label>
+              <label htmlFor={"quantity"}>Qty :</label>
               <div className={classes.select}>
-                <select disabled={product.countInStock === 0}>
+                <select
+                  disabled={product.countInStock === 0}
+                  value={qty}
+                  onChange={(e) => setQty(e.target.value)}
+                >
                   {[...Array(product.countInStock).keys()].map((x) => (
                     <option key={x + 1} value={x + 1}>
                       {x + 1}
@@ -77,7 +89,12 @@ const ProductDetail = ({ match }) => {
             </div>
 
             <div className={classes.addBtn}>
-              <button disabled={product.countInStock === 0}>Add to Cart</button>
+              <button
+                onClick={addToCartHandler}
+                disabled={product.countInStock === 0}
+              >
+                Add to Cart
+              </button>
             </div>
           </div>
           <div className={classes.write}>

@@ -1,5 +1,5 @@
 import React from "react";
-import classes from './TextField.module.scss'
+import classes from './CustomInputs.module.scss'
 
 const TextField = ({
   type,

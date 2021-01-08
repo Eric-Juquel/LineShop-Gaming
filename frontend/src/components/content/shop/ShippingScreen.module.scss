@@ -1,0 +1,30 @@
+@import "../../../sass/variables.scss";
+
+.container {
+  width: 40%;
+  height: 90%;
+  background-color: $color-background-secondary;
+  margin: auto;
+  padding: 1.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  border-radius: 4px;
+
+  & h1 {
+    height: 10%;
+    text-transform: uppercase;
+    text-align: start;
+  }
+}
+
+.message {
+  height: 6%;
+  color: $color-danger;
+}
+
+.form {
+    height:80%;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-evenly;
+}

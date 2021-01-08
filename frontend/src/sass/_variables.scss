@@ -30,8 +30,8 @@
 
 // COLOR VARIABLES
 
-$color-success:#55c57a;
-$color-danger:#fa8072;
+$color-success:rgb(102,205,170);
+$color-danger:rgb(252, 143, 143);
 
 $color-yellow-light:rgb(247, 215, 157,0.8);
 $color-yellow-dark:rgba(46, 38, 25, 0.8);
@@ -40,17 +40,21 @@ $color-brown-light: rgb(248, 223, 163, 0.3);
 $color-brown-dark: #b28451;
 $color-brown-mid: #c6996350;
 
-$color-secondary: #101d2c;
+$color-secondary: rgb(16, 29, 44);
 $color-secondary-trans: rgba(16, 29, 44, 0.801);
 $color-secondary-light: rgba(31, 20, 78, 0.767);
 
-$color-grey-light-1: #f9f7f6;
-$color-grey-light-2: #aaa;
-$color-grey-dark: #363a3f;
+$color-grey-light-1: rgb(249, 247, 246);
+$color-grey-light-2: rgb(170, 170, 170);
+$color-grey-dark: rgb(54, 58, 63);
 
 $color-purple-dark: #370e47bb;
 $color-purple-mid: #ac4e9bc2;
 $color-purple-light: #eabfd6;
+
+$color-blue-light:rgb(214, 221, 255);
+$color-blue-mid:rgb(118, 148, 212);
+
 
 $color-background-secondary:rgb(75, 71, 71,0.5);
 //BORDER

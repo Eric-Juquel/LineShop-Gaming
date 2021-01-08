@@ -26,11 +26,10 @@
   height: 80%;
   transform: translateY(0px);
   transition: all 0.2s ease;
-  & a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   & .text {
     font-family: "Montserrat", sans-serif;
@@ -97,7 +96,7 @@
     padding: 1rem;
     display: flex;
     justify-content: space-between;
-    align-items:center;
+    align-items: center;
 
     &:not(:last-child) {
       border-bottom: 1px solid $color-purple-mid;
