@@ -5,7 +5,7 @@
   font-family: inherit;
   color: $color-secondary;
   padding: 1.5rem 2rem;
-  border-radius: 2px;
+  border-radius: 4px;
   background-color: rgba($color-grey-light-1, 0.6);
   border: none;
   border-bottom: 2px solid transparent;
@@ -41,4 +41,8 @@
   margin-top: 0.7rem;
   display: block;
   transition: all 0.3s;
+}
+
+.select {
+  margin-bottom:2rem;
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./CustomInputs.module.scss";
-import Select from "react-select";
+import Select, { NonceProvider } from "react-select";
 import { Controller } from "react-hook-form";
 import makeAnimated from "react-select/animated";
 
@@ -31,18 +31,18 @@ const SelectField = ({
         ? `0 0 0 1px rgb(252, 143, 143)`
         : !error[name] && state.isFocused
         ? `0 0 0 1px rgb(102,205,170)`
-        : "rgb(249, 247, 246, 0.6)",
-      borderColor: error[name]
-        ? `0 0 0 1px rgb(252, 143, 143)`
+        : "0 0 0 1px rgba(249, 247, 246, 0.6)",
+      border: error[name]
+        ? ' 1px solid rgb(252, 143, 143)'
         : !error[name] && state.isFocused
-        ? ` rgb(102,205,170)`
-        : "rgb(249, 247, 246, 0.6)",
+        ? ` 1px solid rgb(102,205,170)`
+        : "none",
       ":hover": {
-        borderColor: `rgb(102,205,170)`,
+        border: `1px solid rgb(102,205,170)`,
       },
       minHeight: inputheight,
       maxHeight: state.isMulti === true ? "71px" : inputheight,
-      backgroundColor: "rgb(249, 247, 246, 0.6)",
+      backgroundColor: "rgba(249, 247, 246, 0.6)",
     }),
     valueContainer: (provided, state) => ({
       ...provided,
@@ -95,6 +95,7 @@ const SelectField = ({
         as={Select}
         control={control}
         inputId={name}
+        className={classes.select}
         name={name}
         placeholder={`Select ${label}`}
         styles={customStyles}

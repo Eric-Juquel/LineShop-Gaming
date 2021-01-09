@@ -77,6 +77,7 @@ const ShippingScreen = ({ history }) => {
             mandatory={true}
           />
         </div>
+        <button>Continue</button>
       </form>
     </div>
   );
