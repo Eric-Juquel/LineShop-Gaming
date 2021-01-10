@@ -33,7 +33,7 @@ const SelectField = ({
         ? `0 0 0 1px rgb(102,205,170)`
         : "0 0 0 1px rgba(249, 247, 246, 0.6)",
       border: error[name]
-        ? ' 1px solid rgb(252, 143, 143)'
+        ? " 1px solid rgb(252, 143, 143)"
         : !error[name] && state.isFocused
         ? ` 1px solid rgb(102,205,170)`
         : "none",
@@ -47,13 +47,13 @@ const SelectField = ({
     valueContainer: (provided, state) => ({
       ...provided,
       maxHeight: state.isMulti === true ? "68px" : inputheight,
-      padding: "0",
+      padding: "1.5rem",
       overflowY: state.isMulti === true ? "auto" : "hidden",
     }),
     placeholder: (provided, state) => ({
       ...provided,
       fontSize: "1.5rem",
-      marginLeft:'1.5rem',
+      marginLeft: "1.5rem",
       color: "rgb(54, 58, 63)",
     }),
     indicatorsContainer: (provided, state) => ({
@@ -108,6 +108,9 @@ const SelectField = ({
         defaultValue={defaultValue ? defaultValue : ""}
         rules={{ required: mandatory === true ? true : false }}
       />
+      <label htmlFor={name} className={classes.label}>
+        {label}
+      </label>
 
       {/* {error[name] ? (
         <div className={classes.error}>{label} is required</div>

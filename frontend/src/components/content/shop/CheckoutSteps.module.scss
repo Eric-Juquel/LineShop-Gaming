@@ -1,0 +1,28 @@
+@import "../../../sass/variables.scss";
+
+.navigation {
+  width: 57rem;
+  height: 5%;
+  margin: auto;
+
+  & .list {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style: none;
+
+    & hr {
+        width:10%;
+        color:white;
+    }
+
+    & .item {
+    //   width: 20%;
+
+      & a[disabled] {
+        color: $color-grey-light-2;
+      }
+    }
+  }
+}
