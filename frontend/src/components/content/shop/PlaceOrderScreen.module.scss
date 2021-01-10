@@ -1,5 +1,170 @@
-@import '../../../sass/variables.scss';
+@import "../../../sass/variables.scss";
 
 .container {
+  width: 80%;
+  height: 90%;
+  background-color: $color-background-secondary;
+  margin: 2% auto 0 auto;
+  padding: 2rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+}
+
+h2 {
+  color: $color-yellow-light;
+}
+
+.content {
+  width: 95%;
+  height: 90%;
+
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: repeat(2, 20%) repeat(2, 30%);
+  grid-column-gap: 5%;
+
+  & > div {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    & strong {
+      font-size: 1.7rem;
+      font-weight: 600;
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+.shipping {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  border-bottom: 1px solid $color-blue-mid;
+}
+
+.payment {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  border-bottom: 1px solid $color-blue-mid;
+}
+
+.order {
+  grid-column: 1 / 2;
+  grid-row: 3 / -1;
+
+  & .items {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    scrollbar-width: thin !important;
     
+
+    & .item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 100%;
+      height: 33%;
+      padding: 0.5rem;
+
+      & img {
+        height: 100%;
+        min-width: 8%;
+        max-width: 8%;
+      }
+
+      & a {
+        transition: all 0.2s ease;
+        display: inline-block;
+        margin-left: 1rem;
+
+        &:hover,
+        &:active {
+          box-shadow: 0 1rem 2rem $color-secondary;
+          transform: scale(1.2);
+        }
+      }
+
+      & span {
+        font-weight: 700;
+        margin-right:3rem;
+      }
+    }
+  }
+}
+
+.summary {
+  grid-column: 2 / 3;
+  grid-row: 1 / 4;
+}
+
+.card {
+  border: 1px solid $color-purple-mid;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  & div {
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:first-child {
+      height: 22%;
+    }
+
+    &:last-child {
+      height: 18%;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $color-purple-mid;
+    }
+
+    & label {
+      width: 30%;
+      text-align: start;
+    }
+
+    & p {min-width:20%;}
+
+    & button {
+      width: 80%;
+      height: 80%;
+      margin: auto;
+      background: transparent;
+      color: $color-yellow-light;
+      font-size: 1.5rem;
+      text-transform:uppercase;
+      border: 1px solid $color-yellow-light;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background-color: $color-yellow-light;
+        color: $color-secondary;
+        border: none;
+        transform: translateY(0px);
+      }
+
+      &:active {
+        transform: translateY(2px);
+      }
+
+      &:disabled {
+        background: grey;
+        border: none;
+        color: $color-grey-dark;
+
+        &:active {
+          transform: translateY(0px);
+        }
+      }
+    }
+  }
 }

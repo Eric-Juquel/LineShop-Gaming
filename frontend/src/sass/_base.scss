@@ -9,8 +9,8 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%; // 10px/16px = 62.5% -> 1rem = 10px
-  scrollbar-width: thin;
-  scrollbar-color: $color-secondary-light $color-grey-light-1;
+  scrollbar-width: thin !important;
+  scrollbar-color: $color-secondary-light $color-blue-mid;
 
   // @media only screen and (max-width: $bp-largest) {
   //   font-size: 50%;
