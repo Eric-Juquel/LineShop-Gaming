@@ -1,0 +1,99 @@
+@import "../../../sass/variables.scss";
+
+.container {
+  width: 40%;
+  height: 90%;
+  background-color: $color-background-secondary;
+  margin: auto;
+  padding: 2rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  border-radius: 4px;
+
+  & h1 {
+    height: 10%;
+    text-transform: uppercase;
+    text-align: start;
+    color: $color-yellow-light;
+  }
+}
+
+.form {
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  & h3 {
+      text-align:start;
+  }
+
+  & button {
+    margin-top: 2rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 20%;
+    height: 4rem;
+    background: transparent;
+    color: $color-yellow-light;
+    font-size: 1.5rem;
+    border: 1px solid $color-yellow-light;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: $color-yellow-light;
+      color: $color-secondary;
+      border: none;
+      transform: translateY(0px);
+    }
+
+    &:active {
+      transform: translateY(2px);
+    }
+  }
+}
+
+.radioGroup {
+  width: 60%;
+  display: flex;
+
+  & .input {
+    display: none;
+  }
+
+  & .label {
+    cursor: pointer;
+    position: relative;
+    padding-left: 4.5rem;
+    
+  }
+
+  & .radioButton {
+    height: 2rem;
+    width: 2rem;
+    border: 2px solid $color-blue-mid;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1rem;
+      width: 1rem;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: $color-blue-mid;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+  }
+}
+
+.input:checked ~ .label .radioButton::after {
+  opacity: 1;
+}

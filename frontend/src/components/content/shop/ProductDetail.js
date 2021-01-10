@@ -25,6 +25,7 @@ const ProductDetail = ({ history, match }) => {
   };
 
   const addToCartHandler = () => {
+    console.log("added");
     history.push(`/cart/${match.params.id}?qty=${qty}`);
   };
 
@@ -35,8 +36,8 @@ const ProductDetail = ({ history, match }) => {
       ) : error ? (
         <ErrorComponent err={error} />
       ) : (
-        <div className={classes.container} onClick={goBackHandler}>
-          <button className={classes.btn}>
+        <div className={classes.container}>
+          <button className={classes.btn} onClick={goBackHandler}>
             <IoIosReturnLeft />
             &nbsp;
             <span className={classes.text}> Go Back</span>

@@ -17,6 +17,8 @@ import ProductsScreen from "./components/content/shop/ProductsScreen";
 import ProductDetail from "./components/content/shop/ProductDetail";
 import CartScreen from "./components/content/shop/CartScreen";
 import ShippingScreen from "./components/content/shop/ShippingScreen";
+import PaymentScreen from "./components/content/shop/PaymentScreen";
+import PlaceOrderScreen from "./components/content/shop/PlaceOrderScreen";
 
 import Footer from "./components/footer/Footer";
 
@@ -60,6 +62,8 @@ const App = () => {
               <Route path="/product/:id" component={ProductDetail} />
               <Route path="/cart/:id?" component={CartScreen} />
               <Route path="/shipping" component={ShippingScreen} />
+              <Route path="/payment" component={PaymentScreen} />
+              <Route path="/placeorder" component={PlaceOrderScreen} />
               <Route path="/login" component={LoginScreen} />
               <Route path="/logout" component={logout} />
               <Route path="/register" component={RegisterScreen} />
