@@ -36,7 +36,7 @@ const PlaceOrderScreen = () => {
             <strong>Address: </strong>
             {cart.shippingAddress.address}, {cart.shippingAddress.city}{" "}
             {cart.shippingAddress.postalCode},{" "}
-            {cart.shippingAddress.country.toUpperCase()}
+            {cart.shippingAddress.country.label.toUpperCase()}
           </p>
         </div>
         <div className={classes.payment}>
@@ -90,7 +90,7 @@ const PlaceOrderScreen = () => {
             </div>
             <div>
               <button
-                disabled={cart.cartItems === 0}
+                disabled={cart.cartItems.length === 0}
                 onClick={placeOrderHandler}
               >
                 Place Order

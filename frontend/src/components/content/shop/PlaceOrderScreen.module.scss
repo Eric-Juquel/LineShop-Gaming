@@ -61,7 +61,6 @@ h2 {
     width: 100%;
     overflow-y: auto;
     scrollbar-width: thin !important;
-    
 
     & .item {
       display: flex;
@@ -91,7 +90,7 @@ h2 {
 
       & span {
         font-weight: 700;
-        margin-right:3rem;
+        margin-right: 3rem;
       }
     }
   }
@@ -132,7 +131,9 @@ h2 {
       text-align: start;
     }
 
-    & p {min-width:20%;}
+    & p {
+      min-width: 30%;
+    }
 
     & button {
       width: 80%;
@@ -141,9 +142,24 @@ h2 {
       background: transparent;
       color: $color-yellow-light;
       font-size: 1.5rem;
-      text-transform:uppercase;
+      text-transform: uppercase;
       border: 1px solid $color-yellow-light;
       transition: all 0.2s ease;
+
+      &:disabled {
+        background: grey;
+        border: none;
+        color: $color-grey-dark;
+
+        &:hover {
+          background: grey;
+          color: $color-grey-dark;
+        }
+
+        &:active {
+          transform: translateY(0px);
+        }
+      }
 
       &:hover {
         background-color: $color-yellow-light;
@@ -156,15 +172,7 @@ h2 {
         transform: translateY(2px);
       }
 
-      &:disabled {
-        background: grey;
-        border: none;
-        color: $color-grey-dark;
-
-        &:active {
-          transform: translateY(0px);
-        }
-      }
+    
     }
   }
 }

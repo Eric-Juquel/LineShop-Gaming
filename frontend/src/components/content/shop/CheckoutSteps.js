@@ -24,7 +24,7 @@ const CheckoutSteps = ({ step1, step2, step3, step4 }) => {
               Shipping
             </Link>
           ) : (
-            <Link className={classes.link} disabled>
+            <Link className={classes.link} to='#' disabled>
               Shipping
             </Link>
           )}
@@ -36,7 +36,7 @@ const CheckoutSteps = ({ step1, step2, step3, step4 }) => {
               Payment
             </Link>
           ) : (
-            <Link className={classes.link} disabled>
+            <Link className={classes.link} to='#' disabled>
               Payment
             </Link>
           )}
@@ -48,7 +48,7 @@ const CheckoutSteps = ({ step1, step2, step3, step4 }) => {
               Place Order
             </Link>
           ) : (
-            <Link className={classes.link} disabled>
+            <Link className={classes.link} to='#' disabled>
               Place Order
             </Link>
           )}
