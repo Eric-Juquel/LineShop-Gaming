@@ -18,62 +18,18 @@
   }
 
   & button {
-    width: 60%;
-    height: 55%;
     margin: auto;
-
-    &,
-    &:link,
-    &:visited {
-      outline: none;
-      width: 10rem;
-      cursor: pointer;
-      height: 4rem;
-      padding: 0 1rem;
-      font-size: 1.5rem;
-      text-align: center;
-      border-radius: 10px;
-      background-image: linear-gradient(
-        to top left,
-        rgba(0, 0, 0, 0.2),
-        rgba(0, 0, 0, 0.2) 30%,
-        rgba(0, 0, 0, 0)
-      );
-      background-color: transparent;
-      box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
-        inset -2px -2px 3px rgba(0, 0, 0, 0.6);
-      transition: all 0.2s;
-    }
+    width: 10rem;
+    height: 4rem;
 
     &.validate {
       margin-right: 50%;
-      border: 1px $color-success solid;
-      color: $color-success;
-
-      &:hover {
-        background-color: $color-success;
-        color: $color-grey-light-1;
-      }
+      @include btn3d($color-success);
     }
 
     &.cancel {
       margin-left: 50%;
-      border: 1px $color-danger solid;
-      color: $color-danger;
-
-      &:hover {
-        background-color: $color-danger;
-        color: $color-grey-light-1;
-      }
-    }
-
-    &:hover {
-      border: none;
-      transform: translateY(0px);
-    }
-
-    &:active {
-      transform: translateY(2px);
+      @include btn3d($color-danger);
     }
   }
 }
