@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import Moment from "react-moment";
 import { useForm } from "react-hook-form";
 import classes from "./ProfileScreen.module.scss";
+import { GiSplitCross } from "react-icons/gi";
 import Spinner from "../../Spinner";
-import ErrorComponent from '../../ErrorComponent'
+import ErrorComponent from "../../ErrorComponent";
 import TextField from "../forms/TextField";
 import {
   getUserDetails,
   updateUserProfile,
 } from "../../../actions/userActions";
 import { USER_UPDATE_PROFILE_RESET } from "../../../constants/userConstants";
+import { listMyOrders } from "../../../actions/orderActions";
 
 const ProfileScreen = ({ history }) => {
   const [firstName, setFirstName] = useState("");
@@ -27,7 +30,10 @@ const ProfileScreen = ({ history }) => {
   const { userInfo } = userLogin;
 
   const userUpdateProfile = useSelector((state) => state.userUpdateProfile);
-  const { success, error:errorUpdate } = userUpdateProfile;
+  const { success, error: errorUpdate } = userUpdateProfile;
+
+  const orderListMy = useSelector((state) => state.orderListMy);
+  const { loading: loadingOrders, error: errorOrders, orders } = orderListMy;
 
   const { register, handleSubmit, errors, control } = useForm();
 
@@ -39,6 +45,7 @@ const ProfileScreen = ({ history }) => {
         setMessage(null);
         // dispatch({ type: USER_UPDATE_PROFILE_RESET });
         dispatch(getUserDetails("profile"));
+        dispatch(listMyOrders());
       } else {
         setFirstName(user.firstName);
         setLastName(user.lastName);
@@ -156,7 +163,53 @@ const ProfileScreen = ({ history }) => {
       </div>
       <div className={classes.orders}>
         <h1>My Orders</h1>
-        <div>Table</div>
+        {loadingOrders ? (
+          <Spinner />
+        ) : error ? (
+          <ErrorComponent err={error} />
+        ) : (
+          <div className={classes.orderTable}>
+            <div className={classes.entitled}>
+              <h4 className={classes.cell}>ID</h4>
+              <h4 className={classes.cell}>DATE</h4>
+              <h4 className={classes.cell}>TOTAL</h4>
+              <h4 className={classes.cell}>PAID</h4>
+              <h4 className={classes.cell}>DELIVERED</h4>
+              <h4 className={classes.cell}></h4>
+            </div>
+
+            <div className={classes.items}>
+              {orders.map((order) => (
+                <div key={order._id} className={classes.row}>
+                  <div className={classes.cell}>{order._id}</div>
+                  <div className={classes.cell}>
+                    <Moment format="YYYY/MM/DD">{order.createdAt}</Moment>
+                  </div>
+                  <div className={classes.cell}>{order.totalPrice}</div>
+                  <div className={classes.cell}>
+                    {order.isPaid ? (
+                      <Moment format="YYYY/MM/DD">{order.paidAt}</Moment>
+                    ) : (
+                      <GiSplitCross />
+                    )}
+                  </div>
+                  <div className={classes.cell}>
+                    {order.isDelivered ? (
+                      <Moment format="YYYY/MM/DD">{order.deliveredAt}</Moment>
+                    ) : (
+                      <GiSplitCross />
+                    )}
+                  </div>
+                  <div className={classes.cell}>
+                    <Link to={`/order/${order._id}`}>
+                      <button>Details</button>
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

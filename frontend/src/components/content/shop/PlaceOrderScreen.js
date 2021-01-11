@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import classes from "./PlaceOrderScreen.module.scss";
 import ErrorComponent from "../../ErrorComponent";
 import Spinner from "../../Spinner";
 import CheckoutSteps from "./CheckoutSteps";
+import { createOrder } from "../../../actions/orderActions";
 
-const PlaceOrderScreen = () => {
+const PlaceOrderScreen = ({ history }) => {
+  const dispatch = useDispatch();
+
   const cart = useSelector((state) => state.cart);
 
   // Calculate prices
@@ -18,17 +21,45 @@ const PlaceOrderScreen = () => {
     (acc, item) => acc + item.price * item.qty,
     0
   );
-  cart.shippingPrice = cart.itemsPrice > 100 ? 0 : cart.itemsPrice === 0 ? 0 : 15;
+  cart.shippingPrice =
+    cart.itemsPrice > 100 ? 0 : cart.itemsPrice === 0 ? 0 : 15;
   cart.taxPrice = addDecimals(Number(0.15 * cart.itemsPrice).toFixed(2));
-  cart.totalPrice = (Number(cart.itemsPrice) + Number(cart.shippingPrice) + Number(cart.taxPrice)).toFixed(2);
+  cart.totalPrice = (
+    Number(cart.itemsPrice) +
+    Number(cart.shippingPrice) +
+    Number(cart.taxPrice)
+  ).toFixed(2);
+
+  const orderCreate = useSelector((state) => state.orderCreate);
+  const { order, success, error } = orderCreate;
+
+  useEffect(() => {
+    if (success) {
+      history.push(`/order/${order._id}`);
+    }
+    // eslint-disable-next-line
+  }, [history, success]);
 
   const placeOrderHandler = () => {
-    console.log("order");
+    dispatch(
+      createOrder({
+        orderItems: cart.cartItems,
+        shippingAddress: cart.shippingAddress,
+        paymentMethod: cart.paymentMethod,
+        itemsPrice: cart.itemsPrice,
+        shippingPrice: cart.shippingPrice,
+        taxPrice: cart.taxPrice,
+        totalPrice: cart.totalPrice,
+      })
+    );
   };
 
-  return (
+  return error ? (
+    <ErrorComponent err={error} />
+  ) : (
     <div className={classes.container}>
       <CheckoutSteps step1 step2 step3 step4 />
+
       <div className={classes.content}>
         <div className={classes.shipping}>
           <h2>Shipping</h2>

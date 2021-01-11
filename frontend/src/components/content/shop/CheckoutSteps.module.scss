@@ -13,26 +13,23 @@
     list-style: none;
 
     & hr {
-        width:10%;
-        color:$color-success;
+      width: 10%;
+      color: $color-success;
 
-        &[disabled=""]{
-          color: $color-grey-light-2;
-        }
-    }
-
-    & .item {
-    //   width: 20%;
-& a {
-      color:$color-success;
-      
-      &[disabled] {
+      &[disabled=""] {
         color: $color-grey-light-2;
       }
     }
 
-      &[disabled] {
-        color: $color-grey-light-2;
+    & .item {
+      //   width: 20%;
+      & a {
+        color: $color-success;
+
+        &[disabled] {
+          color: $color-grey-light-2;
+          cursor: default;
+        }
       }
     }
   }

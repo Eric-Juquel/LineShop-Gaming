@@ -76,6 +76,7 @@
     display: inline-block;
     position: absolute;
     left: 0;
+    padding:0;
 
     &::after {
       content: "";

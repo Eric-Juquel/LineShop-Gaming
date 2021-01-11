@@ -1,7 +1,7 @@
 @import "../../../sass//variables.scss";
 
 .container {
-  width: 80%;
+  width: 90%;
   height: 95%;
   background-color: $color-background-secondary;
   margin: 2% auto 0 auto;
@@ -25,17 +25,16 @@
 }
 
 .profile {
-  width: 30%;
+  width: 25%;
 
   & .message {
     height: 6%;
     & .danger {
-        color: $color-danger;
+      color: $color-danger;
     }
     & .success {
-        color:$color-success;
+      color: $color-success;
     }
-    
   }
 
   & .form {
@@ -44,7 +43,7 @@
     align-items: flex-start;
   }
 
-  & .formGroup  {
+  & .formGroup {
     margin-bottom: 0.6rem;
     width: 85%;
   }
@@ -88,5 +87,87 @@
 }
 
 .orders {
-  width: 60%;
+  width: 65%;
+}
+
+.orderTable {
+  width: 100%;
+  border: 1px solid $color-purple-mid;
+  box-shadow: $box-shadow-dark;
+
+  & .items {
+    overflow: auto;
+  }
+}
+
+.row,
+.entitled {
+  width: 100%;
+  display: grid;
+  grid-template-columns: [id-start]30%[id-end date-start]15%[date-end total-start]10%[total-end paid-start]15%[paid-end deliver-start]15%[deliver-end btn-start]15%[btn-end];
+  // grid-template-rows: repeat(auto-fit, 5rem);
+
+  justify-items: stretch;
+
+  & .cell {
+    height: 5rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+      border-right: 1px solid $color-purple-mid;
+    }
+  }
+}
+
+.entitled {
+  border-bottom: 1px solid $color-purple-mid;
+  color:$color-blue-light;
+}
+
+.row {
+  border-top: 1px solid $color-purple-mid;
+
+  &:hover {
+    background-color: rgba($color-secondary, 0.7);
+  }
+
+  & .cell {
+    & svg {
+      fill: $color-danger;
+      margin: auto;
+    }
+
+    & button {
+      &,
+      &:link,
+      &:visited {
+        outline: none;
+        width: 10rem;
+        cursor: pointer;
+        height: 3rem;
+        padding: 0 1rem;
+        font-size: 1.5rem;
+        text-align: center;
+
+        background-color: transparent;
+        border: 1px $color-yellow-light solid;
+        color: $color-yellow-light;
+
+        transition: all 0.2s;
+      }
+
+      &:hover {
+        background-color: $color-yellow-light;
+        color: $color-secondary;
+        border: none;
+        transform: translateY(0px);
+      }
+
+      &:active {
+        transform: translateY(2px);
+      }
+    }
+  }
 }

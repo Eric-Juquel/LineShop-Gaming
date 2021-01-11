@@ -1,7 +1,7 @@
 @import "../../../sass/variables.scss";
 
 .container {
-  width: 80%;
+  width: 90%;
   height: 90%;
   background-color: $color-background-secondary;
   margin: 2% auto 0 auto;
@@ -10,16 +10,25 @@
   font-size: 1.5rem;
 }
 
+h1 {
+  text-transform: uppercase;
+  text-align: start;
+  color: $color-blue-light;
+  & span {
+    font-size: 1.8rem;
+  }
+}
+
 h2 {
   color: $color-yellow-light;
 }
 
 .content {
   width: 95%;
-  height: 90%;
+  height: 95%;
 
   display: grid;
-  grid-template-columns: 70% 30%;
+  grid-template-columns: 72% 28%;
   grid-template-rows: repeat(2, 20%) repeat(2, 30%);
   grid-column-gap: 5%;
 
@@ -42,6 +51,8 @@ h2 {
   grid-row: 1 / 2;
   border-bottom: 1px solid $color-blue-mid;
 }
+
+
 
 .payment {
   grid-column: 1 / 2;
@@ -74,6 +85,7 @@ h2 {
         height: 100%;
         min-width: 8%;
         max-width: 8%;
+        box-shadow:$box-shadow-dark;
       }
 
       & a {
@@ -171,8 +183,6 @@ h2 {
       &:active {
         transform: translateY(2px);
       }
-
-    
     }
   }
 }

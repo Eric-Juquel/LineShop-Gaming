@@ -38,7 +38,7 @@ const PaymentScreen = ({ history }) => {
             checked={paymentMethod === "PayPal"}
             onChange={(e) => setPaymentMethod(e.target.value)}
           />
-          <label for="paypal" className={classes.label}>
+          <label htmlFor="paypal" className={classes.label}>
             <span className={classes.radioButton}></span>
             PayPal or Credit Card
           </label>
@@ -53,7 +53,7 @@ const PaymentScreen = ({ history }) => {
             checked={paymentMethod === "Stripe"}
             onChange={(e) => setPaymentMethod(e.target.value)}
           />
-          <label for="stripe" className={classes.label}>
+          <label htmlFor="stripe" className={classes.label}>
             <span className={classes.radioButton}></span>
             Stripe
           </label>

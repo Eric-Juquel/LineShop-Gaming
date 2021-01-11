@@ -1,6 +1,5 @@
-@import './sass/variables.scss';
-@import './sass/base.scss';
-
+@import "./sass/variables.scss";
+@import "./sass/base.scss";
 
 html,
 body,
@@ -8,18 +7,16 @@ body,
   width: 100%;
   height: 100%;
   overflow: hidden;
-  
 }
 
 #root {
   overflow: hidden;
   background: #000108;
-  
 }
 
 a {
-  text-decoration:none;
-  color:inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 .App {
@@ -29,7 +26,6 @@ a {
   background: url(./images/background/orion-1920.jpg) no-repeat center fixed;
   background-size: cover;
   color: $color-grey-light-1;
-  
 }
 
 .container {
@@ -56,7 +52,7 @@ a {
     grid-row: main-start / main-end;
     grid-column: 1 / -1;
 
-    display:flex;
+    display: flex;
   }
 
   & .footer {
