@@ -1,0 +1,26 @@
+//FONTS
+
+@font-face {
+  font-family: "Star wars";
+  src: url("../fonts/Star-wars/SF\ Distant\ Galaxy.ttf");
+}
+
+@font-face {
+  font-family: "Star wars1";
+  src: url("../fonts/Star-wars/SF\ Distant\ Galaxy\ Outline\ Italic.ttf");
+}
+
+@font-face {
+  font-family: "Quantity";
+  src: url("../fonts/numbers/CRASS\ ROOTS\ OFL.ttf");
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Montserrat&family=Open+Sans&family=Roboto&display=swap");
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-shadow: 1px 2px 2px $color-secondary;
+}
