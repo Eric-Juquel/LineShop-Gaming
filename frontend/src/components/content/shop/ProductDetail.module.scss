@@ -19,32 +19,17 @@
   grid-column: 1 / 2;
   grid-row: back-start / back-end;
 
-  border: 1px solid $color-grey-light-1;
-  background-color: $color-grey-dark;
-  color: $color-grey-light-1;
   width: 50%;
   height: 80%;
-  transform: translateY(0px);
-  transition: all 0.2s ease;
+
+  @include btn3d($color-blue-light);
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  & .text {
-    font-family: "Montserrat", sans-serif;
-  }
-
   & svg {
     font-size: 3rem;
-  }
-
-  &:hover {
-    filter: invert(1);
-  }
-
-  &:active {
-    transform: translateY(2px);
   }
 }
 
@@ -103,35 +88,10 @@
     }
 
     & button {
-      width: 80%;
+      width: 90%;
       height: 4rem;
       margin: auto;
-      background: transparent;
-      color: $color-yellow-light;
-      font-size: 1.5rem;
-      border: 1px solid $color-yellow-light;
-      transition: all 0.2s ease;
-
-      &:hover {
-        background-color: $color-yellow-light;
-        color: $color-secondary;
-        border: none;
-        transform: translateY(0px);
-      }
-
-      &:active {
-        transform: translateY(2px);
-      }
-
-      &:disabled {
-        background: grey;
-        border: none;
-        color: $color-grey-dark;
-
-        &:active {
-          transform: translateY(0px);
-        }
-      }
+      @include btnFlat
     }
   }
 

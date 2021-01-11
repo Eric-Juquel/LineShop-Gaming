@@ -55,7 +55,7 @@
       height: 100%;
       min-width: 8%;
       max-width: 8%;
-      box-shadow:$box-shadow-dark;
+      box-shadow: $box-shadow-dark;
     }
 
     & h3 {
@@ -67,11 +67,7 @@
         display: inline-block;
         margin-left: 1rem;
 
-        &:hover,
-        &:active {
-          box-shadow: 0 1rem 2rem $color-secondary;
-          transform: scale(1.2);
-        }
+        @include hoverlink;
       }
     }
 
@@ -131,7 +127,7 @@
   flex-direction: column;
   height: 100%;
   border: 1px solid $color-purple-mid;
-  box-shadow:$box-shadow-dark;
+  box-shadow: $box-shadow-dark;
 
   & h3 {
     width: 100%;
@@ -157,45 +153,12 @@
     }
 
     & button {
-      text-transform: uppercase;
-      cursor: pointer;
       width: 90%;
       height: 4rem;
+      text-transform: uppercase;
+      cursor: pointer;
       margin: auto;
-      background: transparent;
-      color: $color-yellow-light;
-      font-size: 1.5rem;
-      border: 1px solid $color-yellow-light;
-      transition: all 0.2s ease;
-
-      &:disabled {
-        background: grey;
-        border: none;
-        color: $color-grey-dark;
-        cursor: auto;
-
-        &:hover {
-          background: grey;
-          color: $color-grey-dark;
-          border: none;
-          transform: translateY(0px);
-        }
-
-        &:active {
-          transform: translateY(0px);
-        }
-      }
-
-      &:hover {
-        background-color: $color-yellow-light;
-        color: $color-secondary;
-        border: none;
-        transform: translateY(0px);
-      }
-
-      &:active {
-        transform: translateY(2px);
-      }
+      @include btnFlat;
     }
   }
 }
@@ -208,37 +171,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  
 
   & a {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-transform: capitalize;
-    cursor: pointer;
     width: 70%;
     height: 4rem;
     margin: auto;
-    background: transparent;
-    color: $color-blue-light;
-    font-size: 1.5rem;
-    border: 1px solid $color-blue-mid;
-    box-shadow:$box-shadow-dark;
-    transition: all 0.2s ease;
+    @include btn3d($color-blue-light);
 
     & svg {
       font-size: 2.5rem;
       margin: 2px 5px 0 -2px;
-    }
-
-    &:hover {
-      background-color: $color-blue-mid;
-      color: $color-secondary;
-      transform: translateY(0px);
-    }
-
-    &:active {
-      transform: translateY(2px);
     }
   }
 }

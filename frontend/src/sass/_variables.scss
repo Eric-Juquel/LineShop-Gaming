@@ -1,12 +1,10 @@
-
-
 // COLOR VARIABLES
 
-$color-success:rgb(102,205,170);
-$color-danger:rgb(252, 143, 143);
+$color-success: rgb(102, 205, 170);
+$color-danger: rgb(252, 143, 143);
 
-$color-yellow-light:rgb(247, 215, 157,0.8);
-$color-yellow-dark:rgba(46, 38, 25, 0.8);
+$color-yellow-light: rgb(247, 215, 157, 0.8);
+$color-yellow-dark: rgba(46, 38, 25, 0.8);
 
 $color-brown-light: rgb(248, 223, 163, 0.3);
 $color-brown-dark: #b28451;
@@ -24,11 +22,10 @@ $color-purple-dark: #370e47bb;
 $color-purple-mid: #ac4e9bc2;
 $color-purple-light: #eabfd6;
 
-$color-blue-light:rgb(214, 221, 255);
-$color-blue-mid:rgb(118, 148, 212);
+$color-blue-light: rgb(214, 221, 255);
+$color-blue-mid: rgb(118, 148, 212);
 
-
-$color-background-secondary:rgb(75, 71, 71,0.6);
+$color-background-secondary: rgb(75, 71, 71, 0.6);
 
 // SHADOWS
 $box-shadow-dark: 0 0.5rem 2rem $color-secondary;
@@ -38,13 +35,129 @@ $box-shadow-light: -4px 4px 8px -2px rgba(237, 213, 180, 0.63);
 $border-dev: 1px solid white;
 
 // FONT VARIABLES
-$font-primary: 'Nunito', sans-serif;
-$font-display: 'Josefin Sans', sans-serif;
-$font-starwars-n: 'Star wars';
-$font-starwars-i: 'Star wars1';
+$font-primary: "Nunito", sans-serif;
+$font-display: "Josefin Sans", sans-serif;
+$font-starwars-n: "Star wars";
+$font-starwars-i: "Star wars1";
 
 // RESPONSIVE BREAKPOINTS
 $bp-largest: 75em; // 1200px
 $bp-large: 62.5em; // 1000px
 $bp-medium: 50em; // 800px
 $bp-small: 37.5em; // 600px
+
+// MIXIN
+@mixin hoverlink {
+  &:hover,
+  &:active {
+    box-shadow: 0 1rem 2rem $color-secondary;
+    transform: scale(1.2);
+  }
+}
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin centerElement {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin btnFlat($color: $color-yellow-light) {
+  &,
+  &:link,
+  &:visited {
+    outline: none;
+    cursor: pointer;
+    padding: 0 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+    background-color: transparent;
+    border: 1px $color solid;
+    color: $color;
+    transition: all 0.2s;
+  }
+
+  &:hover {
+    background-color: $color;
+    color: $color-secondary;
+    border: none;
+    transform: translateY(0px);
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+
+  &:disabled {
+    background: grey;
+    border: none;
+    color: $color-grey-dark;
+
+    &:hover {
+      background: grey;
+      color: $color-grey-dark;
+    }
+
+    &:active {
+      transform: translateY(0px);
+    }
+  }
+}
+
+@mixin btn3d($color: $color-yellow-light) {
+  &,
+  &:link,
+  &:visited {
+    outline: none;
+    cursor: pointer;
+    padding: 0 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+    background-color: transparent;
+    border: 1px $color solid;
+    color: $color;
+    background-image: linear-gradient(
+      to top left,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.2) 30%,
+      rgba(0, 0, 0, 0)
+    );
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+      inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+    transition: all 0.2s;
+  }
+
+  &:hover {
+    background-color: $color;
+    color: $color-secondary;
+    border: none;
+    transform: translateY(0px);
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+
+  &:disabled {
+    background: grey;
+    border: none;
+    color: $color-grey-dark;
+
+    &:hover {
+      background: grey;
+      color: $color-grey-dark;
+    }
+
+    &:active {
+      transform: translateY(0px);
+    }
+  }
+}

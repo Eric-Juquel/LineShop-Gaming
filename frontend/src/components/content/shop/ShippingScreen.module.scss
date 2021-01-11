@@ -32,24 +32,8 @@
 
     & button {
       text-transform: uppercase;
-      cursor: pointer;
       width: 20%;
       height: 4rem;
-      background: transparent;
-      color: $color-yellow-light;
-      font-size: 1.5rem;
-      border: 1px solid $color-yellow-light;
-      transition: all 0.2s ease;
-
-      &:hover {
-        background-color: $color-yellow-light;
-        color: $color-secondary;
-        border: none;
-        transform: translateY(0px);
-      }
-
-      &:active {
-        transform: translateY(2px);
-      }
+     @include btn3d;
     }
 }

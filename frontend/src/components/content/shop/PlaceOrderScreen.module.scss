@@ -52,8 +52,6 @@ h2 {
   border-bottom: 1px solid $color-blue-mid;
 }
 
-
-
 .payment {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
@@ -85,19 +83,14 @@ h2 {
         height: 100%;
         min-width: 8%;
         max-width: 8%;
-        box-shadow:$box-shadow-dark;
+        box-shadow: $box-shadow-dark;
       }
 
       & a {
         transition: all 0.2s ease;
         display: inline-block;
         margin-left: 1rem;
-
-        &:hover,
-        &:active {
-          box-shadow: 0 1rem 2rem $color-secondary;
-          transform: scale(1.2);
-        }
+        @include hoverlink;
       }
 
       & span {
@@ -119,6 +112,7 @@ h2 {
   width: 100%;
   display: flex;
   flex-direction: column;
+  box-shadow: $box-shadow-dark;
 
   & div {
     height: 15%;
@@ -151,38 +145,7 @@ h2 {
       width: 80%;
       height: 80%;
       margin: auto;
-      background: transparent;
-      color: $color-yellow-light;
-      font-size: 1.5rem;
-      text-transform: uppercase;
-      border: 1px solid $color-yellow-light;
-      transition: all 0.2s ease;
-
-      &:disabled {
-        background: grey;
-        border: none;
-        color: $color-grey-dark;
-
-        &:hover {
-          background: grey;
-          color: $color-grey-dark;
-        }
-
-        &:active {
-          transform: translateY(0px);
-        }
-      }
-
-      &:hover {
-        background-color: $color-yellow-light;
-        color: $color-secondary;
-        border: none;
-        transform: translateY(0px);
-      }
-
-      &:active {
-        transform: translateY(2px);
-      }
+      @include btnFlat;
     }
   }
 }
