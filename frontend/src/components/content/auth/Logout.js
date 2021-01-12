@@ -25,7 +25,7 @@ const Logout = ({ history }) => {
   return (
     <Modal ref={modalRef} height="20%" width="30%">
       <div className={classes.logout}>
-        <h3>would you like to logout ?</h3>
+        <h4>would you like to logout ?</h4>
 
         <button className={classes.cancel} onClick={onBack}>
           Cancel

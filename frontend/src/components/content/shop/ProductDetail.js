@@ -46,7 +46,7 @@ const ProductDetail = ({ history, match }) => {
             <img src={product.image} alt={product.name} />
           </div>
           <div className={classes.review}>
-            <h1>Reviews</h1>
+            <h2>Reviews</h2>
             <p>No reviews for this article</p>
           </div>
           <div className={classes.details}>
@@ -58,7 +58,7 @@ const ProductDetail = ({ history, match }) => {
               color={"yellow"}
             />
             <hr />
-            <h3>Description: </h3>
+            <h4>Description: </h4>
             <p>{product.description}</p>
           </div>
           <div className={classes.add}>
@@ -99,7 +99,7 @@ const ProductDetail = ({ history, match }) => {
             </div>
           </div>
           <div className={classes.write}>
-            <h1>Write a review</h1>
+            <h2>Write a review</h2>
             <form>write here</form>
           </div>
         </div>

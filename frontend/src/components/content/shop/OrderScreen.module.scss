@@ -1,5 +1,16 @@
 @import "./PlaceOrderScreen.module";
 
+.container {
+  & h1 {
+    text-transform: uppercase;
+    text-align: start;
+    color: $color-blue-light;
+    & span {
+      font-size: 1.8rem;
+    }
+  }
+}
+
 .content .orderShipping,
 .content .orderPayment {
   border-bottom: 1px solid $color-blue-mid;

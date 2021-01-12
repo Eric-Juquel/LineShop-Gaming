@@ -13,6 +13,8 @@ import logout from "./components/content/auth/Logout";
 import RegisterScreen from "./components/content/auth/RegisterScreen";
 import ProfileScreen from "./components/content/auth/ProfileScreen";
 
+import UserListScreen from './components/content/admin/UserListScreen'
+
 import ProductsScreen from "./components/content/shop/ProductsScreen";
 import ProductDetail from "./components/content/shop/ProductDetail";
 import CartScreen from "./components/content/shop/CartScreen";
@@ -70,6 +72,7 @@ const App = () => {
               <Route path="/logout" component={logout} />
               <Route path="/register" component={RegisterScreen} />
               <Route path="/profile" component={ProfileScreen} />
+              <Route path='/users' component={UserListScreen} />
             </main>
             <footer className="footer">
               <Footer />

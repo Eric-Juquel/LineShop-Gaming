@@ -27,7 +27,7 @@ const PaymentScreen = ({ history }) => {
       <CheckoutSteps step1 step2 step3 />
       <h1>Payment Method</h1>
       <form className={classes.form} onSubmit={submitHandler}>
-        <h3>Select Method</h3>
+        <h2>Select Method</h2>
         <div className={classes.radioGroup}>
           <input
             type="radio"

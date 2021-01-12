@@ -99,7 +99,9 @@
   border-top: 1px solid $color-purple-mid;
 
   &:hover {
-    background-color: rgba($color-secondary, 0.7);
+    & .cell:not(:last-child) {
+      background-color: rgba($color-secondary, 0.7);
+    }
   }
 
   & .cell {

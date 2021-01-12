@@ -37,6 +37,7 @@ const ProfileScreen = ({ history }) => {
 
   const { register, handleSubmit, errors, control } = useForm();
 
+
   useEffect(() => {
     if (!userInfo) {
       history.push("/login");
@@ -185,7 +186,7 @@ const ProfileScreen = ({ history }) => {
                   <div className={classes.cell}>
                     <Moment format="YYYY/MM/DD">{order.createdAt}</Moment>
                   </div>
-                  <div className={classes.cell}>{order.totalPrice}</div>
+                  <div className={classes.cell}>{new Intl.NumberFormat().format(order.totalPrice)}</div>
                   <div className={classes.cell}>
                     {order.isPaid ? (
                       <Moment format="YYYY/MM/DD">{order.paidAt}</Moment>

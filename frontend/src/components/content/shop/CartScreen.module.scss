@@ -19,15 +19,15 @@
   grid-column: 1 / 2;
   grid-row: 1 / -1;
 
-  & h1 {
-    width: 100%;
-    height: 8%;
-    margin-bottom: 5px;
-    font-family: "Audiowide", cursive;
-    color: $color-yellow-light;
-    text-align: start;
-    text-transform: uppercase;
-  }
+  // & h1 {
+  //   width: 100%;
+  //   height: 8%;
+  //   margin-bottom: 5px;
+  //   font-family: "Audiowide", cursive;
+  //   color: $color-yellow-light;
+  //   text-align: start;
+  //   text-transform: uppercase;
+  // }
 
   & .items {
     display: flex;

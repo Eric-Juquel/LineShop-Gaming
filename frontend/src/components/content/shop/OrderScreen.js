@@ -132,7 +132,7 @@ const OrderScreen = ({ match }) => {
         <div className={classes.summary}>
           <div className={classes.card}>
             <div>
-              <h2>Order Summary</h2>
+              <h5>Order Summary</h5>
             </div>
             <div>
               <label>Items :</label>
