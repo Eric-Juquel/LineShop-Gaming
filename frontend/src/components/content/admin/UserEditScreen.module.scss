@@ -1,0 +1,39 @@
+@import "../auth/RegisterScreen.module.scss";
+
+.container {
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  & h1 {
+    align-self: flex-start;
+  }
+}
+
+.form {
+  
+
+  & .submit {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+    margin-left: 1rem;
+  }
+
+  & .back {
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+
+    width: 15rem;
+    height: 4rem;
+    align-self: center;
+    justify-self: flex-end;
+    margin-right: 1rem;
+    @include btn3d($color-blue-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    & svg {
+      font-size: 3rem;
+    }
+  }
+}

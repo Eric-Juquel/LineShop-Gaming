@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import classes from "./ProductDetail.module.scss";
 import { IoIosReturnLeft } from "react-icons/io";

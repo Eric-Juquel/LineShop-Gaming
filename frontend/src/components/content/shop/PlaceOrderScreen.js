@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import classes from "./PlaceOrderScreen.module.scss";
 import ErrorComponent from "../../ErrorComponent";
-import Spinner from "../../Spinner";
 import CheckoutSteps from "./CheckoutSteps";
 import { createOrder } from "../../../actions/orderActions";
 

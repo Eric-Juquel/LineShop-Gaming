@@ -1,7 +1,6 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import classes from "./UserAction.module.scss";
-import { Link } from "react-router-dom";
 import avatar from "../../images/avatars/index.jpg";
 import DropdownButton from "./DropdownButton";
 
@@ -29,9 +28,9 @@ const UserAction = () => {
           <DropdownButton
             label={"Admin"}
             options={[
-              { label: "users", path: "/admin/userList" },
-              { label: "orders", path: "/admin/orderList" },
-              { label: "products", path: "/admin/productList" },
+              { label: "users", path: "/admin/userlist" },
+              { label: "products", path: "/admin/productlist" },
+              { label: "orders", path: "/admin/orderlist" },
             ]}
           />
         ) : (

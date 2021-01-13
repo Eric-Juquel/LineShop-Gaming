@@ -175,7 +175,7 @@ const ProfileScreen = ({ history }) => {
               <h2 className={classes.cell}>TOTAL</h2>
               <h2 className={classes.cell}>PAID</h2>
               <h2 className={classes.cell}>DELIVERED</h2>
-              <h2 className={classes.cell}></h2>
+              <h2 className={classes.cell}>{' '}</h2>
             </div>
 
             <div className={classes.items}>

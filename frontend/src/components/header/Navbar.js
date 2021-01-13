@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import classes from "./Navbar.module.scss";
 import cartIcon from "../../images/icones/marketplace-drawing-clipart-4.png";

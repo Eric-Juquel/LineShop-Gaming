@@ -111,7 +111,7 @@ const RegisterScreen = ({ location, history }) => {
           />
         </div>
 
-        <button type="submit">Register</button>
+        <button className={classes.submit} type="submit">Register</button>
         <div className={classes.account}>
           <p>
             Have an Account ?{" "}

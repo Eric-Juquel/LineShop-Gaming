@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React, { useRef } from "react";
 import classes from "./UserListScreen.module.scss";
 import { GiSplitCross } from "react-icons/gi";
 import { GiHangingSign } from "react-icons/gi";
@@ -11,7 +11,7 @@ import { FaUserEdit } from "react-icons/fa";
 import { FaUserMinus } from "react-icons/fa";
 import Modal from "../../Modal";
 
-const UserItem = ({ user, deleteUser, editUser}) => {
+const UserItem = ({ user, userInfo, deleteUser, editUser }) => {
   const modalRef = useRef();
 
   const onBack = () => {
@@ -19,8 +19,8 @@ const UserItem = ({ user, deleteUser, editUser}) => {
   };
 
   const deleteHandler = () => {
-    modalRef.current.openModal()
-  }
+    modalRef.current.openModal();
+  };
 
   return (
     <div className={classes.row}>
@@ -48,6 +48,7 @@ const UserItem = ({ user, deleteUser, editUser}) => {
         <button
           title="Edit User"
           className={classes.edit}
+          disabled={userInfo._id === user._id}
           onClick={() => editUser(`/admin/user/${user._id}/edit`)}
         >
           <FaUserEdit />
@@ -55,6 +56,7 @@ const UserItem = ({ user, deleteUser, editUser}) => {
         <button
           title="Delete User"
           className={classes.delete}
+          disabled={userInfo._id === user._id}
           onClick={() => deleteHandler()}
         >
           <FaUserMinus />

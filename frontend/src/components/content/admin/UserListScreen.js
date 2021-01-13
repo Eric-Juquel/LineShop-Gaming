@@ -53,7 +53,7 @@ const UserListScreen = ({ history }) => {
 
           <div className={classes.items}>
             {users.map((user) => (
-              <UserItem key={user._id} user={user} deleteUser={onDelete} editUser={onEdit}/>
+              <UserItem key={user._id} user={user} userInfo={userInfo} deleteUser={onDelete} editUser={onEdit}/>
             ))}
           </div>
         </div>

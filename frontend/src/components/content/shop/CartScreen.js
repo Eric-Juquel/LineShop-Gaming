@@ -5,8 +5,6 @@ import { IoIosReturnLeft } from "react-icons/io";
 import { FaTrash } from "react-icons/fa";
 import { GiEmptyMetalBucketHandle } from "react-icons/gi";
 import classes from "./CartScreen.module.scss";
-import ErrorComponent from "../../ErrorComponent";
-import Spinner from "../../Spinner";
 import { addToCart, removeFromCart } from "../../../actions/cartActions";
 
 const CartScreen = ({ match, history, location }) => {

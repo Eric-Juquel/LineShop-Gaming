@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef} from 'react'
 import { Link } from 'react-router-dom'
 import classes from './DropdownButton.module.scss'
 import { FaCaretDown } from 'react-icons/fa'
