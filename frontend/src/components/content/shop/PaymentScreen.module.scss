@@ -22,14 +22,12 @@
   flex-direction: column;
   justify-content: space-evenly;
 
-  & button {
+  & .continue {
     margin-top: 2rem;
-    text-transform: uppercase;
-    width: 20%;
-    height: 4rem;
-    @include btn3d;
   }
 }
+
+@include btnTopSlide;
 
 .radioGroup {
   width: 60%;

@@ -163,3 +163,60 @@ $bp-small: 37.5em; // 600px
     }
   }
 }
+
+@mixin btnTopSlide($bgColor:$color-yellow-light, $color:$color-secondary) {
+  .btn {
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    background-image: linear-gradient(
+      to top left,
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.2) 30%,
+      rgba(0, 0, 0, 0)
+    );
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+      inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+    background-color: $bgColor;
+    color: $color;
+    position: relative;
+    overflow: hidden;
+  
+    & > * {
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      transition: all 0.2s;
+    }
+  
+    &__visible {
+      padding: 1.5rem 4rem;
+    }
+  
+    &__invisible {
+      position: absolute;
+      left: 0;
+      top: -100%;
+      padding: 1.5rem 0;
+    }
+  
+    &:hover {
+      background-image: linear-gradient(
+        to bottom right,
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.2) 30%,
+        rgba(0, 0, 0, 0)
+      );
+    }
+  
+    &:hover &__visible {
+      transform: translateY(100%);
+    }
+  
+    &:hover &__invisible {
+      top: 0;
+    }
+  }
+}

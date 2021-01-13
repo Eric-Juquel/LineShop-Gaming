@@ -37,7 +37,6 @@ const ProfileScreen = ({ history }) => {
 
   const { register, handleSubmit, errors, control } = useForm();
 
-
   useEffect(() => {
     if (!userInfo) {
       history.push("/login");
@@ -171,43 +170,49 @@ const ProfileScreen = ({ history }) => {
         ) : (
           <div className={classes.orderTable}>
             <div className={classes.entitled}>
-              <h4 className={classes.cell}>ID</h4>
-              <h4 className={classes.cell}>DATE</h4>
-              <h4 className={classes.cell}>TOTAL</h4>
-              <h4 className={classes.cell}>PAID</h4>
-              <h4 className={classes.cell}>DELIVERED</h4>
-              <h4 className={classes.cell}></h4>
+              <h2 className={classes.cell}>ID</h2>
+              <h2 className={classes.cell}>DATE</h2>
+              <h2 className={classes.cell}>TOTAL</h2>
+              <h2 className={classes.cell}>PAID</h2>
+              <h2 className={classes.cell}>DELIVERED</h2>
+              <h2 className={classes.cell}></h2>
             </div>
 
             <div className={classes.items}>
-              {orders.map((order) => (
-                <div key={order._id} className={classes.row}>
-                  <div className={classes.cell}>{order._id}</div>
-                  <div className={classes.cell}>
-                    <Moment format="YYYY/MM/DD">{order.createdAt}</Moment>
+              {orders.length === 0 ? (
+                <p>No Current Order</p>
+              ) : (
+                orders.map((order) => (
+                  <div key={order._id} className={classes.row}>
+                    <div className={classes.cell}>{order._id}</div>
+                    <div className={classes.cell}>
+                      <Moment format="YYYY/MM/DD">{order.createdAt}</Moment>
+                    </div>
+                    <div className={classes.cell}>
+                      {new Intl.NumberFormat().format(order.totalPrice)}
+                    </div>
+                    <div className={classes.cell}>
+                      {order.isPaid ? (
+                        <Moment format="YYYY/MM/DD">{order.paidAt}</Moment>
+                      ) : (
+                        <GiSplitCross />
+                      )}
+                    </div>
+                    <div className={classes.cell}>
+                      {order.isDelivered ? (
+                        <Moment format="YYYY/MM/DD">{order.deliveredAt}</Moment>
+                      ) : (
+                        <GiSplitCross />
+                      )}
+                    </div>
+                    <div className={classes.cell}>
+                      <Link to={`/order/${order._id}`}>
+                        <button>Details</button>
+                      </Link>
+                    </div>
                   </div>
-                  <div className={classes.cell}>{new Intl.NumberFormat().format(order.totalPrice)}</div>
-                  <div className={classes.cell}>
-                    {order.isPaid ? (
-                      <Moment format="YYYY/MM/DD">{order.paidAt}</Moment>
-                    ) : (
-                      <GiSplitCross />
-                    )}
-                  </div>
-                  <div className={classes.cell}>
-                    {order.isDelivered ? (
-                      <Moment format="YYYY/MM/DD">{order.deliveredAt}</Moment>
-                    ) : (
-                      <GiSplitCross />
-                    )}
-                  </div>
-                  <div className={classes.cell}>
-                    <Link to={`/order/${order._id}`}>
-                      <button>Details</button>
-                    </Link>
-                  </div>
-                </div>
-              ))}
+                ))
+              )}
             </div>
           </div>
         )}

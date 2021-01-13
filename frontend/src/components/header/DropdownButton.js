@@ -26,8 +26,8 @@ const DropdownButton = ({ label, options }) => {
           {options.map((option, i) => {
             return (
               <li key={`${option}_${i}`}>
-                <Link to={`/${option}`} onClick={() => setIsActive(false)}>
-                  {option}
+                <Link to={option.path} onClick={() => setIsActive(false)}>
+                  {option.label}
                 </Link>
               </li>
             )

@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./CustomInputs.module.scss";
-import Select, { NonceProvider } from "react-select";
+import Select from "react-select";
 import { Controller } from "react-hook-form";
 import makeAnimated from "react-select/animated";
 

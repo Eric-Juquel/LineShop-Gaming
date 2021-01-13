@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { IoIosReturnLeft } from "react-icons/io";
 import { FaTrash } from "react-icons/fa";
+import { GiEmptyMetalBucketHandle } from "react-icons/gi";
 import classes from "./CartScreen.module.scss";
 import ErrorComponent from "../../ErrorComponent";
 import Spinner from "../../Spinner";
@@ -24,6 +25,10 @@ const CartScreen = ({ match, history, location }) => {
     }
   }, [dispatch, productId, qty]);
 
+  const goBackHandler = () => {
+    history.goBack()
+  }
+
   const removeFromCartHandler = (id) => {
     dispatch(removeFromCart(id));
   };
@@ -38,8 +43,10 @@ const CartScreen = ({ match, history, location }) => {
         <h1>Shopping Cart</h1>
         {cartItems.length === 0 ? (
           <div className={classes.items}>
-            <p>Your cart is empty</p>
-            <Link to="/products">Go Back</Link>
+            <div className={classes.empty}>
+              <h4>Your cart is empty</h4>
+              <button onClick={() => goBackHandler()}>Go Back</button>
+            </div>
           </div>
         ) : (
           <div className={classes.items}>
@@ -70,7 +77,9 @@ const CartScreen = ({ match, history, location }) => {
                     <span className="focus"></span>
                   </div>
                 </div>
-                <FaTrash onClick={() => removeFromCartHandler(item.product)} />
+                <GiEmptyMetalBucketHandle
+                  onClick={() => removeFromCartHandler(item.product)}
+                />
               </div>
             ))}
           </div>

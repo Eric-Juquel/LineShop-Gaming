@@ -15,7 +15,10 @@ const UserAction = () => {
         {userInfo ? (
           <DropdownButton
             label={`Hello ${userInfo.firstName}`}
-            options={["profile", "logout"]}
+            options={[
+              { label: "profile", path: "/profile" },
+              { label: "logout", path: "/logout" },
+            ]}
           />
         ) : (
           ""
@@ -25,7 +28,11 @@ const UserAction = () => {
         {userInfo && userInfo.isAdmin ? (
           <DropdownButton
             label={"Admin"}
-            options={["users", "orders", "products"]}
+            options={[
+              { label: "users", path: "/admin/userList" },
+              { label: "orders", path: "/admin/orderList" },
+              { label: "products", path: "/admin/productList" },
+            ]}
           />
         ) : (
           ""

@@ -8,13 +8,11 @@
   padding: 0.5rem;
   font-family: "Montserrat", sans-serif;
   font-size: 1.5rem;
-
   display: flex;
   justify-content: space-evenly;
+
   & h1 {
     height: 10%;
-    font-family: "Audiowide", cursive;
-    color: $color-yellow-light;
     text-align: start;
   }
 }
@@ -73,7 +71,7 @@
 .entitled {
   width: 100%;
   display: grid;
-  grid-template-columns: [id-start]30%[id-end date-start]15%[date-end total-start]10%[total-end paid-start]15%[paid-end deliver-start]15%[deliver-end btn-start]15%[btn-end];
+  grid-template-columns: [id-start]28%[id-end date-start]13%[date-end total-start]12%[total-end paid-start]16%[paid-end deliver-start]16%[deliver-end btn-start]15%[btn-end];
   // grid-template-rows: repeat(auto-fit, 5rem);
 
   justify-items: stretch;
@@ -93,14 +91,23 @@
 .entitled {
   border-bottom: 1px solid $color-purple-mid;
   color: $color-blue-light;
+
+  & h2 {
+    font-size: 1.8rem;
+  }
 }
 
 .row {
   border-top: 1px solid $color-purple-mid;
 
   &:hover {
-    & .cell:not(:last-child) {
-      background-color: rgba($color-secondary, 0.7);
+    & .cell {
+      &:not(:last-child) {
+        background-color: rgba($color-secondary, 0.7);
+      }
+      &:last-child {
+        background-color: rgba($color-blue-mid, 0.1);
+      }
     }
   }
 

@@ -14,7 +14,7 @@
     height: 10%;
     text-transform: uppercase;
     text-align: start;
-    color:$color-yellow-light;
+    color: $color-yellow-light;
   }
 }
 
@@ -24,16 +24,15 @@
 }
 
 .form {
-    height:80%;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-evenly;
-
-
-    & button {
-      text-transform: uppercase;
-      width: 20%;
-      height: 4rem;
-     @include btn3d;
-    }
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
+
+.continue {
+  display:flex;
+  padding: 1rem 0;
+}
+
+@include btnTopSlide;

@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import countryList from "react-select-country-list";
 import TextField from "../forms/TextField";
 import SelectField from "../forms/SelectField";
-import CheckoutSteps from './CheckoutSteps'
+import CheckoutSteps from "./CheckoutSteps";
 import { saveShippingAddress } from "../../../actions/cartActions";
 
 const ShippingScreen = ({ history }) => {
@@ -18,16 +18,16 @@ const ShippingScreen = ({ history }) => {
 
   const countriesOption = countryList().getData();
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const onSubmit = (data) => {
     dispatch(saveShippingAddress(data));
-    history.push('/payment')
+    history.push("/payment");
   };
 
   return (
     <div className={classes.container}>
-      <CheckoutSteps step1 step2/>
+      <CheckoutSteps step1 step2 />
       <h1>Shipping</h1>
       <div className={classes.message}>{message && <p>{message}</p>}</div>
       <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
@@ -89,7 +89,12 @@ const ShippingScreen = ({ history }) => {
             mandatory={true}
           />
         </div>
-        <button type="submit">Continue</button>
+        <div className={classes.continue}>
+          <button className={classes.btn} type="submit">
+            <span className={classes.btn__visible}>Continue</span>
+            <span className={classes.btn__invisible}>Payment</span>
+          </button>
+        </div>
       </form>
     </div>
   );

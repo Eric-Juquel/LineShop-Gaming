@@ -58,7 +58,12 @@ const PaymentScreen = ({ history }) => {
             Stripe
           </label>
         </div>
-        <button type="submit">Continue</button>
+        <div className={classes.continue}>
+          <button className={classes.btn} type="submit">
+            <span className={classes.btn__visible}>Continue</span>
+            <span className={classes.btn__invisible}>Place Order</span>
+          </button>
+        </div>
       </form>
     </div>
   );

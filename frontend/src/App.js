@@ -72,7 +72,7 @@ const App = () => {
               <Route path="/logout" component={logout} />
               <Route path="/register" component={RegisterScreen} />
               <Route path="/profile" component={ProfileScreen} />
-              <Route path='/users' component={UserListScreen} />
+              <Route path='/admin/userList' component={UserListScreen} />
             </main>
             <footer className="footer">
               <Footer />
