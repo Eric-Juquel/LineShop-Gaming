@@ -1,0 +1,87 @@
+@import "../../../sass/variables";
+
+.container {
+  width: 70%;
+  height: 95%;
+  background-color: $color-background-secondary;
+  margin: 2% auto 0 auto;
+  padding: 2rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+
+  & h1 {
+    height: 15%;
+    padding: 1rem;
+    text-align: start;
+  }
+}
+
+.form {
+  height: 85%;
+  display: grid;
+  grid-template-columns: repeat(2, 47.5%);
+  grid-template-rows: repeat(5, 16%) 25%;
+  grid-column-gap: 5%;
+  align-items: center;
+
+  & .name {
+    grid-column: 1 /2;
+    grid-row: 1 / span 1;
+  }
+
+  & .price {
+    grid-column: 1 /2;
+    grid-row: 2 / span 1;
+  }
+
+  & .image {
+    grid-column: 1 /2;
+    grid-row: 3 / span 2;
+  }
+
+  & .brand {
+    grid-column: 1 /2;
+    grid-row: 5 / span 1;
+  }
+
+  & .inStock {
+    grid-column: 2 /3;
+    grid-row: 2 / span 1;
+  }
+
+  & .description {
+    grid-column: 2 / 3;
+    grid-row: 3 / span 3;
+
+  }
+
+  & .submit {
+    grid-column: 1 / 2;
+    grid-row: 6 / span 1;
+
+    width:30%;
+    height:40%;
+    margin-left:10%;
+    @include btn3d;
+  }
+
+  & .back {
+    grid-column: 2 / 3;
+    grid-row: 6 / span 1;
+    justify-self:flex-end;
+
+    width:30%;
+    height:40%;
+    margin-right:10%;
+    @include btn3d($color-blue-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    & svg {
+      font-size: 3rem;
+    }
+  }
+
+  
+}

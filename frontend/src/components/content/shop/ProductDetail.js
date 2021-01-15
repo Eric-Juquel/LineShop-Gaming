@@ -24,7 +24,6 @@ const ProductDetail = ({ history, match }) => {
   };
 
   const addToCartHandler = () => {
-    console.log("added");
     history.push(`/cart/${match.params.id}?qty=${qty}`);
   };
 

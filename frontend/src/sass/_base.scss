@@ -32,9 +32,11 @@ body {
   // user-select: none;
   ::selection {
     background: rgba(0, 0, 0, 0.534); /* WebKit/Blink Browsers */
+    color:white;
   }
   ::-moz-selection {
     background: rgba(0, 0, 0, 0.514); /* Gecko Browsers */
+    color:white;
   }
   cursor: default;
 }

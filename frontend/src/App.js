@@ -16,6 +16,7 @@ import ProfileScreen from "./components/content/auth/ProfileScreen";
 import UserListScreen from "./components/content/admin/UserListScreen";
 import UserEditScreen from "./components/content/admin/UserEditScreen";
 import ProductListScreen from './components/content/admin/ProductListScreen'
+import ProductEditScreen from "./components/content/admin/ProductEditScreen";
 
 import ProductsScreen from "./components/content/shop/ProductsScreen";
 import ProductDetail from "./components/content/shop/ProductDetail";
@@ -77,6 +78,7 @@ const App = () => {
               <Route path="/admin/userlist" component={UserListScreen} />
               <Route path="/admin/user/:id/edit" component={UserEditScreen} />
               <Route path='/admin/productlist' component={ProductListScreen} />
+              <Route path="/admin/product/:id/edit" component={ProductEditScreen} />
             </main>
             <footer className="footer">
               <Footer />

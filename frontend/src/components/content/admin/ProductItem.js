@@ -21,6 +21,7 @@ const ProductItem = ({ product, deleteProduct, editProduct }) => {
     <div className={classes.row}>
       <div className={classes.cell}>{product._id}</div>
       <div className={classes.cell}>{product.name}</div>
+      <div className={classes.cell}>{product.countInStock}</div>
       <div className={classes.cell}>{product.price} €</div>
       <div className={classes.cell}>{product.category}</div>
       <div className={classes.cell}>{product.brand}</div>

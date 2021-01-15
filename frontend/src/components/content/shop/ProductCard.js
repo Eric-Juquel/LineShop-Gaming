@@ -1,10 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import classes from "./ProductCard.module.scss";
 import FlipCard from "./FlipCard";
 import Rating from "./Rating";
 
 const ProductCard = ({ product }) => {
+  const history = useHistory();
+
   const {
     _id,
     name,
@@ -14,6 +16,10 @@ const ProductCard = ({ product }) => {
     description,
     countInStock,
   } = product;
+
+  const addToCartHandler = () => {
+    history.push(`/cart/${_id}?qty=${1}`);
+  };
 
   return (
     <div className={classes.card}>
@@ -46,7 +52,11 @@ const ProductCard = ({ product }) => {
         </div>
       </div>
 
-      <button className={classes.btn} disabled={countInStock === 0}>
+      <button
+        className={classes.btn}
+        disabled={countInStock === 0}
+        onClick={() => addToCartHandler()}
+      >
         Add to cart
       </button>
     </div>

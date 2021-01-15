@@ -9,7 +9,6 @@ import {
   listProducts,
   deleteProduct,
   createProduct,
-  updateProduct,
 } from "../../../actions/productActions";
 import { PRODUCT_CREATE_RESET } from "../../../constants/productConstants";
 
@@ -89,6 +88,7 @@ const ProductListScreen = ({ history }) => {
           <div className={classes.entitled}>
             <h2 className={classes.cell}>ID</h2>
             <h2 className={classes.cell}>NAME</h2>
+            <h2 className={classes.cell}>IN STOCK</h2>
             <h2 className={classes.cell}>PRICE</h2>
             <h2 className={classes.cell}>CATEGORY</h2>
             <h2 className={classes.cell}>BRAND</h2>
