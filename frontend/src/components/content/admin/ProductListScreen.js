@@ -1,10 +1,17 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import classes from "./ProductListScreen.module.scss";
+import { FaPlusCircle } from "react-icons/fa";
 import Spinner from "../../Spinner";
 import ErrorComponent from "../../ErrorComponent";
 import ProductItem from "./ProductItem";
-import { listProducts, deleteProduct } from "../../../actions/productActions";
+import {
+  listProducts,
+  deleteProduct,
+  createProduct,
+  updateProduct,
+} from "../../../actions/productActions";
+import { PRODUCT_CREATE_RESET } from "../../../constants/productConstants";
 
 const ProductListScreen = ({ history }) => {
   const dispatch = useDispatch();
@@ -16,15 +23,44 @@ const ProductListScreen = ({ history }) => {
   const { userInfo } = userLogin;
 
   const productDelete = useSelector((state) => state.productDelete);
-  const { success: successDelete } = productDelete;
+  const {
+    loading: loadingDelete,
+    error: errorDelete,
+    success: successDelete,
+  } = productDelete;
+
+  const productCreate = useSelector((state) => state.productCreate);
+  const {
+    loading: loadingCreate,
+    error: errorCreate,
+    success: successCreate,
+    createdProduct
+  } = productCreate;
 
   useEffect(() => {
-    if (userInfo && userInfo.isAdmin) {
-      dispatch(listProducts());
-    } else {
+    dispatch({ type: PRODUCT_CREATE_RESET });
+
+    if (!userInfo.isAdmin) {
       history.push("/login");
     }
-  }, [dispatch, history, successDelete, userInfo]);
+
+    if (successCreate) {
+      history.push(`/admin/product/${createdProduct._id}/edit`);
+    } else {
+      dispatch(listProducts());
+    }
+  }, [
+    dispatch,
+    history,
+    successDelete,
+    userInfo,
+    successCreate,
+    createdProduct,
+  ]);
+
+  const createProductHandler = () => {
+    dispatch(createProduct());
+  };
 
   const onDelete = (id) => {
     dispatch(deleteProduct(id));
@@ -36,10 +72,17 @@ const ProductListScreen = ({ history }) => {
 
   return (
     <div className={classes.container}>
-      <h1>Products</h1>
-      {loading ? (
+      <div className={classes.title}>
+        <h1>Products</h1>
+        <button onClick={createProductHandler}>
+          <FaPlusCircle />
+          CREATE PRODUCT
+        </button>
+      </div>
+
+      {loading || loadingDelete || loadingCreate ? (
         <Spinner />
-      ) : error ? (
+      ) : error || errorDelete || loadingCreate ? (
         <ErrorComponent err={error} />
       ) : (
         <div className={classes.productsTable}>
