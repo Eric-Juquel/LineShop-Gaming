@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import classes from "./ProductEditScreen.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
@@ -13,16 +14,18 @@ import {
   updateProduct,
 } from "../../../actions/productActions";
 import { PRODUCT_UPDATE_RESET } from "../../../constants/productConstants";
+import UploadField from "../forms/UploadField";
 
 const ProductEditScreen = ({ match, history }) => {
   const productId = match.params.id;
-  console.log('productId',productId)
+
+  const [uploading, setUploading] = useState(false);
 
   const dispatch = useDispatch();
 
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
-  console.log('product',product)
+  // console.log("product", product);
 
   const productUpdate = useSelector((state) => state.productUpdate);
   const {
@@ -49,20 +52,43 @@ const ProductEditScreen = ({ match, history }) => {
     history.goBack();
   };
 
-  const onSubmit = (data) => {
-    console.log(data);
-    dispatch(
-      updateProduct({
-        _id: productId,
-        name: data.name,
-        price: data.price,
-        image: data.image,
-        brand: data.brand,
-        category: data.category,
-        countInStock: data.countInStock,
-        description: data.description,
-      })
-    );
+  const onSubmit = async (data) => {
+    console.log("data", data);
+
+    let payload = {
+      _id: productId,
+      name: data.name,
+      price: data.price,
+      image: data.imageUrl,
+      brand: data.brand,
+      category: data.category,
+      countInStock: data.countInStock,
+      description: data.description,
+    };
+
+    if (data.imageFile) {
+      const file = data.imageFile[0];
+      const formData = new FormData();
+      formData.append("image", file);
+      setUploading(true);
+      try {
+        const config = {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        };
+
+        const { data } = await axios.post("/api/upload", formData, config);
+
+        payload.image = data
+        setUploading(false)
+      } catch (error) {}
+      setUploading(false)
+    }
+
+    console.log('payload',payload)
+
+    dispatch(updateProduct(payload));
   };
 
   return (
@@ -110,11 +136,25 @@ const ProductEditScreen = ({ match, history }) => {
               error={errors}
               inputwidth="100%"
               inputheight="4rem"
-              label="Image"
-              name="image"
+              label="Image Url"
+              name="imageUrl"
               placeholder="Enter image url"
               defaultValue={product.image}
-              mandatory={true}
+              mandatory={false}
+            />
+          </div>
+          <div className={`${classes.formGroup} ${classes.upload}`}>
+            <UploadField
+              type="file"
+              register={register}
+              error={errors}
+              inputwidth="100%"
+              inputheight="4rem"
+              label="Image File"
+              name="imageFile"
+              placeholder="Browse image file"
+              mandatory={false}
+              loading={uploading}
             />
           </div>
           <div className={`${classes.formGroup} ${classes.brand}`}>

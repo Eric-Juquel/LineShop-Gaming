@@ -1,4 +1,4 @@
-@import '../../../sass//variables';
+@import "../../../sass//variables";
 
 .flipcard {
   margin: 0 auto;
@@ -37,21 +37,35 @@
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  border-radius:10px/5px;
+  border-radius: 10px/5px;
   filter: drop-shadow(2px 2px 4px black);
- 
-
 }
 
-.flipcardback  {
-    background: rgba(237,237,237,1);
-    background: linear-gradient(45deg, rgba(237,237,237,1) 0%, rgba(237,237,237,1) 33%, rgba(255,255,255,1) 47%, rgba(245,245,245,1) 58%, rgba(245,245,245,1) 60%, rgba(245,245,245,1) 70%, rgba(245,245,245,1) 75%);
-    color: $color-secondary;
-    display:flex;
-    align-items:center;
-    padding:1.5rem;
-    font-family: 'Montserrat', sans-serif;
-    font-size:1.1rem;
-    font-weight:600;
-    transform: rotateY(180deg);
-    }
+.flipcardback {
+  background: rgba(237, 237, 237, 1);
+  background: linear-gradient(
+    45deg,
+    rgba(237, 237, 237, 1) 0%,
+    rgba(237, 237, 237, 1) 33%,
+    rgba(255, 255, 255, 1) 47%,
+    rgba(245, 245, 245, 1) 58%,
+    rgba(245, 245, 245, 1) 60%,
+    rgba(245, 245, 245, 1) 70%,
+    rgba(245, 245, 245, 1) 75%
+  );
+  color: $color-secondary;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transform: rotateY(180deg);
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  & p {
+    margin: auto;
+    max-height: 90%;
+  }
+}

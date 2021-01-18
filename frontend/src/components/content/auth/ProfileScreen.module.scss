@@ -58,12 +58,15 @@
 }
 
 .orderTable {
+  height: 90%;
   width: 100%;
   border: 1px solid $color-purple-mid;
   box-shadow: $box-shadow-dark;
 
   & .items {
+    max-height: 90%;
     overflow: auto;
+    scrollbar-width: thin;
   }
 }
 
@@ -102,12 +105,7 @@
 
   &:hover {
     & .cell {
-      &:not(:last-child) {
-        background-color: rgba($color-secondary, 0.7);
-      }
-      &:last-child {
-        background-color: rgba($color-blue-mid, 0.1);
-      }
+      background-color: rgba($color-secondary, 0.7);
     }
   }
 

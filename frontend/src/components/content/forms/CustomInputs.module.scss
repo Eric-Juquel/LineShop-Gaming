@@ -88,3 +88,38 @@ input[type="checkbox"] {
     opacity: 1;
   }
 }
+
+.upload {
+  position: relative;
+
+  & .input {
+    height:90%;
+    position:relative;
+    opacity: 0;
+    z-index: 2;
+  }
+
+  & .btnUpload {
+    width: 50%;
+    height: 85%;
+    @include centerElement;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    border-radius: 4px;
+    border: none;
+    color: rgba($color-grey-light-1, 0.8);
+    background-image: linear-gradient(to top, rgb(49, 49, 49), rgb(99, 97, 97));
+
+    & svg {
+      margin-right: 3%;
+    }
+  }
+
+  & .label {
+    position: absolute;
+    top: 25%;
+    left: 0;
+  }
+}
