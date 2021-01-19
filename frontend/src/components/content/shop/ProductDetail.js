@@ -15,6 +15,7 @@ import {
 import { PRODUCT_CREATE_REVIEW_RESET } from "../../../constants/productConstants";
 
 const ProductDetail = ({ history, match }) => {
+  // const [alreadyReviewed, setAlreadyReviewed] = useState(false);
   const [addReview, setAddReview] = useState(false);
   const [qty, setQty] = useState(1);
 
@@ -32,11 +33,20 @@ const ProductDetail = ({ history, match }) => {
     error: errorProductReview,
   } = productReviewCreate;
 
+  let alreadyReviewed = false
+  const userReviewed = product.reviews.map((r) => r.user);
+  if (userReviewed.includes(userInfo._id)) {
+    alreadyReviewed = true
+  }
+
+  console.log(userReviewed, userInfo._id);
+
   useEffect(() => {
     if (successProductReview) {
       alert("Review Submitted!");
       dispatch({ type: PRODUCT_CREATE_REVIEW_RESET });
     }
+
     dispatch(listProductDetails(match.params.id));
   }, [dispatch, match, successProductReview]);
 
@@ -48,6 +58,8 @@ const ProductDetail = ({ history, match }) => {
   const addToCartHandler = () => {
     history.push(`/cart/${match.params.id}?qty=${qty}`);
   };
+
+  console.log("alreadyreviewed", alreadyReviewed);
 
   return (
     <>
@@ -100,7 +112,12 @@ const ProductDetail = ({ history, match }) => {
             ""
           ) : (
             <div className={classes.write}>
-              <button onClick={() => setAddReview(true)}>Write a review</button>
+              <button
+                onClick={() => setAddReview(true)}
+                disabled={alreadyReviewed}
+              >
+                {alreadyReviewed ? "Already Reviewed" : "Write a review"}
+              </button>
             </div>
           )}
 
@@ -150,7 +167,7 @@ const ProductDetail = ({ history, match }) => {
                 <p>No reviews for this article</p>
               ) : (
                 product.reviews.map((review) => (
-                  <div key={review.id} className={classes.review}>
+                  <div key={review._id} className={classes.review}>
                     <hr />
                     <strong>
                       {review.name} -{" "}
