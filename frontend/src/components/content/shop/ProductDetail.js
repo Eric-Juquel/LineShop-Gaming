@@ -1,13 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import classes from "./ProductDetail.module.scss";
+import Moment from "react-moment";
 import { IoIosReturnLeft } from "react-icons/io";
+import ProductDetailReview from "./ProductDetailReview";
 import Spinner from "../../Spinner";
 import ErrorComponent from "../../ErrorComponent";
 import Rating from "./Rating";
-import { listProductDetails } from "../../../actions/productActions";
+import {
+  listProductDetails,
+  createProductReview,
+} from "../../../actions/productActions";
+import { PRODUCT_CREATE_REVIEW_RESET } from "../../../constants/productConstants";
 
 const ProductDetail = ({ history, match }) => {
+  const [addReview, setAddReview] = useState(false);
   const [qty, setQty] = useState(1);
 
   const dispatch = useDispatch();
@@ -15,11 +23,25 @@ const ProductDetail = ({ history, match }) => {
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
 
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+
+  const productReviewCreate = useSelector((state) => state.productReviewCreate);
+  const {
+    success: successProductReview,
+    error: errorProductReview,
+  } = productReviewCreate;
+
   useEffect(() => {
+    if (successProductReview) {
+      alert("Review Submitted!");
+      dispatch({ type: PRODUCT_CREATE_REVIEW_RESET });
+    }
     dispatch(listProductDetails(match.params.id));
-  }, [dispatch, match]);
+  }, [dispatch, match, successProductReview]);
 
   const goBackHandler = () => {
+    setAddReview(false);
     history.goBack();
   };
 
@@ -43,22 +65,45 @@ const ProductDetail = ({ history, match }) => {
           <div className={classes.image}>
             <img src={product.image} alt={product.name} />
           </div>
-          <div className={classes.review}>
-            <h2>Reviews</h2>
-            <p>No reviews for this article</p>
-          </div>
-          <div className={classes.details}>
-            <h1>{product.name}</h1>
-            <hr />
-            <Rating
-              value={product.rating}
-              text={` ${product.numReviews} Reviews`}
-              color={"yellow"}
+
+          {addReview ? (
+            <ProductDetailReview
+              product={product}
+              user={userInfo}
+              errorProductReview={errorProductReview}
+              dispatch={dispatch}
+              createReview={createProductReview}
+              setAddReview={setAddReview}
             />
-            <hr />
-            <h4>Description: </h4>
-            <p>{product.description}</p>
-          </div>
+          ) : (
+            <div className={classes.details}>
+              <h1>{product.name}</h1>
+              <hr />
+              <Rating
+                value={product.rating}
+                text={` ${product.numReviews} Reviews`}
+                color={"yellow"}
+              />
+              <hr />
+              <h4>Description: </h4>
+              <p>{product.description}</p>
+            </div>
+          )}
+
+          {!userInfo ? (
+            <div className={classes.write}>
+              <p>
+                Please <Link to="/login"> Sign In </Link> to write a Review{" "}
+              </p>
+            </div>
+          ) : addReview ? (
+            ""
+          ) : (
+            <div className={classes.write}>
+              <button onClick={() => setAddReview(true)}>Write a review</button>
+            </div>
+          )}
+
           <div className={classes.add}>
             <div className={classes.price}>
               <p>Price :</p>
@@ -96,9 +141,28 @@ const ProductDetail = ({ history, match }) => {
               </button>
             </div>
           </div>
-          <div className={classes.write}>
-            <h2>Write a review</h2>
-            <form>write here</form>
+          <div className={classes.reviews}>
+            <h2>
+              Reviews <span>({product.numReviews})</span>
+            </h2>
+            <div className={classes.text}>
+              {product.reviews.length === 0 ? (
+                <p>No reviews for this article</p>
+              ) : (
+                product.reviews.map((review) => (
+                  <div key={review.id} className={classes.review}>
+                    <hr />
+                    <strong>
+                      {review.name} -{" "}
+                      <Moment format="YYYY/MM/DD">{review.createdAt}</Moment>
+                    </strong>
+                    <Rating value={review.rating} color={"yellow"} />
+                    <p>{review.comment}</p>
+                  </div>
+                ))
+              )}
+            </div>
+            {/* <div className={classes.all}>See all reviews</div> */}
           </div>
         </div>
       )}

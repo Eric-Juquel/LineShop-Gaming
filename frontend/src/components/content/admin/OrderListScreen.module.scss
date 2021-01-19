@@ -27,8 +27,12 @@
 
   & .items {
     height: 89%;
-    overflow: auto;
-    scrollbar-width: thin;
+    overflow-y: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }
 
@@ -71,10 +75,15 @@
     }
   }
 
+  & svg {
+    fill: $color-danger;
+    margin: auto;
+  }
+
   & button {
     width: 10rem;
     height: 3rem;
-    margin:auto;
+    margin: auto;
 
     @include btnFlat;
   }

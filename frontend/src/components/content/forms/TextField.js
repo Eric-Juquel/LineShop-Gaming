@@ -12,6 +12,7 @@ const TextField = ({
   placeholder,
   defaultValue,
   mandatory,
+  step
 }) => {
   return (
     
@@ -25,6 +26,8 @@ const TextField = ({
           name={name}
           placeholder={placeholder}
           defaultValue={defaultValue ? defaultValue : ""}
+          step={step}
+          min={0}
         />
         <label htmlFor={name} className={classes.label}>
           {label}

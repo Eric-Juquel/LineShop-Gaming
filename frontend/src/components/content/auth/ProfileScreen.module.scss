@@ -64,9 +64,13 @@
   box-shadow: $box-shadow-dark;
 
   & .items {
-    max-height: 90%;
+    max-height: 89%;
     overflow: auto;
-    scrollbar-width: thin;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }
 

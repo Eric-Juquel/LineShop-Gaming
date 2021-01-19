@@ -10,7 +10,7 @@
   font-size: 1.5rem;
 
   display: grid;
-  grid-template-columns: [image-start] repeat(2, 20%) [image-end detail-start] 26% [detail-end add-start] 26% [add-end];
+  grid-template-columns: [image-start] repeat(2, 20%) [image-end detail-start] 26% [detail-end add-start] 28% [add-end];
   grid-template-rows: [back-start] 10% [back-end image-start] repeat(4, 20%) [image-end ];
   grid-gap: 2%;
 }
@@ -91,7 +91,7 @@
       width: 90%;
       height: 4rem;
       margin: auto;
-      @include btnFlat
+      @include btnFlat;
     }
   }
 
@@ -134,16 +134,131 @@
   }
 }
 
-.review {
+.write {
   grid-column: detail-start / detail-end;
   grid-row: 5 / image-end;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  & a {
+    margin: 0 2px 0 2px;
+    color: $color-yellow-light;
+    @include hoverlink;
+  }
+
+  & button {
+    text-transform: uppercase;
+    height: 40%;
+    width: 50%;
+    @include btn3d;
+  }
 }
 
-.write {
+.reviews {
   grid-column: add-start / add-end;
   grid-row: 4 / image-end;
+
+  border: 1px solid $color-blue-mid;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  & h2 {
+    height: 20%;
+    width: 100%;
+    & span {
+      font-size: 2rem;
+    }
+  }
+
+  & .text {
+    width: 100%;
+    height: 85%;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+
+    & .review {
+      width: 100%;
+
+      & hr {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(
+          to right,
+          rgba(110, 110, 110, 0),
+          rgba(223, 219, 219, 0.75),
+          rgba(110, 110, 110, 0)
+        );
+      }
+
+      & strong {
+        font-size: 1.6rem;
+        color: $color-yellow-light;
+      }
+    }
+  }
 }
 
+//REVIEW FORM
+.reviewContainer {
+  grid-column: detail-start / detail-end;
+  grid-row: 1 / image-end;
+
+  height: 110%;
+  width: 110%;
+  margin-left: -10%;
+  padding: 1.5rem;
+
+  & h1 {
+    height: 15%;
+  }
+
+  & h2 {
+    height: 10%;
+  }
+
+  & form {
+    height: 75%;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    & .formGroup,
+    & .btnGroup {
+      width: 100%;
+    }
+
+    & .btnGroup {
+      display: flex;
+      height: 10%;
+
+      & button {
+        height: 100%;
+        width: 40%;
+        margin: auto;
+
+        &.submit {
+          @include btn3d($color-success);
+        }
+        &.cancel {
+          @include btn3d($color-danger);
+        }
+      }
+    }
+  }
+}
+
+// SELECT BUTTON
 select {
   // A reset of styles, including removing the default dropdown arrow
   appearance: none;

@@ -127,6 +127,7 @@ const ProductEditScreen = ({ match, history }) => {
               placeholder="Enter Price"
               defaultValue={product.price}
               mandatory={true}
+              step="0.01"
             />
           </div>
           <div className={`${classes.formGroup} ${classes.image}`}>

@@ -11,7 +11,7 @@
 
   & h1 {
     text-align: start;
-    margin-bottom:2rem;
+    margin-bottom: 2rem;
   }
 }
 
@@ -23,6 +23,11 @@
 
   & .items {
     overflow: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }
 
