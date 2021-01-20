@@ -35,7 +35,7 @@ const ProfileScreen = ({ history }) => {
   const orderListMy = useSelector((state) => state.orderListMy);
   const { loading: loadingOrders, error: errorOrders, orders } = orderListMy;
 
-  const { register, handleSubmit, errors, control } = useForm();
+  const { register, handleSubmit, errors} = useForm();
 
   useEffect(() => {
     if (!userInfo) {

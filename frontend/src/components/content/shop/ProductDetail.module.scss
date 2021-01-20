@@ -154,6 +154,12 @@
     width: 50%;
     @include btn3d;
   }
+
+  & .message {
+    width:100%;
+    font-size:1.8rem;
+    color:$color-success
+  }
 }
 
 .reviews {

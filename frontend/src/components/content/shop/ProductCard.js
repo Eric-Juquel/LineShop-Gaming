@@ -12,8 +12,6 @@ const ProductCard = ({ product }) => {
     name,
     rating,
     price,
-    image,
-    description,
     countInStock,
   } = product;
 
@@ -45,7 +43,7 @@ const ProductCard = ({ product }) => {
         <hr />
         <div className={classes.rating}>
           <Rating
-            value={product.rating}
+            value={rating}
             text={` (${product.numReviews})`}
             color={"yellow"}
           />

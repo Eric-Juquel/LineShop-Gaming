@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React from "react";
 import classes from "./ProductDetail.module.scss";
 import { useForm } from "react-hook-form";
 import SelectField from "../forms/SelectField";
@@ -9,7 +9,6 @@ const ProductDetailReview = ({
   dispatch,
   product,
   createReview,
-  user,
   errorProductReview,
   setAddReview,
 }) => {

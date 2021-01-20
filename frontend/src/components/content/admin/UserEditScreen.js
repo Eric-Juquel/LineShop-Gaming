@@ -25,7 +25,7 @@ const UserEditScreen = ({ match, history }) => {
     success: successUpdate,
   } = userUpdate;
 
-  const { register, handleSubmit, errors, control } = useForm();
+  const { register, handleSubmit, errors} = useForm();
 
   useEffect(() => {
     if (successUpdate) {

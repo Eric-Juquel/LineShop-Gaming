@@ -12,7 +12,7 @@ const RegisterScreen = ({ location, history }) => {
 
   const redirect = location.search ? location.search.split("=")[1] : "/";
 
-  const { register, handleSubmit, errors, control } = useForm();
+  const { register, handleSubmit, errors } = useForm();
 
   const dispatch = useDispatch();
 

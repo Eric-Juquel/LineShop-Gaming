@@ -24,7 +24,6 @@ const UploadField = ({
         ref={register({ required: mandatory === true ? true : false })}
         type={type}
         className={classes.input}
-        type={type}
         id={name}
         name={name}
         placeholder={placeholder}

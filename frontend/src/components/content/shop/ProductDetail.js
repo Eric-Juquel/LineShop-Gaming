@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import classes from "./ProductDetail.module.scss";
@@ -15,7 +15,7 @@ import {
 import { PRODUCT_CREATE_REVIEW_RESET } from "../../../constants/productConstants";
 
 const ProductDetail = ({ history, match }) => {
-  // const [alreadyReviewed, setAlreadyReviewed] = useState(false);
+  const [message, setMessage] = useState(null);
   const [addReview, setAddReview] = useState(false);
   const [qty, setQty] = useState(1);
 
@@ -33,22 +33,17 @@ const ProductDetail = ({ history, match }) => {
     error: errorProductReview,
   } = productReviewCreate;
 
-  let alreadyReviewed = false
-  const userReviewed = product.reviews.map((r) => r.user);
-  if (userReviewed.includes(userInfo._id)) {
-    alreadyReviewed = true
-  }
-
-  console.log(userReviewed, userInfo._id);
-
   useEffect(() => {
     if (successProductReview) {
-      alert("Review Submitted!");
+      setMessage("Review Submited !");
+      setTimeout(function () {
+        setMessage(null);
+      }, 3000);
       dispatch({ type: PRODUCT_CREATE_REVIEW_RESET });
     }
 
     dispatch(listProductDetails(match.params.id));
-  }, [dispatch, match, successProductReview]);
+  }, [dispatch, match, successProductReview, message]);
 
   const goBackHandler = () => {
     setAddReview(false);
@@ -59,13 +54,17 @@ const ProductDetail = ({ history, match }) => {
     history.push(`/cart/${match.params.id}?qty=${qty}`);
   };
 
-  console.log("alreadyreviewed", alreadyReviewed);
+  let alreadyReviewed = false;
+  if (product) {
+    const userReviewed = product.reviews.map((r) => r.user);
+    if (userReviewed.includes(userInfo._id)) {
+      alreadyReviewed = true;
+    }
+  }
 
   return (
     <>
-      {loading ? (
-        <Spinner />
-      ) : error ? (
+      { error ? (
         <ErrorComponent err={error} />
       ) : (
         <div className={classes.container}>
@@ -112,12 +111,16 @@ const ProductDetail = ({ history, match }) => {
             ""
           ) : (
             <div className={classes.write}>
-              <button
-                onClick={() => setAddReview(true)}
-                disabled={alreadyReviewed}
-              >
-                {alreadyReviewed ? "Already Reviewed" : "Write a review"}
-              </button>
+              {message ? (
+                <p className={classes.message}>{message}</p>
+              ) : (
+                <button
+                  onClick={() => setAddReview(true)}
+                  disabled={alreadyReviewed}
+                >
+                  {alreadyReviewed ? "Already Reviewed" : "Write a review"}
+                </button>
+              )}
             </div>
           )}
 

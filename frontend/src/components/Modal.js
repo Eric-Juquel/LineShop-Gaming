@@ -1,9 +1,4 @@
-import React, {
-  useState,
-  forwardRef,
-  useImperativeHandle,
-  useEffect,
-} from "react";
+import React, { useState, forwardRef, useImperativeHandle } from "react";
 import ReactDOM from "react-dom";
 import classes from "./Modal.module.scss";
 
@@ -56,6 +51,5 @@ const Modal = forwardRef((props, ref) => {
     );
   } else return null;
 });
-
 
 export default Modal;

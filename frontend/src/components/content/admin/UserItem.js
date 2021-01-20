@@ -1,10 +1,5 @@
 import React, { useRef } from "react";
 import classes from "./UserListScreen.module.scss";
-import { GiSplitCross } from "react-icons/gi";
-import { GiHangingSign } from "react-icons/gi";
-import { GiKing } from "react-icons/gi";
-import { GiQueenCrown } from "react-icons/gi";
-import { GiStrong } from "react-icons/gi";
 import { FaUserGraduate } from "react-icons/fa";
 import { FaUserLock } from "react-icons/fa";
 import { FaUserEdit } from "react-icons/fa";

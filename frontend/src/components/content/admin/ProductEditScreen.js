@@ -6,7 +6,6 @@ import { useForm } from "react-hook-form";
 import { IoIosReturnLeft } from "react-icons/io";
 import TextField from "../forms/TextField";
 import TextareaField from "../forms/Textarea";
-import Checkbox from "../forms/Checkbox";
 import Spinner from "../../Spinner";
 import ErrorComponent from "../../ErrorComponent";
 import {
@@ -34,7 +33,7 @@ const ProductEditScreen = ({ match, history }) => {
     success: successUpdate,
   } = productUpdate;
 
-  const { register, handleSubmit, errors, control } = useForm();
+  const { register, handleSubmit, errors } = useForm();
 
   useEffect(() => {
     if (successUpdate) {
