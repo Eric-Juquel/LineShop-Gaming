@@ -1,4 +1,4 @@
-@import '../../sass/variables';
+@import "../../sass/variables";
 
 .search {
   height: 100%;
@@ -14,33 +14,37 @@
     border: none;
     padding: 0.7rem 2rem;
     border-radius: 100px;
-    width: 50%;
+    width: 70%;
     transition: all 0.2s;
     margin-right: -3.15rem;
 
-    &:focus {
-      outline: none;
-      width: 70%;
-      background-color: $color-grey-light-1;
-      color: $color-secondary;
-
-      & + .btn {
-        & .icon {
-          fill: $color-secondary;
-        }
-      }
+    &::placeholder {
+      color: $color-grey-light-1;
     }
 
-    // &::-moz-placeholder,
-    // &::-webkit-input-placeholder {
-    //   font-weight: 100;
-    //   color: $color-grey-light-1;
+    // &:focus {
+    //   outline: none;
+    //   width: 70%;
+    //   background-color: $color-grey-light-1;
+    //   color: $color-secondary;
+
+    //   & + .btn {
+    //     & .icon {
+    //       fill: $color-secondary;
+    //     }
+    //   }
+
+    //   &::placeholder {
+    //     font-weight: 100;
+    //     color: $color-secondary;
+    //   }
     // }
   }
 
   & .btn {
     border: none;
     background-color: transparent;
+    cursor: pointer;
 
     &:focus {
       outline: none;

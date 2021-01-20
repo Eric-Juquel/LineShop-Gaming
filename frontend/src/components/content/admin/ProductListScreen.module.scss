@@ -2,7 +2,7 @@
 
 .container {
   width: 90%;
-  height: 95%;
+  height: 97%;
   background-color: $color-background-secondary;
   margin: 2% auto 0 auto;
   padding: 2rem;
@@ -13,40 +13,46 @@
     height: 15%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 1rem;
 
-    & button {
-      @include btn3d($color-yellow-light);
-      height: 80%;
-      width: 15%;
-      display: flex;
-      align-items: center;
-      justify-content: space-evenly;
+    & h1 {
+      width: 20%;
+      text-align: start;
+    }
 
-      & svg {
-        font-size: 2.5rem;
+    & .paginate {
+      height: 80%;
+      width: 30%;
+    }
+
+    & .create {
+      display: flex;
+      justify-content: flex-end;
+      width: 20%;
+      height: 80%;
+
+      & button {
+        @include btn3d($color-yellow-light);
+        height: 100%;
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+
+        & svg {
+          font-size: 2.5rem;
+        }
       }
     }
   }
 }
 
 .productsTable {
-  height: 100%;
   width: 100%;
-  max-height: 85%;
   border: 1px solid $color-purple-mid;
   box-shadow: $box-shadow-dark;
   margin: auto;
-
-  & .items {
-    height: 89%;
-    overflow: auto;
-    scrollbar-width: none;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  }
 }
 
 .row,

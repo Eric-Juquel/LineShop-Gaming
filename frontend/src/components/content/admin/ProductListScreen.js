@@ -5,6 +5,7 @@ import { FaPlusCircle } from "react-icons/fa";
 import Spinner from "../../Spinner";
 import ErrorComponent from "../../ErrorComponent";
 import ProductItem from "./ProductItem";
+import Paginate from "../shop/Paginate";
 import {
   listProducts,
   deleteProduct,
@@ -12,11 +13,13 @@ import {
 } from "../../../actions/productActions";
 import { PRODUCT_CREATE_RESET } from "../../../constants/productConstants";
 
-const ProductListScreen = ({ history }) => {
+const ProductListScreen = ({ history, match }) => {
+  const pageNumber = match.params.pageNumber || 1;
+
   const dispatch = useDispatch();
 
   const productList = useSelector((state) => state.productList);
-  const { loading, error, products } = productList;
+  const { loading, error, products, page, pages } = productList;
 
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
@@ -33,7 +36,7 @@ const ProductListScreen = ({ history }) => {
     loading: loadingCreate,
     error: errorCreate,
     success: successCreate,
-    createdProduct
+    createdProduct,
   } = productCreate;
 
   useEffect(() => {
@@ -46,7 +49,7 @@ const ProductListScreen = ({ history }) => {
     if (successCreate) {
       history.push(`/admin/product/${createdProduct._id}/edit`);
     } else {
-      dispatch(listProducts());
+      dispatch(listProducts("", pageNumber));
     }
   }, [
     dispatch,
@@ -55,6 +58,7 @@ const ProductListScreen = ({ history }) => {
     userInfo,
     successCreate,
     createdProduct,
+    pageNumber,
   ]);
 
   const createProductHandler = () => {
@@ -73,10 +77,15 @@ const ProductListScreen = ({ history }) => {
     <div className={classes.container}>
       <div className={classes.title}>
         <h1>Products</h1>
-        <button onClick={createProductHandler}>
-          <FaPlusCircle />
-          CREATE PRODUCT
-        </button>
+        <div className={classes.paginate}>
+          <Paginate pages={pages} page={page} isAdmin={true} />
+        </div>
+        <div className={classes.create}>
+          <button onClick={createProductHandler}>
+            <FaPlusCircle />
+            CREATE PRODUCT
+          </button>
+        </div>
       </div>
 
       {loading || loadingDelete || loadingCreate ? (

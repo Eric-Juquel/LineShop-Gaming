@@ -5,6 +5,7 @@ import Product from '../models/productModel.js'
 // @route  Get  /api/products
 // @acces  Public
 export const getProducts = asyncHandler(async (req, res) => {
+  
   const pageSize = 8
   const page = Number(req.query.pageNumber) || 1
 
@@ -13,7 +14,14 @@ export const getProducts = asyncHandler(async (req, res) => {
         name: {
           $regex: req.query.keyword,
           $options: 'i',
-        },
+        }
+        
+      } &&
+      {
+        category: {
+          $regex: req.query.keyword,
+          $options: 'i',
+        }
       }
     : {}
 

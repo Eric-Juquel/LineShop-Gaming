@@ -65,7 +65,10 @@ const App = () => {
             </header>
             <main className="main">
               <Route exact path="/" component={Carousel3d} />
-              <Route path="/products" component={ProductsScreen} />
+              <Route exact path="/products/page/:pageNumber" component={ProductsScreen} />
+              <Route exact path="/products" component={ProductsScreen} />
+              <Route exact path="/products/search/:keyword" component={ProductsScreen} />
+              <Route exact path="/products/search/:keyword/page/:pageNumber" component={ProductsScreen} />
               <Route path="/product/:id" component={ProductDetail} />
               <Route path="/cart/:id?" component={CartScreen} />
               <Route path="/shipping" component={ShippingScreen} />
@@ -78,7 +81,8 @@ const App = () => {
               <Route path="/profile" component={ProfileScreen} />
               <Route path="/admin/userlist" component={UserListScreen} />
               <Route path="/admin/user/:id/edit" component={UserEditScreen} />
-              <Route path='/admin/productlist' component={ProductListScreen} />
+              <Route exact path='/admin/productlist' component={ProductListScreen} />
+              <Route exact path='/admin/productlist/:pageNumber' component={ProductListScreen} />
               <Route path="/admin/product/:id/edit" component={ProductEditScreen} />
               <Route path="/admin/orderlist" component={OrderListScreen} />
             </main>
