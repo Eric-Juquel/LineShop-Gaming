@@ -16,13 +16,7 @@ export const getProducts = asyncHandler(async (req, res) => {
           $options: 'i',
         }
         
-      } &&
-      {
-        category: {
-          $regex: req.query.keyword,
-          $options: 'i',
-        }
-      }
+      } 
     : {}
 
   const count = await Product.countDocuments({ ...keyword })
@@ -160,7 +154,7 @@ export const createProductReview = asyncHandler(async (req, res) => {
 // @route  GET /api/products/top
 // @acces  Public
 export const getTopProducts = asyncHandler(async (req, res) => {
-  const products = await Product.find({}).sort({ rating: -1 }).limit(3)
+  const products = await Product.find({}).sort({ rating: -1 }).limit(15)
 
   res.json(products)
 })

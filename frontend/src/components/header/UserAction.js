@@ -35,15 +35,6 @@ const UserAction = () => {
             </Link>
             {/* {cart !== null && <div className={classes.qty}> {cart.length} </div>} */}
           </div>
-          <div className={classes.user}>
-            <DropdownButton
-              label={`Hello ${userInfo.firstName}`}
-              options={[
-                { label: "profile", path: "/profile" },
-                { label: "logout", path: "/logout" },
-              ]}
-            />
-          </div>
           <div className={classes.admin}>
             {userInfo && userInfo.isAdmin ? (
               <DropdownButton
@@ -55,9 +46,19 @@ const UserAction = () => {
                 ]}
               />
             ) : (
-              ""
+              <div className={classes.empty}></div>
             )}
           </div>
+          <div className={classes.user}>
+            <DropdownButton
+              label={`Hello ${userInfo.firstName}`}
+              options={[
+                { label: "profile", path: "/profile" },
+                { label: "logout", path: "/logout" },
+              ]}
+            />
+          </div>
+         
           <div className={classes.avatar}>
             {userInfo && (
               <img

@@ -27,7 +27,7 @@ export const listProducts = (keyword = "", pageNumber = "") => async (
   dispatch
 ) => {
 
-  console.log('window', window.innerWidth)
+  // console.log('window', window.innerWidth)
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST });
 
