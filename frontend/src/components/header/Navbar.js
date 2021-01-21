@@ -1,12 +1,9 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import classes from "./Navbar.module.scss";
-import cartIcon from "../../images/icones/marketplace-drawing-clipart-4.png";
+
 
 const Navbar = () => {
-  const userLogin = useSelector((state) => state.userLogin);
-  const { userInfo } = userLogin;
 
   return (
     <nav className={classes.navigation}>
@@ -16,27 +13,11 @@ const Navbar = () => {
             SHOP
           </Link>
         </li>
-        {!userInfo ? (
-          <>
-            <li className={classes.item}>
-              <Link className={classes.link} to="/register">
-                REGISTER
-              </Link>
-            </li>
-            <li className={classes.item}>
-              <Link className={classes.link} to="/login">
-                LOGIN
-              </Link>
-            </li>
-          </>
-        ) : (
-          <li className={classes.item}>
-            <Link  to="/cart">
-              <img className={classes.cart} src={cartIcon} alt="cart" />
-            </Link>
-            {/* {cart !== null && <div className={classes.qty}> {cart.length} </div>} */}
-          </li>
-        )}
+        <li className={classes.item}>
+          <Link className={classes.link} to="/gallery">
+            GALLERY
+          </Link>
+        </li>
       </ul>
     </nav>
   );

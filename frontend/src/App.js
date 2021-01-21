@@ -4,9 +4,12 @@ import "./App.scss";
 
 import { useSpring, animated } from "react-spring";
 import classes from "./ParallaxBack.module.scss";
-import Carousel3d from "./components/content/Carousel3d";
+
 
 import Header from "./components/header/Header";
+
+import Carousel3d from "./components/content/Carousel3d";
+import ProductGallery from "./components/content/ProductGallery"
 
 import LoginScreen from "./components/content/auth/LoginScreen";
 import logout from "./components/content/auth/Logout";
@@ -65,6 +68,7 @@ const App = () => {
             </header>
             <main className="main">
               <Route exact path="/" component={Carousel3d} />
+              <Route exact path="/gallery" component={ProductGallery} />
               <Route exact path="/products/page/:pageNumber" component={ProductsScreen} />
               <Route exact path="/products" component={ProductsScreen} />
               <Route exact path="/products/search/:keyword" component={ProductsScreen} />

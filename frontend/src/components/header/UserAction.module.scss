@@ -1,24 +1,40 @@
 @import "../../sass/variables";
+@import "./Navbar.module.scss";
 
-.container {
+.userLoged {
+  width: 100%;
   height: 100%;
-
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+}
 
-  & .avatar {
-    width: 16%;
-    & img {
-      cursor: pointer;
-      width: 80%;
-      border-radius: 100px;
-      transform: scale(1);
-      transition: all 0.2s;
+.cart {
+  height: 3rem;
 
-      &:hover {
-        transform: scale(1.1);
-      }
+  filter: invert(1) brightness(150%)
+    drop-shadow(8px 8px 10px rgb(255, 252, 252));
+  -webkit-filter: invert(1) brightness(150%)
+    drop-shadow(8px 8px 10px rgb(255, 253, 253));
+}
+
+.qty {
+  font-family: "Quantity";
+  color: orange;
+  margin: auto;
+}
+
+.avatar {
+  width: 5rem;
+  & img {
+    cursor: pointer;
+    width: 80%;
+    border-radius: 100px;
+    transform: scale(1);
+    transition: all 0.2s;
+
+    &:hover {
+      transform: scale(1.1);
     }
   }
 }
