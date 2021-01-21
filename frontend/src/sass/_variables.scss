@@ -73,6 +73,12 @@ $bp-small: 37.5em; // 600px
   transform: translate(-50%, -50%);
 }
 
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @mixin btnFlat($color: $color-yellow-light) {
   &,
   &:link,
@@ -103,7 +109,7 @@ $bp-small: 37.5em; // 600px
     background: grey;
     border: none;
     color: $color-grey-dark;
-    cursor:default;
+    cursor: default;
 
     &:hover {
       background: grey;
@@ -155,7 +161,7 @@ $bp-small: 37.5em; // 600px
     background: grey;
     border: none;
     color: $color-grey-dark;
-    cursor:default;
+    cursor: default;
 
     &:hover {
       background: grey;

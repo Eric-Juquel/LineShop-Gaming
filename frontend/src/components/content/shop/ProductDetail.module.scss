@@ -37,9 +37,11 @@
   grid-column: image-start / image-end;
   grid-row: image-start/ image-end;
 
+  @include flexCenter;
+
   & img {
-    width: 80%;
-    height: 100%;
+    width: auto;
+    height: 90%;
   }
 }
 
@@ -156,9 +158,9 @@
   }
 
   & .message {
-    width:100%;
-    font-size:1.8rem;
-    color:$color-success
+    width: 100%;
+    font-size: 1.8rem;
+    color: $color-success;
   }
 }
 

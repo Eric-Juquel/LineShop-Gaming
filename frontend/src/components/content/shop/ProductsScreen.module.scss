@@ -8,7 +8,7 @@
 
   display: grid;
   grid-template-columns: 5rem repeat(4, 1fr) 5rem;
-  grid-template-rows: repeat(2, 46%) 8%;
+  grid-template-rows: repeat(2, 47%) 6%;
 }
 
 .prev,
@@ -30,6 +30,8 @@
 .paginate {
   grid-column: 3 / 5;
   grid-row: 3 / 4;
+
+  @include flexCenter;
 }
 
 .cardContainer {

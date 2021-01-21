@@ -55,7 +55,7 @@ const ProductDetail = ({ history, match }) => {
   };
 
   let alreadyReviewed = false;
-  if (product) {
+  if (product && userInfo) {
     const userReviewed = product.reviews.map((r) => r.user);
     if (userReviewed.includes(userInfo._id)) {
       alreadyReviewed = true;

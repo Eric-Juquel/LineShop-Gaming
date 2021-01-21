@@ -2,9 +2,9 @@
 
 .container {
   width: 90%;
-  height: 97%;
+  max-height: 95%;
   background-color: $color-background-secondary;
-  margin: 2% auto 0 auto;
+  margin: auto;
   padding: 2rem;
   font-family: "Montserrat", sans-serif;
   font-size: 1.5rem;
@@ -22,7 +22,7 @@
     }
 
     & .paginate {
-      height: 80%;
+      height: 50%;
       width: 30%;
     }
 
@@ -34,14 +34,14 @@
 
       & button {
         @include btn3d($color-yellow-light);
-        height: 100%;
-        width: 80%;
+        height: 4rem;
+        width: 18rem;
         display: flex;
         align-items: center;
         justify-content: space-evenly;
 
         & svg {
-          font-size: 2.5rem;
+          font-size: 2rem;
         }
       }
     }
