@@ -5,6 +5,7 @@ import classes from "./ProductDetail.module.scss";
 import Moment from "react-moment";
 import { IoIosReturnLeft } from "react-icons/io";
 import ProductDetailReview from "./ProductDetailReview";
+import Meta from "../../Meta";
 import Spinner from "../../Spinner";
 import ErrorComponent from "../../ErrorComponent";
 import Rating from "./Rating";
@@ -63,16 +64,19 @@ const ProductDetail = ({ history, match }) => {
   }
 
   return (
-    <>
-      { error ? (
+    <div className={classes.container}>
+      <button className={classes.btn} onClick={goBackHandler}>
+        <IoIosReturnLeft />
+        &nbsp;
+        <span className={classes.text}> Go Back</span>
+      </button>
+      {loading ? (
+        <Spinner />
+      ) : error ? (
         <ErrorComponent err={error} />
       ) : (
-        <div className={classes.container}>
-          <button className={classes.btn} onClick={goBackHandler}>
-            <IoIosReturnLeft />
-            &nbsp;
-            <span className={classes.text}> Go Back</span>
-          </button>
+        <>
+          <Meta title={`LineShop | ${product.name}`} />
           <div className={classes.image}>
             <img src={product.image} alt={product.name} />
           </div>
@@ -184,9 +188,9 @@ const ProductDetail = ({ history, match }) => {
             </div>
             {/* <div className={classes.all}>See all reviews</div> */}
           </div>
-        </div>
+        </>
       )}
-    </>
+    </div>
   );
 };
 

@@ -7,13 +7,7 @@ import Rating from "./Rating";
 const ProductCard = ({ product }) => {
   const history = useHistory();
 
-  const {
-    _id,
-    name,
-    rating,
-    price,
-    countInStock,
-  } = product;
+  const { _id, name, rating, price, countInStock } = product;
 
   const addToCartHandler = () => {
     history.push(`/cart/${_id}?qty=${1}`);

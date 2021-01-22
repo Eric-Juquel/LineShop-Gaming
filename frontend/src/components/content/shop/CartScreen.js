@@ -5,6 +5,7 @@ import { IoIosReturnLeft } from "react-icons/io";
 import { FaTrash } from "react-icons/fa";
 import { GiEmptyMetalBucketHandle } from "react-icons/gi";
 import classes from "./CartScreen.module.scss";
+import Meta from "../../Meta";
 import { addToCart, removeFromCart } from "../../../actions/cartActions";
 
 const CartScreen = ({ match, history, location }) => {
@@ -24,8 +25,8 @@ const CartScreen = ({ match, history, location }) => {
   }, [dispatch, productId, qty]);
 
   const goBackHandler = () => {
-    history.goBack()
-  }
+    history.goBack();
+  };
 
   const removeFromCartHandler = (id) => {
     dispatch(removeFromCart(id));
@@ -37,6 +38,7 @@ const CartScreen = ({ match, history, location }) => {
 
   return (
     <div className={classes.container}>
+      <Meta title={"LineShop | My Cart"} />
       <div className={classes.cart}>
         <h1>Shopping Cart</h1>
         {cartItems.length === 0 ? (

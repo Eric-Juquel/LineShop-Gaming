@@ -10,11 +10,25 @@ const UserAction = () => {
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
+  const cart = useSelector((state) => state.cart);
+  const { cartItems } = cart;
+
   return (
     <>
       {!userInfo ? (
         <nav className={classes.navigation}>
           <ul className={classes.list}>
+            <li className={classes.userCart}>
+              <Link to="/cart">
+                <img className={classes.cart} src={cartIcon} alt="cart" />
+                {cart !== null && (
+                  <div className={classes.qty}>
+                    {" "}
+                    {cartItems.reduce((acc, item) => acc + item.qty, 0)}
+                  </div>
+                )}
+              </Link>
+            </li>
             <li className={classes.item}>
               <Link className={classes.link} to="/register">
                 REGISTER
@@ -32,8 +46,13 @@ const UserAction = () => {
           <div className={classes.userCart}>
             <Link to="/cart">
               <img className={classes.cart} src={cartIcon} alt="cart" />
+              {cart !== null && (
+                <div className={classes.qty}>
+                  {" "}
+                  {cartItems.reduce((acc, item) => acc + item.qty, 0)}
+                </div>
+              )}
             </Link>
-            {/* {cart !== null && <div className={classes.qty}> {cart.length} </div>} */}
           </div>
           <div className={classes.admin}>
             {userInfo && userInfo.isAdmin ? (
@@ -58,7 +77,7 @@ const UserAction = () => {
               ]}
             />
           </div>
-         
+
           <div className={classes.avatar}>
             {userInfo && (
               <img

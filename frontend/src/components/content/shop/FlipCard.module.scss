@@ -41,6 +41,13 @@
   filter: drop-shadow(2px 2px 4px black);
 }
 
+.flipcardfront img {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
 .flipcardback {
   background: rgba(237, 237, 237, 1);
   background: linear-gradient(

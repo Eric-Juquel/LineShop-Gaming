@@ -11,7 +11,7 @@
 
   & h2 {
     color: $color-yellow-light;
-    text-transform:capitalize;
+    text-transform: capitalize;
   }
 }
 
@@ -75,6 +75,8 @@
         height: 100%;
         min-width: 8%;
         max-width: 8%;
+        object-fit: cover;
+        display: block;
         box-shadow: $box-shadow-dark;
       }
 
@@ -98,7 +100,7 @@
   grid-row: 1 / 4;
 
   & h5 {
-    text-transform:uppercase;
+    text-transform: uppercase;
   }
 }
 

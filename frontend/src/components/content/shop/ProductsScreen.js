@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import classes from "./ProductsScreen.module.scss";
 import ProductCard from "./ProductCard";
+import Meta from "../../Meta";
 import Spinner from "../../Spinner";
 import ErrorComponent from "../../ErrorComponent";
 import Paginate from "./Paginate";
@@ -23,6 +24,7 @@ const ProductsScreen = ({ match }) => {
 
   return (
     <>
+      <Meta />
       {loading ? (
         <Spinner />
       ) : error ? (

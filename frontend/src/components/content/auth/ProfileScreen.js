@@ -41,9 +41,9 @@ const ProfileScreen = ({ history }) => {
     if (!userInfo) {
       history.push("/login");
     } else {
-      if (!user || (!user.firstName && !user.lastName)) {
+      if (!user || (!user.firstName && !user.lastName) ) {
         setMessage(null);
-        // dispatch({ type: USER_UPDATE_PROFILE_RESET });
+        dispatch({ type: USER_UPDATE_PROFILE_RESET });
         dispatch(getUserDetails("profile"));
         dispatch(listMyOrders());
       } else {
@@ -180,7 +180,7 @@ const ProfileScreen = ({ history }) => {
 
             <div className={classes.items}>
               {orders.length === 0 ? (
-                <p>No Current Order</p>
+                <h4>No Current Order</h4>
               ) : (
                 orders.map((order) => (
                   <div key={order._id} className={classes.row}>
