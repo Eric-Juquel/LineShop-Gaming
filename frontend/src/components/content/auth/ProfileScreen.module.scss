@@ -58,24 +58,7 @@
 }
 
 .orderTable {
-  height: 90%;
-  width: 100%;
-  border: 1px solid $color-purple-mid;
-  box-shadow: $box-shadow-dark;
-
-  & .items {
-    max-height: 89%;
-    overflow: auto;
-    scrollbar-width: none;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
-    & h4 {
-      margin-top:20%;
-    }
-  }
+  @include tableScroll;
 }
 
 .row,
@@ -88,14 +71,7 @@
   justify-items: stretch;
 
   & .cell {
-    height: 5rem;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-
-    &:not(:last-child) {
-      border-right: 1px solid $color-purple-mid;
-    }
+    @include tableCel;
   }
 }
 

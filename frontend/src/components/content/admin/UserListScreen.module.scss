@@ -16,19 +16,7 @@
 }
 
 .usersTable {
-  width: 100%;
-  border: 1px solid $color-purple-mid;
-  box-shadow: $box-shadow-dark;
-  margin: auto;
-
-  & .items {
-    overflow: auto;
-    scrollbar-width: none;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  }
+  @include tableScroll;
 }
 
 .row,
@@ -41,14 +29,7 @@
   justify-items: stretch;
 
   & .cell {
-    height: 5rem;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-
-    &:not(:last-child) {
-      border-right: 1px solid $color-purple-mid;
-    }
+   @include tableCel;
   }
 }
 
