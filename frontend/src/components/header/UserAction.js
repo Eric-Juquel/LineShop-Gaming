@@ -79,12 +79,15 @@ const UserAction = () => {
           </div>
 
           <div className={classes.avatar}>
-            {userInfo && (
+            {userInfo && 
+            userInfo.avatar ? (
               <img
-                src={avatar}
+                src={userInfo.avatar}
                 alt="avatar"
                 title={`${userInfo.firstName} profile`}
               />
+            ) : (
+              <div className={classes.noAvatar}>{userInfo.firstName.substring(0,1)}{' '}{userInfo.lastName.substring(0,1)}</div>
             )}
           </div>
         </div>

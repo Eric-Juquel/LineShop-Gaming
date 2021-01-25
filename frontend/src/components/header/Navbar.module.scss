@@ -23,6 +23,7 @@
     min-width: 120%;
     &:link {
       display: inline-block;
+      
       font-size: 3rem;
       font-family: $font-starwars-i;
       font-weight: 300;
@@ -43,6 +44,7 @@
 
     &:hover,
     &:active {
+      border-radius:4px;
       background-position: 100%;
       color: $color-grey-light-1;
       transform: translateY(-0.3rem);

@@ -42,6 +42,10 @@
   & .formGroup {
     margin-bottom: 0.6rem;
     width: 85%;
+
+    &.upload {
+      height:4rem;
+    }
   }
 
   & button {

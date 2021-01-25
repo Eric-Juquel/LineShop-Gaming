@@ -10,18 +10,17 @@
   justify-content: space-evenly;
 }
 
-.userCart{
-
-  width:5rem;
+.userCart {
+  width: 5rem;
 
   & a {
-    display:flex;
+    display: flex;
   }
 
   & .cart {
     height: 3rem;
-    margin-right:0.6rem;
-  
+    margin-right: 0.6rem;
+
     filter: invert(1) brightness(150%)
       drop-shadow(8px 8px 10px rgb(255, 252, 252));
     -webkit-filter: invert(1) brightness(150%)
@@ -34,16 +33,10 @@
     color: orange;
     margin: auto;
   }
-
-
 }
 
-
-
-
-
 .empty {
-  width:13rem;
+  width: 13rem;
 }
 
 .avatar {
@@ -54,10 +47,30 @@
     border-radius: 100px;
     transform: scale(1);
     transition: all 0.2s;
-    margin-right:-2rem;
+    margin-right: -2rem;
 
     &:hover {
       transform: scale(1.1);
     }
+  }
+}
+
+.noAvatar {
+  @include flexCenter;
+  text-transform:uppercase;
+  font-size:1.8rem;
+  color:$color-secondary;
+  font-weight:600;
+  background-color:$color-blue-light;
+  cursor: pointer;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 100px;
+  transform: scale(1);
+  transition: all 0.2s;
+  margin-right: -2rem;
+
+  &:hover {
+    transform: scale(1.1);
   }
 }

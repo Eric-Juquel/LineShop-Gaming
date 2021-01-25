@@ -94,13 +94,16 @@ input[type="checkbox"] {
   position: relative;
 
   & .input {
+    margin-left:4rem;
     height:90%;
+    width:60%;
     position:relative;
     opacity: 0;
     z-index: 2;
   }
 
   & .btnUpload {
+    margin-left:4rem;
     width: 50%;
     height: 85%;
     @include centerElement;

@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -8,6 +9,7 @@ import { GiSplitCross } from "react-icons/gi";
 import Spinner from "../../Spinner";
 import ErrorComponent from "../../ErrorComponent";
 import TextField from "../forms/TextField";
+import UploadField from "../forms/UploadField";
 import {
   getUserDetails,
   updateUserProfile,
@@ -19,7 +21,11 @@ const ProfileScreen = ({ history }) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
+  const [avatar, setAvatar] = useState('')
   const [message, setMessage] = useState(null);
+  const [uploading, setUploading] = useState(false);
+
+  const [sort, setSort] = useState("");
 
   const dispatch = useDispatch();
 
@@ -35,13 +41,13 @@ const ProfileScreen = ({ history }) => {
   const orderListMy = useSelector((state) => state.orderListMy);
   const { loading: loadingOrders, error: errorOrders, orders } = orderListMy;
 
-  const { register, handleSubmit, errors} = useForm();
+  const { register, handleSubmit, errors } = useForm();
 
   useEffect(() => {
     if (!userInfo) {
       history.push("/login");
     } else {
-      if (!user || (!user.firstName && !user.lastName) ) {
+      if (!user || (!user.firstName && !user.lastName)) {
         setMessage(null);
         dispatch({ type: USER_UPDATE_PROFILE_RESET });
         dispatch(getUserDetails("profile"));
@@ -50,24 +56,50 @@ const ProfileScreen = ({ history }) => {
         setFirstName(user.firstName);
         setLastName(user.lastName);
         setEmail(user.email);
+        user.avatar && setAvatar(user.avatar)
       }
     }
   }, [dispatch, history, userInfo, user]);
 
-  const onSubmit = (data) => {
-    console.log("profile data", data);
+  const onSubmit = async(data) => {
+    console.log('data', data)
+
+    let payload = {
+      id: user._id,
+      firstName: data.firstName,
+      lastName: data.lastName,
+      email: data.email,
+      avatar: avatar,
+      password: data.password,
+    };
+
+    if (data.avatar) {
+      const file = data.avatar[0];
+      const formData = new FormData();
+      formData.append("image", file);
+      setUploading(true);
+      try {
+        const config = {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        };
+
+        const { data } = await axios.post("/api/upload", formData, config);
+
+        console.log('data', data)
+
+        payload.avatar = data
+        setUploading(false)
+      } catch (error) {}
+      setUploading(false)
+    }
+
     if (data.password !== data.confirmPassword) {
       setMessage("Passwords do not match");
     } else {
-      dispatch(
-        updateUserProfile({
-          id: user._id,
-          firstName: data.firstName,
-          lastName: data.lastName,
-          email: data.email,
-          password: data.password,
-        })
-      );
+      console.log('payload', payload)
+      dispatch(updateUserProfile(payload));
     }
   };
 
@@ -128,6 +160,20 @@ const ProfileScreen = ({ history }) => {
                   mandatory={true}
                 />
               </div>
+              <div className={`${classes.formGroup} ${classes.upload}`}>
+                <UploadField
+                  type="file"
+                  register={register}
+                  error={errors}
+                  inputwidth="100%"
+                  inputheight="4rem"
+                  label="Avatar"
+                  name="avatar"
+                  placeholder="Upload Avatar"
+                  mandatory={false}
+                  loading={uploading}
+                />
+              </div>
               <div className={classes.formGroup}>
                 <TextField
                   type="password"
@@ -171,11 +217,25 @@ const ProfileScreen = ({ history }) => {
           <div className={classes.orderTable}>
             <div className={classes.entitled}>
               <h2 className={classes.cell}>ID</h2>
-              <h2 className={classes.cell}>DATE</h2>
-              <h2 className={classes.cell}>TOTAL</h2>
-              <h2 className={classes.cell}>PAID</h2>
-              <h2 className={classes.cell}>DELIVERED</h2>
-              <h2 className={classes.cell}>{' '}</h2>
+              <h2 className={classes.cell} onClick={() => setSort("createdAt")}>
+                DATE
+              </h2>
+              <h2
+                className={classes.cell}
+                onClick={() => setSort("totalPrice")}
+              >
+                TOTAL
+              </h2>
+              <h2 className={classes.cell} onClick={() => setSort("paidAt")}>
+                PAID
+              </h2>
+              <h2
+                className={classes.cell}
+                onClick={() => setSort("deliveredAt")}
+              >
+                DELIVERED
+              </h2>
+              <h2 className={classes.cell}> </h2>
             </div>
 
             <div className={classes.items}>

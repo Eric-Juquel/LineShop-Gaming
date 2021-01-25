@@ -52,8 +52,6 @@ const ProductEditScreen = ({ match, history }) => {
   };
 
   const onSubmit = async (data) => {
-    console.log("data", data);
-
     let payload = {
       _id: productId,
       name: data.name,
@@ -79,13 +77,11 @@ const ProductEditScreen = ({ match, history }) => {
 
         const { data } = await axios.post("/api/upload", formData, config);
 
-        payload.image = data
-        setUploading(false)
+        payload.image = data;
+        setUploading(false);
       } catch (error) {}
-      setUploading(false)
+      setUploading(false);
     }
-
-    console.log('payload',payload)
 
     dispatch(updateProduct(payload));
   };

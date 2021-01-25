@@ -72,6 +72,7 @@ export const getUserProfile = asyncHandler(async (req, res) => {
       firstName: user.firstName,
       lastName: user.lastName,
       email: user.email,
+      avatar: user.avatar,
       isAdmin: user.isAdmin,
     })
   } else {
@@ -90,6 +91,7 @@ export const updateUserProfile = asyncHandler(async (req, res) => {
     user.firstName = req.body.firstName || user.firstName
     user.lastName = req.body.lastName || user.lastName
     user.email = req.body.email || user.email
+    user.avatar = req.body.avatar || user.avatar
     if (req.body.password) {
       user.password = req.body.password
     }
@@ -101,6 +103,7 @@ export const updateUserProfile = asyncHandler(async (req, res) => {
       firstName: updatedUser.firstName,
       lastName: updatedUser.lastName,
       email: updatedUser.email,
+      avatar: updatedUser.avatar,
       isAdmin: updatedUser.isAdmin,
       token: generateToken(updatedUser._id),
     })
