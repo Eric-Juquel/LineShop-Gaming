@@ -3,13 +3,10 @@
 .container {
   width: 90%;
   height: 95%;
-  background-color: $color-background-secondary;
-  margin: 2% auto 0 auto;
-  padding: 0.5rem;
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.5rem;
   display: flex;
   justify-content: space-evenly;
+
+  @include container;
 
   & h1 {
     height: 10%;

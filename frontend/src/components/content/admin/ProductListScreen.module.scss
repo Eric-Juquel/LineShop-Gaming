@@ -3,11 +3,7 @@
 .container {
   width: 90%;
   max-height: 95%;
-  background-color: $color-background-secondary;
-  margin: 0 auto ;
-  padding: 2rem;
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.5rem;
+ @include container;
 
   & .title {
     height: 15%;
