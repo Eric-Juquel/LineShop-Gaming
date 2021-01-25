@@ -14,15 +14,15 @@
   }
 
   & .item {
-    margin: 1rem;
+    display: flex;
+    align-items: center;
   }
 
   & .link {
-    &:link,
-    &:visited {
+    min-width: 120%;
+    &:link {
       display: inline-block;
       font-size: 3rem;
-      border-radius: 15px;
       font-family: $font-starwars-i;
       font-weight: 300;
       color: white;
@@ -36,6 +36,7 @@
         $color-brown-light 50%
       );
       background-size: 230%;
+      clip-path: polygon(3rem 0, 100% 0, calc(100% - 3rem) 100%, 0 100%);
       transition: all 0.4s;
     }
 
@@ -44,7 +45,7 @@
       background-position: 100%;
       color: $color-grey-light-1;
       transform: translateY(-0.3rem);
+      clip-path: polygon(3rem 0, 100% 0, calc(100% - 3rem)  100%, 0 100%);
     }
   }
 }
-
