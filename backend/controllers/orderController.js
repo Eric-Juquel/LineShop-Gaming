@@ -102,7 +102,7 @@ export const updateOrderToDelivered = asyncHandler(async (req, res) => {
 // @acces  Private
 export const getMyOrders = asyncHandler(async (req, res) => {
   const orders = await Order.find({ user: req.user._id });
-  res.json(orders);
+  res.json(orders.reverse());
 });
 
 // @desc   Get all orders
@@ -110,5 +110,5 @@ export const getMyOrders = asyncHandler(async (req, res) => {
 // @acces  Private/Admin
 export const getOrders = asyncHandler(async (req, res) => {
   const orders = await Order.find({}).populate("user", "id firstName lastName");
-  res.json(orders);
+  res.json(orders.reverse());
 });

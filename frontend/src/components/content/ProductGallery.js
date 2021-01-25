@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import "./ProductGallery.scss";
 import { Link } from "react-router-dom";
 import Spinner from "../Spinner";
-import ErrorComponent from '../ErrorComponent'
+import ErrorComponent from "../ErrorComponent";
 import { listTopProducts } from "../../actions/productActions";
 
 const ProductGallery = () => {
@@ -22,10 +22,11 @@ const ProductGallery = () => {
     <ErrorComponent err={error} />
   ) : (
     <div className="ProductGalleryContainer">
-      <div className="ProductGalleryTitle">
-        <h1>Top 14 products</h1>
-      </div>
       <div className="gallery">
+        {" "}
+        <div className="ProductGalleryTitle">
+          <h1>Top 14 products</h1>
+        </div>
         {products.map((product, index) => (
           <Link
             key={product._id}
