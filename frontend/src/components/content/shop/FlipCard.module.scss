@@ -74,6 +74,7 @@
 
   & p {
     margin: auto;
-    max-height: 90%;
+    display:block;
+    text-overflow:ellipsis;
   }
 }

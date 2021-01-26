@@ -31,13 +31,13 @@ const ProductsScreen = ({ match }) => {
         <ErrorComponent err={error} />
       ) : (
         <div className={classes.container}>
-          <div className={classes.prev}>{""}</div>
-          {products.map((product) => (
-            <div key={product._id} className={classes.cardContainer}>
-              <ProductCard product={product} />
-            </div>
-          ))}
-          <div className={classes.next}>{""}</div>
+          <div className={classes.cardsContainer}>
+            {products.map((product) => (
+              <div key={product._id} className={classes.cardContainer}>
+                <ProductCard product={product} />
+              </div>
+            ))}
+          </div>
           <div className={classes.paginate}>
             <Paginate
               pages={pages}

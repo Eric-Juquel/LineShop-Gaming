@@ -11,7 +11,7 @@
 
   display: grid;
   grid-template-rows: [title-start] 15% [title-end body-start] repeat(4, 22%) [body-end];
-  grid-template-columns: repeat(5, 18%);
+  grid-template-columns:  17% repeat(4, 18%);
   align-items: center;
   grid-column-gap: 3%;
 

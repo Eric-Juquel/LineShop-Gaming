@@ -3,8 +3,8 @@
 
 .container {
   width: 90%;
-  max-height: 95%;
- @include container;
+  height: 95%;
+  @include container;
 
   & .title {
     height: 15%;
@@ -46,30 +46,19 @@
 }
 
 .productsTable {
-  width: 100%;
-  border: 1px solid $color-purple-mid;
-  box-shadow: $box-shadow-dark;
-  margin: auto;
+  @include tableScroll;
 }
 
 .row,
 .entitled {
   width: 100%;
   display: grid;
-  grid-template-columns: [id-start]25%[id-end name-start]20%[name-end stock-start] 10%[stock-end price-start]10%[price-end cat-start]10%[cat-end brand-start]10%[brand-end action-start]15%[action-end];
-  //   grid-template-rows: repeat(auto-fit, 5rem);
+  grid-template-columns: [id-start]25%[id-end name-start]18%[name-end stock-start] 10%[stock-end price-start]10%[price-end cat-start]10%[cat-end brand-start]12%[brand-end action-start]15%[action-end];
 
   justify-items: stretch;
 
   & .cell {
-    height: 5rem;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-
-    &:not(:last-child) {
-      border-right: 1px solid $color-purple-mid;
-    }
+    @include tableCel;
   }
 }
 

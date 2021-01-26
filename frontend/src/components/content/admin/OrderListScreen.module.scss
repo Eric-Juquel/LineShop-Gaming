@@ -23,12 +23,11 @@
   width: 100%;
   display: grid;
   grid-template-columns: [id-start]25%[id-end user-start]20%[user-end date-start] 10%[date-end price-start]15%[price-end paid-start]10%[paid-end deliver-start]10%[deliver-end action-start]10%[action-end];
-  //   grid-template-rows: repeat(auto-fit, 5rem);
 
   justify-items: stretch;
 
   & .cell {
-   @include tableCel;
+    @include tableCel;
   }
 }
 
