@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import classes from "./UserAction.module.scss";
 import cartIcon from "../../images/icones/marketplace-drawing-clipart-4.png";
-import avatar from "../../images/avatars/index.jpg";
 import DropdownButton from "./DropdownButton";
 
 const UserAction = () => {

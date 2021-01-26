@@ -16,6 +16,7 @@ export const authUser = asyncHandler(async (req, res) => {
       firstName: user.firstName,
       lastName: user.lastName,
       email: user.email,
+      avatar: user.avatar,
       isAdmin: user.isAdmin,
       token: generateToken(user._id),
     })
