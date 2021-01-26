@@ -11,13 +11,9 @@
 
   display: grid;
   grid-template-rows: [title-start] 15% [title-end body-start] repeat(4, 22%) [body-end];
-  grid-template-columns:  17% repeat(4, 18%);
+  grid-template-columns: repeat(5, 18%);
   align-items: center;
   grid-column-gap: 3%;
-
-  // & p:not(:last-child) {
-  //   border-bottom: 1px $color-yellow-light solid;
-  // }
 }
 
 .title {
@@ -26,7 +22,7 @@
   align-self: flex-start;
   font-family: "Audiowide", cursive;
   font-size: 1.8rem;
-  text-transform:capitalize;
+  text-transform: capitalize;
   margin-top: -4px;
   color: $color-yellow-light;
 

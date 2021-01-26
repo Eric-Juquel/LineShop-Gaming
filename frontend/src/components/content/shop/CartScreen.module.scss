@@ -22,10 +22,9 @@
 
   & .items {
     display: flex;
-    flex-direction: column;
-    justify-content: stretch;
+
     height: 92%;
-    width: 90%;
+    width: 100%;
     overflow-y: auto;
     scrollbar-width: thin !important;
 
@@ -41,6 +40,16 @@
         @include btn3d($color-grey-light-1);
       }
     }
+
+    & .list {
+      width: 95%;
+      display: flex;
+      flex-direction: column;
+      justify-content: stretch;
+      height: 92%;
+    }
+
+    
   }
 
   & .item {

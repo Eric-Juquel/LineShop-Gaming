@@ -50,38 +50,40 @@ const CartScreen = ({ match, history, location }) => {
           </div>
         ) : (
           <div className={classes.items}>
-            {cartItems.map((item) => (
-              <div className={classes.item} key={item.product}>
-                <img src={item.image} alt={item.name} />
-                <h3>
-                  <Link to={`/product/${item.product}`}>{item.name}</Link>
-                </h3>
-                <p>{item.price} €</p>
-                <div className={classes.qty}>
-                  <div className={classes.select}>
-                    <select
-                      disabled={item.countInStock === 0}
-                      value={item.qty}
-                      onChange={(e) =>
-                        dispatch(
-                          addToCart(item.product, Number(e.target.value))
-                        )
-                      }
-                    >
-                      {[...Array(item.countInStock).keys()].map((x) => (
-                        <option key={x + 1} value={x + 1}>
-                          {x + 1}
-                        </option>
-                      ))}
-                    </select>
-                    <span className="focus"></span>
+            <div className={classes.list}>
+              {cartItems.map((item) => (
+                <div className={classes.item} key={item.product}>
+                  <img src={item.image} alt={item.name} />
+                  <h3>
+                    <Link to={`/product/${item.product}`}>{item.name}</Link>
+                  </h3>
+                  <p>{item.price} €</p>
+                  <div className={classes.qty}>
+                    <div className={classes.select}>
+                      <select
+                        disabled={item.countInStock === 0}
+                        value={item.qty}
+                        onChange={(e) =>
+                          dispatch(
+                            addToCart(item.product, Number(e.target.value))
+                          )
+                        }
+                      >
+                        {[...Array(item.countInStock).keys()].map((x) => (
+                          <option key={x + 1} value={x + 1}>
+                            {x + 1}
+                          </option>
+                        ))}
+                      </select>
+                      <span className="focus"></span>
+                    </div>
                   </div>
+                  <GiEmptyMetalBucketHandle
+                    onClick={() => removeFromCartHandler(item.product)}
+                  />
                 </div>
-                <GiEmptyMetalBucketHandle
-                  onClick={() => removeFromCartHandler(item.product)}
-                />
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         )}
       </div>
