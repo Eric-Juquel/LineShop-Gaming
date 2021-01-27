@@ -44,8 +44,8 @@ const OrderScreen = ({ match, history }) => {
   }
 
   useEffect(() => {
-    if(!userInfo) {
-      history.push('/login')
+    if (!userInfo) {
+      history.push("/login");
     }
 
     const addPayPalScript = async () => {
