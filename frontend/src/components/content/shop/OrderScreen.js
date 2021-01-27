@@ -8,7 +8,6 @@ import { useDispatch, useSelector } from "react-redux";
 import classes from "./OrderScreen.module.scss";
 import ErrorComponent from "../../ErrorComponent";
 import Spinner from "../../Spinner";
-import {cartResetItems} from '../../../actions/cartActions'
 import {
   getOrderDetails,
   payOrder,
@@ -79,7 +78,6 @@ const OrderScreen = ({ match, history }) => {
   const successPaymentHandler = (paymentResult) => {
     console.log(paymentResult);
     dispatch(payOrder(orderId, paymentResult));
-    dispatch(cartResetItems())
   };
 
   const successDeliverHandler = () => {
