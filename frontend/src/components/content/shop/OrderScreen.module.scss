@@ -84,17 +84,21 @@
   }
 }
 
-.content .paypalBtn {
+.content .paypalBtn,
+.content .stripeBtn {
   grid-column: 2 / 3;
   grid-row: 4 / 5;
 
   align-items: stretch;
-  height: 120%;
   width: 91%;
   margin: -15% auto 0 auto;
   background-color: white;
   border-radius: 4px;
   box-shadow: $box-shadow-dark;
+}
+
+.content .paypalBtn {
+  height: 120%;
   overflow-y: auto;
   scrollbar-width: none;
 
@@ -103,9 +107,19 @@
   }
 }
 
+.content .stripeBtn {
+  height: 60%;
+
+  & p {
+    color:orangered;
+    font-size:1rem;
+    margin-top:1rem;
+  }
+}
+
 .deliver {
-  height:30%;
-  width:50%;
-  margin:auto;
-  @include btnFlat
+  height: 30%;
+  width: 50%;
+  margin: auto;
+  @include btnFlat;
 }

@@ -4,6 +4,7 @@ import {
   CART_REMOVE_ITEM,
   CART_SAVE_SHIPPING_ADDRESS,
   CART_SAVE_PAYMENT_METHOD,
+  CART_RESET_ITEMS,
 } from "../constants/cartConstants";
 
 export const addToCart = (id, qty) => async (dispatch, getState) => {
@@ -49,4 +50,10 @@ export const savePaymentMethod = (data) => (dispatch) => {
   })
 
   localStorage.setItem('paymentMethod', JSON.stringify(data))
+}
+
+export const cartResetItems = () => (dispatch, getState) => {
+  dispatch({type: CART_RESET_ITEMS})
+
+  localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems))
 }

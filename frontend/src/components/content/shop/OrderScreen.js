@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Moment from "react-moment";
 import { PayPalButton } from "react-paypal-button-v2";
+import StripeButton from "./StripeButton";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import classes from "./OrderScreen.module.scss";
 import ErrorComponent from "../../ErrorComponent";
 import Spinner from "../../Spinner";
+import {cartResetItems} from '../../../actions/cartActions'
 import {
   getOrderDetails,
   payOrder,
@@ -77,6 +79,7 @@ const OrderScreen = ({ match, history }) => {
   const successPaymentHandler = (paymentResult) => {
     console.log(paymentResult);
     dispatch(payOrder(orderId, paymentResult));
+    dispatch(cartResetItems())
   };
 
   const successDeliverHandler = () => {
@@ -176,19 +179,25 @@ const OrderScreen = ({ match, history }) => {
             </div>
           </div>
         </div>
-        {!order.isPaid && (
-          <div className={classes.paypalBtn}>
-            {loadingPay && <Spinner />}
-            {!sdkReady ? (
-              <Spinner />
-            ) : (
-              <PayPalButton
-                amount={order.totalPrice}
-                onSuccess={successPaymentHandler}
-              />
-            )}
-          </div>
-        )}
+        {!order.isPaid &&
+          (order.paymentMethod === "PayPal" ? (
+            <div className={classes.paypalBtn}>
+              {loadingPay && <Spinner />}
+              {!sdkReady ? (
+                <Spinner />
+              ) : (
+                <PayPalButton
+                  amount={order.totalPrice}
+                  onSuccess={successPaymentHandler}
+                />
+              )}
+            </div>
+          ) : (
+            <div className={classes.stripeBtn}>
+              <StripeButton price={order.totalPrice} email={order.user.email} />
+              <p>4242424242424242	Visa	Any 3 digits	Any future date</p>
+            </div>
+          ))}
 
         {userInfo && userInfo.isAdmin && order.isPaid && !order.isDelivered && (
           <button className={classes.deliver} onClick={successDeliverHandler}>
