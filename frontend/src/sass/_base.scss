@@ -12,9 +12,18 @@ html {
   scrollbar-width: thin !important;
   scrollbar-color: $color-secondary-light $color-blue-mid;
 
-  // @media only screen and (max-width: $bp-largest) {
-  //   font-size: 50%;
-  // }
+  @media only screen and (max-width: $bp-largest) {
+    font-size: 60%;
+  }
+
+  @media only screen and (max-width: $bp-large) {
+    font-size: 50%;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    font-size: 45%;
+  }
+
 }
 
 body {

@@ -69,13 +69,27 @@
   }
 }
 
-.btn {
+.btnLarge,
+.btnSmall {
   grid-row: 5 / body-end;
   grid-column: 4 / 6;
 
   margin: auto;
-  width: 10rem;
-  height: 4rem;
+  width: 80%;;
+  height: 70%;;
 
   @include btn3d;
+}
+
+.btnSmall {
+  display:none;
+}
+
+@media only screen and (max-width: $bp-tab) {
+  .btnLarge {
+    display:none;
+  }
+  .btnSmall {
+    display:block;
+  }
 }

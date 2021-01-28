@@ -13,6 +13,8 @@ const ProductCard = ({ product }) => {
     history.push(`/cart/${_id}?qty=${1}`);
   };
 
+  console.log(window.innerWidth)
+
   return (
     <div className={classes.card}>
       <div className={classes.title}>
@@ -45,11 +47,18 @@ const ProductCard = ({ product }) => {
       </div>
 
       <button
-        className={classes.btn}
+        className={classes.btnLarge}
         disabled={countInStock === 0}
         onClick={() => addToCartHandler()}
       >
         Add to cart
+      </button>
+      <button
+        className={classes.btnSmall}
+        disabled={countInStock === 0}
+        onClick={() => addToCartHandler()}
+      >
+        Add
       </button>
     </div>
   );
