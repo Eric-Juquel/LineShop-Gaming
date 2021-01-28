@@ -17,7 +17,7 @@ const ProductCard = ({ product }) => {
     <div className={classes.card}>
       <div className={classes.title}>
         <Link to={`/product/${_id}`}>
-          <p>{name}</p>
+          <h3>{name}</h3>
         </Link>
       </div>
       <div className={classes.flipCard}>

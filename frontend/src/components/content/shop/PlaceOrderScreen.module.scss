@@ -2,14 +2,9 @@
 @import "../../../sass/mixins";
 
 .container {
-  width: 90%;
+  width: 80%;
   height: 90%;
   @include container;
-
-  & h2 {
-    color: $color-yellow-light;
-    text-transform: capitalize;
-  }
 }
 
 .content {
@@ -136,11 +131,16 @@
       min-width: 30%;
     }
 
+    & .price {
+      font-weight:600;
+    }
+
     & button {
-      width: 80%;
-      height: 80%;
+      width: 20rem;
+      height: 5rem;
       margin: auto;
       @include btnFlat;
+      letter-spacing: 1px;
     }
   }
 }

@@ -99,7 +99,9 @@ const OrderScreen = ({ match, history }) => {
           <div className={classes.contact}>
             <strong>Contact: </strong> {order.user.firstName}{" "}
             {order.user.lastName}
-            <a href={`mailto:${order.user.email}`}>{order.user.email}</a>
+            <a href={`mailto:${order.user.email}`} title="send email">
+              {order.user.email}
+            </a>
           </div>
           <div className={classes.address}>
             <strong>Address: </strong>
@@ -109,7 +111,7 @@ const OrderScreen = ({ match, history }) => {
           </div>
           {order.isDelivered ? (
             <div className={classes.statusSuccess}>
-              Delidery on{" "}
+              Delidery on &nbsp;
               <Moment format="YYYY/MM/DD">{order.deliveredAt}</Moment>
             </div>
           ) : (
@@ -126,7 +128,7 @@ const OrderScreen = ({ match, history }) => {
           </p>
           {order.isPaid ? (
             <div className={classes.statusSuccess}>
-              Paid on <Moment format="YYYY/MM/DD">{order.paidAt}</Moment>{" "}
+              Paid on &nbsp;<Moment format="YYYY/MM/DD">{order.paidAt}</Moment>
             </div>
           ) : (
             <div className={classes.statusDanger}>Not Paid</div>
@@ -142,7 +144,9 @@ const OrderScreen = ({ match, history }) => {
               order.orderItems.map((item) => (
                 <div key={item.product} className={classes.item}>
                   <img src={item.image} alt={item.name} />
-                  <Link to={`/product/${item.product}`}>{item.name}</Link>
+                  <Link to={`/product/${item.product}`}>
+                    <h3>{item.name}</h3>
+                  </Link>
                   <p>
                     {item.qty} x {item.price} € ={" "}
                     <span>
@@ -173,7 +177,9 @@ const OrderScreen = ({ match, history }) => {
             </div>
             <div>
               <label>Total :</label>
-              <p>{new Intl.NumberFormat().format(order.totalPrice)} €</p>
+              <p className={classes.total}>
+                {new Intl.NumberFormat().format(order.totalPrice)} €
+              </p>
             </div>
           </div>
         </div>
@@ -193,7 +199,7 @@ const OrderScreen = ({ match, history }) => {
           ) : (
             <div className={classes.stripeBtn}>
               <StripeButton price={order.totalPrice} email={order.user.email} />
-              <p>4242424242424242	Visa	Any 3 digits	Any future date</p>
+              <p>4242424242424242 Visa Any 3 digits Any future date</p>
             </div>
           ))}
 

@@ -95,7 +95,7 @@ const PlaceOrderScreen = ({ history }) => {
               cart.cartItems.map((item) => (
                 <div key={item.product} className={classes.item}>
                   <img src={item.image} alt={item.name} />
-                  <Link to={`/product/${item.product}`}>{item.name}</Link>
+                  <Link to={`/product/${item.product}`}><h3>{item.name}</h3></Link>
                   <p>
                     {item.qty} x {item.price} € ={" "}
                     <span>
@@ -114,19 +114,19 @@ const PlaceOrderScreen = ({ history }) => {
             </div>
             <div>
               <label>Items :</label>
-              <p>{new Intl.NumberFormat().format(cart.itemsPrice)} €</p>
+              <p >{new Intl.NumberFormat().format(cart.itemsPrice)} €</p>
             </div>
             <div>
               <label>Shipping :</label>
-              <p>{cart.shippingPrice} €</p>
+              <p >{cart.shippingPrice} €</p>
             </div>
             <div>
               <label>Tax :</label>
-              <p>{cart.taxPrice} €</p>
+              <p >{cart.taxPrice} €</p>
             </div>
             <div>
               <label>Total :</label>
-              <p>{new Intl.NumberFormat().format(cart.totalPrice)} €</p>
+              <p className={classes.price}>{new Intl.NumberFormat().format(cart.totalPrice)} €</p>
             </div>
             <div>
               <button

@@ -216,26 +216,26 @@ const ProfileScreen = ({ history }) => {
         ) : (
           <div className={classes.orderTable}>
             <div className={classes.entitled}>
-              <h2 className={classes.cell}>ID</h2>
-              <h2 className={classes.cell} onClick={() => setSort("createdAt")}>
+              <h4 className={classes.cell}>ID</h4>
+              <h4 className={classes.cell} onClick={() => setSort("createdAt")}>
                 DATE
-              </h2>
-              <h2
+              </h4>
+              <h4
                 className={classes.cell}
                 onClick={() => setSort("totalPrice")}
               >
                 TOTAL
-              </h2>
-              <h2 className={classes.cell} onClick={() => setSort("paidAt")}>
+              </h4>
+              <h4 className={classes.cell} onClick={() => setSort("paidAt")}>
                 PAID
-              </h2>
-              <h2
+              </h4>
+              <h4
                 className={classes.cell}
                 onClick={() => setSort("deliveredAt")}
               >
                 DELIVERED
-              </h2>
-              <h2 className={classes.cell}> </h2>
+              </h4>
+              <h4 className={classes.cell}> </h4>
             </div>
 
             <div className={classes.items}>

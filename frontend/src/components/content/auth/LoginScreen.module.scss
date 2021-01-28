@@ -34,10 +34,10 @@
 
   & button {
     margin: 0 auto;
-    min-height: 4rem;
+    height: 4rem;
     width: 10rem;
     @include btn3d;
-   
+    letter-spacing: 1px;
   }
 
   & .new {

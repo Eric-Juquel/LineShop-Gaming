@@ -2,10 +2,10 @@
 @import "../../../sass/mixins";
 
 .container {
-  width: 70%;
-  height: 95%;
+  width: 60%;
+  height: 90%;
+  margin:auto;
   background-color: $color-background-secondary;
-  margin: 2% auto 0 auto;
   padding: 2rem;
   font-family: "Montserrat", sans-serif;
   font-size: 1.5rem;
@@ -65,8 +65,8 @@
     grid-column: 1 / 2;
     grid-row: 6 / span 1;
 
-    width:30%;
-    height:40%;
+    width:15rem;
+    height:5rem;
     margin-left:10%;
     @include btn3d;
   }
@@ -76,8 +76,8 @@
     grid-row: 6 / span 1;
     justify-self:flex-end;
 
-    width:30%;
-    height:40%;
+    width:15rem;
+    height:5rem;
     margin-right:10%;
     @include btn3d($color-grey-light-1);
     display: flex;

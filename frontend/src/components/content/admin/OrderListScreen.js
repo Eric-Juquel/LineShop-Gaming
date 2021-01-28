@@ -39,13 +39,13 @@ const OrderListScreen = ({ history }) => {
       ) : (
         <div className={classes.ordersTable}>
           <div className={classes.entitled}>
-            <h2 className={classes.cell}>ID</h2>
-            <h2 className={classes.cell}>USER</h2>
-            <h2 className={classes.cell}>DATE</h2>
-            <h2 className={classes.cell}>TOTAL PRICE</h2>
-            <h2 className={classes.cell}>PAID</h2>
-            <h2 className={classes.cell}>DELIVERED</h2>
-            <h2 className={classes.cell}> </h2>
+            <h4 className={classes.cell}>ID</h4>
+            <h4 className={classes.cell}>USER</h4>
+            <h4 className={classes.cell}>DATE</h4>
+            <h4 className={classes.cell}>TOTAL PRICE</h4>
+            <h4 className={classes.cell}>PAID</h4>
+            <h4 className={classes.cell}>DELIVERED</h4>
+            <h4 className={classes.cell}> </h4>
           </div>
 
           <div className={classes.items}>

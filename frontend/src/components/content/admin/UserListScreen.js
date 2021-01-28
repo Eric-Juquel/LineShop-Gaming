@@ -44,11 +44,11 @@ const UserListScreen = ({ history }) => {
       ) : (
         <div className={classes.usersTable}>
           <div className={classes.entitled}>
-            <h2 className={classes.cell}>ID</h2>
-            <h2 className={classes.cell}>NAME</h2>
-            <h2 className={classes.cell}>EMAIL</h2>
-            <h2 className={classes.cell}>ADMIN</h2>
-            <h2 className={classes.cell}>{' '}</h2>
+            <h4 className={classes.cell}>ID</h4>
+            <h4 className={classes.cell}>NAME</h4>
+            <h4 className={classes.cell}>EMAIL</h4>
+            <h4 className={classes.cell}>ADMIN</h4>
+            <h4 className={classes.cell}>{' '}</h4>
           </div>
 
           <div className={classes.items}>

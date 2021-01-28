@@ -95,13 +95,13 @@ const ProductListScreen = ({ history, match }) => {
       ) : (
         <div className={classes.productsTable}>
           <div className={classes.entitled}>
-            <h2 className={classes.cell}>ID</h2>
-            <h2 className={classes.cell}>NAME</h2>
-            <h2 className={classes.cell}>IN STOCK</h2>
-            <h2 className={classes.cell}>PRICE</h2>
-            <h2 className={classes.cell}>CATEGORY</h2>
-            <h2 className={classes.cell}>BRAND</h2>
-            <h2 className={classes.cell}> </h2>
+            <h4 className={classes.cell}>ID</h4>
+            <h4 className={classes.cell}>NAME</h4>
+            <h4 className={classes.cell}>IN STOCK</h4>
+            <h4 className={classes.cell}>PRICE</h4>
+            <h4 className={classes.cell}>CATEGORY</h4>
+            <h4 className={classes.cell}>BRAND</h4>
+            <h4 className={classes.cell}> </h4>
           </div>
 
           <div className={classes.items}>

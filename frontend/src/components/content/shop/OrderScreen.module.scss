@@ -35,6 +35,7 @@
       margin-left: 2rem;
       transition: all 0.2s ease;
       display: inline-block;
+      color: $color-yellow-light;
       @include hoverlink;
     }
   }
@@ -58,7 +59,7 @@
     box-shadow: $box-shadow-dark;
     width: 100%;
     height: 80%;
-    padding: 1.5rem;
+    @include flexCenter;
   }
 
   & .statusSuccess {
@@ -81,6 +82,10 @@
     &:first-child {
       height: 28%;
     }
+  }
+
+  & .total {
+    font-weight: 600;
   }
 }
 
@@ -111,9 +116,9 @@
   height: 60%;
 
   & p {
-    color:orangered;
-    font-size:1rem;
-    margin-top:1rem;
+    color: orangered;
+    font-size: 1rem;
+    margin-top: 1rem;
   }
 }
 

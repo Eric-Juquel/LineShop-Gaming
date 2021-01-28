@@ -40,6 +40,7 @@
     width: 10rem;
     height: 4rem;
     @include btn3d;
+    letter-spacing: 1px;
   }
 
   & .account {

@@ -92,13 +92,13 @@ const CartScreen = ({ match, history, location }) => {
           <h3>Subtotal </h3>
         </div>
 
-        <div style={{ padding: "0 20%" }}>
+        <div >
           <p>Items :</p>
-          <p>{cartItems.reduce((acc, item) => acc + item.qty, 0)}</p>
+          <p className={classes.num}>{cartItems.reduce((acc, item) => acc + item.qty, 0)}</p>
         </div>
-        <div style={{ padding: "0 20%" }}>
+        <div >
           <p>Price :</p>
-          <p>
+          <p className={classes.num}>
             {new Intl.NumberFormat().format(
               cartItems
                 .reduce((acc, item) => acc + item.qty * item.price, 0)

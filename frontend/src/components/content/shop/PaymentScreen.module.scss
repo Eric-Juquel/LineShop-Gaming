@@ -47,7 +47,6 @@
     display: inline-block;
     position: absolute;
     left: 0;
-    padding: 0;
 
     &::after {
       content: "";
@@ -56,6 +55,7 @@
       width: 1rem;
       border-radius: 50%;
       @include centerElement;
+      left:0.7rem;
       background-color: $color-blue-mid;
       opacity: 0;
       transition: opacity 0.2s;

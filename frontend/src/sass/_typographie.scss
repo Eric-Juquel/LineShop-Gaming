@@ -17,6 +17,8 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Montserrat&family=Open+Sans&family=Roboto&display=swap");
 
+
+
 h1,
 h2,
 h3,
@@ -28,35 +30,36 @@ h5 {
 h1 {
   margin-bottom: 5px;
   font-family: "Audiowide", cursive;
-  font-size: 2.8rem;
   color: $color-yellow-light;
   text-transform: uppercase;
 }
 
 h2 {
   font-family: "Montserrat", sans-serif;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   text-transform: uppercase;
   color: $color-blue-light;
 }
 
 h3 {
   font-family: "Audiowide", cursive;
-  font-size: 2rem;
+  font-size: 2.3rem;
   text-transform: capitalize;
   color: $color-yellow-light;
 }
 
 h4 {
   font-family: "Montserrat", sans-serif;
-  font-size: 2.2rem;
+  font-size: 2.1rem;
   text-transform: capitalize;
   color: $color-blue-light;
 }
 
 h5 {
   font-family: "Montserrat", sans-serif;
-  font-size: 2.2rem;
+  font-size: 2.1rem;
   text-transform: capitalize;
   color: $color-yellow-light;
 }
+
+
