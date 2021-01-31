@@ -7,7 +7,7 @@
   height: 100%;
   margin: 1rem;
   padding: 1.5rem;
-  box-shadow: $box-shadow-light;
+  // box-shadow: $box-shadow-light;
 
   display: grid;
   grid-template-rows: [title-start] 15% [title-end body-start] repeat(4, 22%) [body-end];

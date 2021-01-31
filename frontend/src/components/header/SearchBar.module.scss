@@ -23,6 +23,24 @@
       color: $color-grey-light-1;
     }
 
+    &:focus {
+      outline:none;
+      background-color: $color-grey-light-1;
+      color: $color-secondary;
+
+      & + .btn {
+            & .icon {
+              fill: $color-secondary;
+            }
+          }
+    
+          &::placeholder {
+            font-weight: 100;
+            color: $color-secondary;
+          }
+
+    }
+
     // &:focus {
     //   outline: none;
     //   width: 70%;
