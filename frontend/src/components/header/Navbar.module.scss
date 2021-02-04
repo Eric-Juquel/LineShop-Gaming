@@ -1,6 +1,10 @@
 @import "../../sass/variables";
 @import "../../sass/mixins";
 
+.navigationContainer {
+  grid-column: nav-start / nav-end;
+}
+
 .navigation {
   width: 100%;
   height: 100%;
@@ -17,14 +21,21 @@
   & .item {
     display: flex;
     align-items: center;
+
+    &.mobile {
+      display: none;
+      @media screen and (max-width: $bp-mobile) {
+        display: flex;
+      }
+    }
   }
 
   & .link {
     min-width: 120%;
-    outline:none;
+    outline: none;
     &:link {
       display: inline-block;
-      
+
       font-size: 3.5rem;
       font-family: $font-starwars-i;
       font-weight: 300;
@@ -45,11 +56,11 @@
 
     &:hover,
     &:active {
-      border-radius:4px;
-      background-position: 100%;
+      border-radius: 4px;
+      background-position: -90%;
       color: $color-grey-light-1;
       transform: translateY(-0.3rem);
-      clip-path: polygon(3rem 0, 100% 0, calc(100% - 3rem)  100%, 0 100%);
+      clip-path: polygon(3rem 0, 100% 0, calc(100% - 3rem) 100%, 0 100%);
     }
   }
 }

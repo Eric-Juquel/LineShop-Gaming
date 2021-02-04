@@ -34,6 +34,15 @@
     grid-gap: 2rem;
   }
 
+  @media screen  and (max-width: $bp-mobile-land) {
+    height:80%;
+    margin:auto;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows:repeat(6,90%);
+    grid-gap:3.5rem;
+
+  }
+
   &::-webkit-scrollbar {
     display: none;
   }

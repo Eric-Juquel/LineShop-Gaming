@@ -27,6 +27,10 @@
 
   & svg {
     font-size: 3rem;
+
+    @media only screen and (max-width: $bp-small) {
+      display:none;
+    }
   }
 }
 

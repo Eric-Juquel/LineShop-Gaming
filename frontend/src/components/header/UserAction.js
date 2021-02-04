@@ -13,7 +13,7 @@ const UserAction = () => {
   const { cartItems } = cart;
 
   return (
-    <>
+    <div className={classes.actionContainer}>
       {!userInfo ? (
         <nav className={classes.navigation}>
           <ul className={classes.list}>
@@ -78,20 +78,24 @@ const UserAction = () => {
           </div>
 
           <div className={classes.avatar}>
-            {userInfo && 
-            userInfo.avatar ? (
-              <img
-                src={userInfo.avatar}
-                alt="avatar"
-                title={`${userInfo.firstName} profile`}
-              />
-            ) : (
-              <div className={classes.noAvatar}>{userInfo.firstName.substring(0,1)}{' '}{userInfo.lastName.substring(0,1)}</div>
-            )}
+            <Link to={"/profile"}>
+              {userInfo && userInfo.avatar ? (
+                <img
+                  src={userInfo.avatar}
+                  alt="avatar"
+                  title={`${userInfo.firstName} profile`}
+                />
+              ) : (
+                <div className={classes.noAvatar}>
+                  {userInfo.firstName.substring(0, 1)}{" "}
+                  {userInfo.lastName.substring(0, 1)}
+                </div>
+              )}
+            </Link>
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

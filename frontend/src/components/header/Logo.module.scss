@@ -1,5 +1,6 @@
 .logo {
   outline:none;
+  grid-column: logo-start / logo-end;
   & img {
     width: 80%;
     margin:2rem 2rem 0 0;

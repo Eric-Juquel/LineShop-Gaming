@@ -7,11 +7,14 @@ import Searchbar from "./SearchBar";
 import UserAction from "./UserAction";
 
 const Header = () => {
+  const screenWidth = window.innerWidth;
+  console.log(screenWidth);
+
   return (
     <div className={classes.container}>
       <Logo />
 
-      <Navbar />
+      {screenWidth > 800 && <Navbar />}
 
       <Searchbar />
 

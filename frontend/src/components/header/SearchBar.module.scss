@@ -2,6 +2,8 @@
 @import "../../sass/mixins";
 
 .search {
+  grid-column: search-start / search-end;
+
   height: 100%;
   display: flex;
   align-items: center;
@@ -16,7 +18,7 @@
     padding: 0.7rem 2rem;
     border-radius: 100px;
     width: 80%;
-    transition: all 0.2s;
+    transition: all 0.5s;
     margin-right: -3.15rem;
 
     &::placeholder {
@@ -24,21 +26,20 @@
     }
 
     &:focus {
-      outline:none;
+      outline: none;
       background-color: $color-grey-light-1;
       color: $color-secondary;
 
       & + .btn {
-            & .icon {
-              fill: $color-secondary;
-            }
-          }
-    
-          &::placeholder {
-            font-weight: 100;
-            color: $color-secondary;
-          }
+        & .icon {
+          fill: $color-secondary;
+        }
+      }
 
+      &::placeholder {
+        font-weight: 100;
+        color: $color-secondary;
+      }
     }
 
     // &:focus {
