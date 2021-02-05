@@ -78,3 +78,18 @@
     transform: scale(1.1);
   }
 }
+
+.item.desktop {
+  @media only screen and (max-width: $bp-mobile-land) {
+    display:none;
+  }
+  
+}
+
+.admin, 
+.user {
+  @media only screen and (max-width: $bp-mobile-land) {
+    display:none;
+  }
+}
+

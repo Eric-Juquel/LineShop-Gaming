@@ -28,12 +28,12 @@ const UserAction = () => {
                 )}
               </Link>
             </li>
-            <li className={classes.item}>
+            <li className={`${classes.item} ${classes.desktop}`}>
               <Link className={classes.link} to="/register">
                 REGISTER
               </Link>
             </li>
-            <li className={classes.item}>
+            <li className={`${classes.item} ${classes.desktop}`}>
               <Link className={classes.link} to="/login">
                 LOGIN
               </Link>

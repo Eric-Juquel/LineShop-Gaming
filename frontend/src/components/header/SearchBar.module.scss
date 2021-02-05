@@ -9,6 +9,11 @@
   align-items: center;
   justify-content: center;
 
+  @media screen and (max-width:$bp-mobile-land) {
+    width:80%;
+    justify-self:flex-end;
+  }
+
   & .input {
     font-family: inherit;
     font-size: 1.5rem;
@@ -42,23 +47,7 @@
       }
     }
 
-    // &:focus {
-    //   outline: none;
-    //   width: 70%;
-    //   background-color: $color-grey-light-1;
-    //   color: $color-secondary;
-
-    //   & + .btn {
-    //     & .icon {
-    //       fill: $color-secondary;
-    //     }
-    //   }
-
-    //   &::placeholder {
-    //     font-weight: 100;
-    //     color: $color-secondary;
-    //   }
-    // }
+    
   }
 
   & .btn {

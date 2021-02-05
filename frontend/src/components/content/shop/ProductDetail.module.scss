@@ -10,6 +10,11 @@
   grid-template-columns: [image-start] repeat(2, 20%) [image-end detail-start] 26% [detail-end add-start] 28% [add-end];
   grid-template-rows: [back-start] 10% [back-end image-start] repeat(4, 20%) [image-end ];
   grid-gap: 2%;
+
+  @media screen and (max-width:$bp-mobile-land) {
+    grid-template-columns: [image-start] repeat(2, 15%) [image-end detail-start] 32% [detail-end add-start] 32% [add-end];
+    grid-template-rows: [back-start] 10% [back-end image-start] repeat(3, 22%) 14%[image-end ];
+  }
 }
 
 .btn {
@@ -62,6 +67,7 @@
 
   & p {
     text-align: justify;
+    overflow:auto;
   }
 }
 
@@ -91,7 +97,7 @@
     & button {
       width: 90%;
       height: 4rem;
-      margin: auto;
+      margin: 0 auto;
       @include btnFlat;
     }
   }

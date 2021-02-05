@@ -68,7 +68,7 @@ const ProductDetail = ({ history, match }) => {
       <button className={classes.btn} onClick={goBackHandler}>
         <IoIosReturnLeft />
         &nbsp;
-        <span className={classes.text}> Go Back</span>
+        <span className={classes.text}>Back</span>
       </button>
       {loading ? (
         <Spinner />
