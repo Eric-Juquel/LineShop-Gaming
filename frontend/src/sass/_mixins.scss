@@ -212,6 +212,8 @@
     padding: 1rem;
     display: flex;
     align-items: center;
+    overflow:hidden;
+    text-overflow:ellipsis;
   
     &:not(:last-child) {
       border-right: 1px solid $borderColor;

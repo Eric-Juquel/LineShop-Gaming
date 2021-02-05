@@ -43,6 +43,12 @@
 
   }
 
+  @media screen and (max-width:$bp-mobile-vert) {
+    grid-template-columns: 1fr;
+    grid-template-rows:repeat(12,50%);
+    grid-gap:3.5rem;
+  }
+
   &::-webkit-scrollbar {
     display: none;
   }

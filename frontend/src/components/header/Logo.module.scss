@@ -1,12 +1,22 @@
+@import "../../sass/variables.scss";
+
 .logo {
-  outline:none;
+  outline: none;
   grid-column: logo-start / logo-end;
+  grid-row: 1/ 2;
+
+  
   & img {
-    width: 80%;
-    margin:2rem 2rem 0 0;
+    width: 60%;
+    margin: 2rem 2rem 0 0;
     filter: invert(1) brightness(150%)
       drop-shadow(8px 3px 10px rgb(255, 252, 252));
     -webkit-filter: invert(1) brightness(150%)
       drop-shadow(8px 3px 10px rgb(255, 253, 253));
+
+    @media screen and (max-width:$bp-mobile-vert) {
+      width:70%;
+      margin: 2rem 6rem 0 0;
+    }
   }
 }

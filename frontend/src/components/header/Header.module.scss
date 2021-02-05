@@ -14,5 +14,11 @@
     margin-top:1rem;
   }
 
+  @media screen and (max-width: $bp-mobile-vert) {
+    grid-template-columns: [logo-start] 50% [logo-end action-start] 50% [action-end];
+    grid-template-rows: repeat(2, 1fr)
+    
+  }
+
   align-content: center;
 }

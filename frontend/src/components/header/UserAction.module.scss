@@ -5,8 +5,10 @@
 
 .actionContainer {
   grid-column: action-start / action-end;
+  grid-row:1 / 2;
   display:flex;
   justify-content:space-between;
+
 }
 
 .userCart {
@@ -41,6 +43,10 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+
+  @media screen and (max-width: $bp-mobile-land){
+    width:50%;
+  }
 }
 
 

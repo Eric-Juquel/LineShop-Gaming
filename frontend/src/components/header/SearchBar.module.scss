@@ -14,6 +14,13 @@
     justify-self:flex-end;
   }
 
+  @media screen and (max-width:$bp-mobile-vert) {
+    grid-column: logo-start / action-end;
+    grid-row:2 / 3;
+    width:100%;
+    justify-self:center;
+  }
+
   & .input {
     font-family: inherit;
     font-size: 1.5rem;
@@ -25,6 +32,11 @@
     width: 80%;
     transition: all 0.5s;
     margin-right: -3.15rem;
+
+    @media screen and (max-width:$bp-mobile-vert) {
+      height:4.5rem;
+    }
+    
 
     &::placeholder {
       color: $color-grey-light-1;
