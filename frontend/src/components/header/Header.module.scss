@@ -3,13 +3,15 @@
 .container {
   height: 100%;
   background-color: transparent;
-  padding: 2rem;
+  padding: 0 2rem;
 
   display: grid;
   grid-template-columns: [logo-start] 15% [logo-end nav-start] 30% [nav-end search-start] 20% [search-end action-start] 36% [action-end];
 
   @media screen and (max-width: $bp-mobile-land) {
     grid-template-columns: [logo-start] 20% [logo-end search-start] 50% [search-end action-start] 30% [action-end];
+
+    margin-top:1rem;
   }
 
   align-content: center;

@@ -1,21 +1,17 @@
 @import "../../sass/variables";
 @import "../../sass/mixins";
-@import "./Navbar.module.scss";
+@import './Navbar.module.scss';
+
 
 .actionContainer {
   grid-column: action-start / action-end;
-}
-
-.userLoged {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+  display:flex;
+  justify-content:space-between;
 }
 
 .userCart {
   width: 5rem;
+  @include flexCenter;
 
   & a {
     display: flex;
@@ -38,6 +34,16 @@
     margin: auto;
   }
 }
+
+.userLoged {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+
 
 .empty {
   width: 13rem;
@@ -76,6 +82,21 @@
 
   &:hover {
     transform: scale(1.1);
+  }
+}
+
+.burger {
+  display:none;
+
+  @media only screen and (max-width: $bp-mobile-land) {
+    display:block;
+    width:35%;
+  }
+}
+
+.actionContainer .navigation {
+  @media only screen and (max-width: $bp-mobile-land) {
+    width:50%;
   }
 }
 

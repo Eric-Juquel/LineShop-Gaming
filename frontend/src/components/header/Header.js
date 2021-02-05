@@ -8,7 +8,6 @@ import UserAction from "./UserAction";
 
 const Header = () => {
   const screenWidth = window.innerWidth;
-  console.log(screenWidth);
 
   return (
     <div className={classes.container}>

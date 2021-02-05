@@ -3,11 +3,13 @@
 
 .navigationContainer {
   grid-column: nav-start / nav-end;
+ 
 }
 
 .navigation {
   width: 100%;
   height: 100%;
+
   & .list {
     width: 100%;
     height: 100%;
@@ -16,6 +18,12 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+
+    @media screen and (max-width: $bp-mobile-land) {
+      @include centerElement;
+      flex-direction: column;
+      justify-content: center;
+    }
   }
 
   & .item {
@@ -24,8 +32,9 @@
 
     &.mobile {
       display: none;
-      @media screen and (max-width: $bp-mobile) {
+      @media screen and (max-width: $bp-mobile-land) {
         display: flex;
+        margin:1rem;
       }
     }
   }
@@ -35,7 +44,6 @@
     outline: none;
     &:link {
       display: inline-block;
-
       font-size: 3.5rem;
       font-family: $font-starwars-i;
       font-weight: 300;
@@ -52,15 +60,22 @@
       background-size: 230%;
       clip-path: polygon(3rem 0, 100% 0, calc(100% - 3rem) 100%, 0 100%);
       transition: all 0.4s;
+
+      @media screen and (max-width: $bp-mobile-land) {
+        clip-path: none;
+        font-size:4rem;
+      }
     }
 
     &:hover,
     &:active {
-      border-radius: 4px;
-      background-position: -90%;
-      color: $color-grey-light-1;
-      transform: translateY(-0.3rem);
-      clip-path: polygon(3rem 0, 100% 0, calc(100% - 3rem) 100%, 0 100%);
+      @media screen and (min-width: $bp-mobile-land) {
+        border-radius: 4px;
+        background-position: -90%;
+        color: $color-grey-light-1;
+        transform: translateY(-0.3rem);
+        clip-path: polygon(3rem 0, 100% 0, calc(100% - 3rem) 100%, 0 100%);
+      }
     }
   }
 }

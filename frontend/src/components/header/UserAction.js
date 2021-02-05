@@ -4,8 +4,11 @@ import { useSelector } from "react-redux";
 import classes from "./UserAction.module.scss";
 import cartIcon from "../../images/icones/marketplace-drawing-clipart-4.png";
 import DropdownButton from "./DropdownButton";
+import BurgerNavigation from "./BurgerNavigation";
 
 const UserAction = () => {
+  const screenWidth = window.innerWidth;
+
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
@@ -14,20 +17,20 @@ const UserAction = () => {
 
   return (
     <div className={classes.actionContainer}>
-      {!userInfo ? (
+      <div className={classes.userCart}>
+        <Link to="/cart">
+          <img className={classes.cart} src={cartIcon} alt="cart" />
+          {cart !== null && (
+            <div className={classes.qty}>
+              {" "}
+              {cartItems.reduce((acc, item) => acc + item.qty, 0)}
+            </div>
+          )}
+        </Link>
+      </div>
+      {!userInfo && screenWidth > 960 ? (
         <nav className={classes.navigation}>
           <ul className={classes.list}>
-            <li className={classes.userCart}>
-              <Link to="/cart">
-                <img className={classes.cart} src={cartIcon} alt="cart" />
-                {cart !== null && (
-                  <div className={classes.qty}>
-                    {" "}
-                    {cartItems.reduce((acc, item) => acc + item.qty, 0)}
-                  </div>
-                )}
-              </Link>
-            </li>
             <li className={`${classes.item} ${classes.desktop}`}>
               <Link className={classes.link} to="/register">
                 REGISTER
@@ -40,19 +43,10 @@ const UserAction = () => {
             </li>
           </ul>
         </nav>
+      ) : !userInfo && screenWidth <= 960 ? (
+        ""
       ) : (
         <div className={classes.userLoged}>
-          <div className={classes.userCart}>
-            <Link to="/cart">
-              <img className={classes.cart} src={cartIcon} alt="cart" />
-              {cart !== null && (
-                <div className={classes.qty}>
-                  {" "}
-                  {cartItems.reduce((acc, item) => acc + item.qty, 0)}
-                </div>
-              )}
-            </Link>
-          </div>
           <div className={classes.admin}>
             {userInfo && userInfo.isAdmin ? (
               <DropdownButton
@@ -95,6 +89,9 @@ const UserAction = () => {
           </div>
         </div>
       )}
+      <div className={classes.burger}>
+        <BurgerNavigation />
+      </div>
     </div>
   );
 };

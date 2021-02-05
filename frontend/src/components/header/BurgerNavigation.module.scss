@@ -1,0 +1,107 @@
+@import "../../sass/variables.scss";
+@import "./Navbar.module.scss";
+
+
+
+.btn {
+  background-color: $color-grey-light-1;
+  height: 7rem;
+  width: 7rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 1.5rem;
+  right: 2.5rem;
+  z-index: 2000;
+  box-shadow: 0 1px 8px rgba($color-grey-light-2, 0.8);
+  text-align: center;
+  cursor: pointer;
+}
+
+.background {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 2rem;
+  right: 3rem;
+  background-image: radial-gradient($color-grey-dark, $color-secondary);
+  z-index: 1000;
+  transition: transform 0.8s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.navbar {
+  
+  height: 100vh;
+  max-width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1500;
+  transition: all 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+  width: 0;
+  opacity: 0;
+}
+
+// FUNCTIONALITY
+.checkbox {
+  display: none;
+
+  &:checked ~ .background {
+    transform: scale(50);
+  }
+
+  &:checked ~ .navbar {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+// ICON
+.icon {
+  position: relative;
+  margin-top: 3.3rem;
+  &,
+  &::before,
+  &::after {
+    width: 3rem;
+    height: 0.3rem;
+    background-color: $color-secondary;
+    display: inline-block;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    transition: all 0.2s;
+  }
+
+  &::before {
+    top: -1rem;
+  }
+
+  &::after {
+    top: 1rem;
+  }
+}
+
+.checkbox:checked + .btn .icon {
+    background-color: transparent;
+}
+
+.checkbox:checked + .btn .icon::before {
+    top:0;
+    transform: rotate(135deg);
+}
+
+.checkbox:checked + .btn .icon::after {
+    top:0;
+    transform: rotate(-135deg);
+}
+
+
+
+
+
