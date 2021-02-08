@@ -9,8 +9,8 @@
   width: 7rem;
   border-radius: 50%;
   position: fixed;
-  top: 1.5rem;
-  right: 2.5rem;
+  top: 5%;
+  right: 4%;
   z-index: 2000;
   box-shadow: 0 1px 8px rgba($color-grey-light-2, 0.8);
   text-align: center;
@@ -22,8 +22,8 @@
   width: 6rem;
   border-radius: 50%;
   position: fixed;
-  top: 2rem;
-  right: 3rem;
+  top: 5.5%;
+  right: 4.5%;
   background-image: radial-gradient($color-grey-dark, $color-secondary);
   z-index: 1000;
   transition: transform 0.8s cubic-bezier(0.83, 0, 0.17, 1);

@@ -9,11 +9,73 @@
 }
 
 .copyright {
-  background-color: rgba($color-secondary,0.6);
-  display:flex;
-  align-items:center;
-  & svg{
-    margin-right:3px;
-    font-size:1.8rem;
+  background-color: rgba($color-secondary, 0.6);
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  & svg {
+    margin-right: 3px;
+    font-size: 1.8rem;
+  }
+}
+
+.demo {
+  height: 100%;
+  width: 60%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & .marquee {
+    width: 90%;
+    font-size: 2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    & p {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 25s linear infinite;
+
+      background: linear-gradient(
+        45deg,
+        $color-grey-light-1,
+        $color-blue-light,
+        $color-purple-light
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
+      display: inline-block;
+    }
+  }
+
+  & button {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    margin-left: 2px;
+
+    @media screen and (min-width: $bp-mobile-land) {
+      @include btn3d($color-blue-mid);
+    }
+
+    @media screen and(max-width:$bp-mobile-land) {
+      @include btnFlat($color-blue-mid);
+      @include flexCenter;
+    }
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
   }
 }

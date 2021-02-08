@@ -10,8 +10,6 @@
 
   @media screen and (max-width: $bp-mobile-land) {
     grid-template-columns: [logo-start] 20% [logo-end search-start] 50% [search-end action-start] 30% [action-end];
-
-    margin-top:1rem;
   }
 
   @media screen and (max-width: $bp-mobile-vert) {

@@ -94,21 +94,26 @@ input[type="checkbox"] {
   position: relative;
 
   & .input {
-    margin-left:4rem;
-    height:90%;
-    width:60%;
-    position:relative;
+    margin-left: 4rem;
+    height: 90%;
+    width: 60%;
+    position: relative;
     opacity: 0;
     z-index: 2;
+    cursor: pointer;
+
+    &:hover + .btnUpload {
+      filter: contrast(200%);
+    }
   }
 
   & .btnUpload {
-    margin-left:4rem;
+    margin-left: 4rem;
     width: 50%;
     height: 85%;
     @include centerElement;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     font-size: 1.8rem;
     border-radius: 4px;
@@ -117,7 +122,7 @@ input[type="checkbox"] {
     background-image: linear-gradient(to top, rgb(49, 49, 49), rgb(99, 97, 97));
 
     & svg {
-      margin-right: 3%;
+      margin-right: 5%;
     }
   }
 

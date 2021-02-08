@@ -44,6 +44,11 @@ a {
 
   grid-row-gap: 2rem;
 
+  @media screen and (max-width: $bp-mobile-land) {
+    grid-template-rows: [header-start] 20% [header-end main-start]repeat(4, 1fr) [main-end footer-start] 5% [footer-end];
+
+  }
+
   & .header {
     grid-row: header-start / header-end;
     grid-column: 1 / -1;
