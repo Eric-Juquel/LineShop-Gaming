@@ -3,25 +3,50 @@
 
 .container {
   width: 90%;
-  height: 95%;
+  height: 100%;
   display: flex;
   justify-content: space-evenly;
 
+  @media screen and (max-width: $bp-mobile-land) {
+    flex-direction: column;
+  }
+
   @include container;
+
+  @media screen and (max-width: $bp-mobile-land) {
+    padding: 1rem;
+  }
 
   & h1 {
     height: 10%;
     text-align: start;
+
+    @media screen and (min-width: $bp-mobile-vert) and (max-width: $bp-mobile-land) {
+      font-size:2rem;
+    }
   }
 }
 
 .profile,
 .orders {
   padding: 1.5rem;
+
+  @media screen and (max-width: $bp-mobile-land) {
+    padding: 0;
+  }
 }
 
 .profile {
   width: 25%;
+
+  @media screen and (max-width: $bp-mobile-land) {
+    width: 100%;
+    height: 35%;
+  }
+
+  @media screen and (max-width: $bp-mobile-vert) {
+    height: 50%;
+  }
 
   & .message {
     height: 6%;
@@ -37,14 +62,35 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    @media screen and (max-width: $bp-mobile-land) {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+  }
+
+  & .empty {
+    @media screen and (max-width: $bp-mobile-land) {
+      display: none;
+    }
   }
 
   & .formGroup {
     margin-bottom: 0.6rem;
     width: 85%;
 
+    @media screen and (max-width: $bp-mobile-land) {
+      width: 27%;
+    }
+
+    @media screen and (max-width: $bp-mobile-vert) {
+      width: 45%;
+    }
+
     &.upload {
-      height:4rem;
+      height: 4rem;
     }
   }
 
@@ -57,6 +103,16 @@
 
 .orders {
   width: 65%;
+
+  @media screen and (max-width: $bp-mobile-land) {
+    width: 100%;
+    height: 65%;
+  }
+
+  @media screen and (max-width: $bp-mobile-vert) {
+    height: 50%;
+  }
+    
 }
 
 .orderTable {

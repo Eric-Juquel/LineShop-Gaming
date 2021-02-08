@@ -21,7 +21,7 @@ const ProfileScreen = ({ history }) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [avatar, setAvatar] = useState('')
+  const [avatar, setAvatar] = useState("");
   const [message, setMessage] = useState(null);
   const [uploading, setUploading] = useState(false);
 
@@ -56,13 +56,13 @@ const ProfileScreen = ({ history }) => {
         setFirstName(user.firstName);
         setLastName(user.lastName);
         setEmail(user.email);
-        user.avatar && setAvatar(user.avatar)
+        user.avatar && setAvatar(user.avatar);
       }
     }
   }, [dispatch, history, userInfo, user]);
 
-  const onSubmit = async(data) => {
-    console.log('data', data)
+  const onSubmit = async (data) => {
+    console.log("data", data);
 
     let payload = {
       id: user._id,
@@ -87,18 +87,18 @@ const ProfileScreen = ({ history }) => {
 
         const { data } = await axios.post("/api/upload", formData, config);
 
-        console.log('data', data)
+        console.log("data", data);
 
-        payload.avatar = data
-        setUploading(false)
+        payload.avatar = data;
+        setUploading(false);
       } catch (error) {}
-      setUploading(false)
+      setUploading(false);
     }
 
     if (data.password !== data.confirmPassword) {
       setMessage("Passwords do not match");
     } else {
-      console.log('payload', payload)
+      console.log("payload", payload);
       dispatch(updateUserProfile(payload));
     }
   };
@@ -187,7 +187,7 @@ const ProfileScreen = ({ history }) => {
                   mandatory={false}
                 />
               </div>
-              <div className={classes.formGroup}></div>
+              <div className={`${classes.formGroup} ${classes.empty}`}></div>
               <div className={classes.formGroup}>
                 <TextField
                   type="password"

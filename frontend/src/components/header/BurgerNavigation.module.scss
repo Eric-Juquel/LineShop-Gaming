@@ -1,8 +1,6 @@
 @import "../../sass/variables.scss";
 @import "./Navbar.module.scss";
 
-
-
 .btn {
   background-color: $color-grey-light-1;
   height: 7rem;
@@ -15,6 +13,10 @@
   box-shadow: 0 1px 8px rgba($color-grey-light-2, 0.8);
   text-align: center;
   cursor: pointer;
+
+  @media screen and (max-width: $bp-mobile-vert) {
+    top: 2%;
+  }
 }
 
 .background {
@@ -27,10 +29,13 @@
   background-image: radial-gradient($color-grey-dark, $color-secondary);
   z-index: 1000;
   transition: transform 0.8s cubic-bezier(0.83, 0, 0.17, 1);
+
+  @media screen and (max-width: $bp-mobile-vert) {
+    top: 2.5%;
+  }
 }
 
 .navbar {
-  
   height: 100vh;
   max-width: 100%;
   position: fixed;
@@ -88,20 +93,15 @@
 }
 
 .checkbox:checked + .btn .icon {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 .checkbox:checked + .btn .icon::before {
-    top:0;
-    transform: rotate(135deg);
+  top: 0;
+  transform: rotate(135deg);
 }
 
 .checkbox:checked + .btn .icon::after {
-    top:0;
-    transform: rotate(-135deg);
+  top: 0;
+  transform: rotate(-135deg);
 }
-
-
-
-
-
