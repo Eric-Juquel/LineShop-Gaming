@@ -97,7 +97,7 @@ const ProductListScreen = ({ history, match }) => {
           <div className={classes.entitled}>
             <h4 className={classes.cell}>ID</h4>
             <h4 className={classes.cell}>NAME</h4>
-            <h4 className={classes.cell}>IN STOCK</h4>
+            <h4 className={classes.cell}>STOCK</h4>
             <h4 className={classes.cell}>PRICE</h4>
             <h4 className={classes.cell}>CATEGORY</h4>
             <h4 className={classes.cell}>BRAND</h4>

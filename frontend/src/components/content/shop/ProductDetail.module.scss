@@ -3,7 +3,7 @@
 
 .container {
   width: 80%;
-  height: 90%;
+  height: 100%;
   @include container;
 
   display: grid;
@@ -162,7 +162,7 @@
 
   & button {
     text-transform: uppercase;
-    height: 40%;
+    height: 5rem;
     width: 60%;
     @include btn3d;
   }

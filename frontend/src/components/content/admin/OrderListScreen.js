@@ -42,7 +42,7 @@ const OrderListScreen = ({ history }) => {
             <h4 className={classes.cell}>ID</h4>
             <h4 className={classes.cell}>USER</h4>
             <h4 className={classes.cell}>DATE</h4>
-            <h4 className={classes.cell}>TOTAL PRICE</h4>
+            <h4 className={classes.cell}>TOTAL</h4>
             <h4 className={classes.cell}>PAID</h4>
             <h4 className={classes.cell}>DELIVERED</h4>
             <h4 className={classes.cell}> </h4>

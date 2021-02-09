@@ -16,13 +16,19 @@
 
 .ordersTable {
   @include tableScroll;
+
+  & h4 {
+    @media screen and(max-width:$bp-mobile-land) {
+        font-size: 1.6rem;
+    }
+  }
 }
 
 .row,
 .entitled {
   width: 100%;
   display: grid;
-  grid-template-columns: [id-start]25%[id-end user-start]20%[user-end date-start] 10%[date-end price-start]15%[price-end paid-start]10%[paid-end deliver-start]10%[deliver-end action-start]10%[action-end];
+  grid-template-columns: [id-start]25%[id-end user-start]20%[user-end date-start] 13%[date-end price-start]10%[price-end paid-start]11%[paid-end deliver-start]11%[deliver-end action-start]10%[action-end];
 
   justify-items: stretch;
 

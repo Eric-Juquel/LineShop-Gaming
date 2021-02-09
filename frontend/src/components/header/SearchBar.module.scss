@@ -33,7 +33,7 @@
     transition: all 0.5s;
     margin-right: -3.15rem;
 
-    @media screen and (max-width:$bp-mobile-vert) {
+    @media screen and (max-width:$bp-mobile-land) {
       height:4.5rem;
     }
     

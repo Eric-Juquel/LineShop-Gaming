@@ -23,7 +23,7 @@ const Logout = ({ history }) => {
   };
 
   return (
-    <Modal ref={modalRef} height="20%" width="30%">
+    <Modal ref={modalRef} height="20rem" width="60rem">
       <div className={classes.logout}>
         <h4>would you like to logout ?</h4>
 

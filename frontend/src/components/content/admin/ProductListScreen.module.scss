@@ -28,6 +28,7 @@
       justify-content: flex-end;
       width: 20%;
       height: 80%;
+      margin-bottom:5px;
 
       & button {
         @include btn3d($color-yellow-light);
@@ -47,13 +48,19 @@
 
 .productsTable {
   @include tableScroll;
+
+  & h4 {
+    @media screen and(max-width:$bp-mobile-land) {
+        font-size: 1.6rem;
+    }
+  }
 }
 
 .row,
 .entitled {
   width: 100%;
   display: grid;
-  grid-template-columns: [id-start]25%[id-end name-start]18%[name-end stock-start] 10%[stock-end price-start]10%[price-end cat-start]10%[cat-end brand-start]12%[brand-end action-start]15%[action-end];
+  grid-template-columns: [id-start]25%[id-end name-start]18%[name-end stock-start] 7%[stock-end price-start]10%[price-end cat-start]13%[cat-end brand-start]12%[brand-end action-start]15%[action-end];
 
   justify-items: stretch;
 

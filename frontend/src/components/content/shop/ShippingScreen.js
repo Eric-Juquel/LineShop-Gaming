@@ -36,7 +36,7 @@ const ShippingScreen = ({ history }) => {
             type="text"
             register={register}
             error={errors}
-            inputwidth="100%"
+            inputwidth="50rem"
             inputheight="4rem"
             label="Address"
             name="address"
@@ -50,7 +50,7 @@ const ShippingScreen = ({ history }) => {
             type="text"
             register={register}
             error={errors}
-            inputwidth="100%"
+            inputwidth="50rem"
             inputheight="4rem"
             label="City"
             name="city"
@@ -64,7 +64,7 @@ const ShippingScreen = ({ history }) => {
             type="text"
             register={register}
             error={errors}
-            inputwidth="100%"
+            inputwidth="50rem"
             inputheight="4rem"
             label="Postal Code"
             name="postalCode"
@@ -77,7 +77,7 @@ const ShippingScreen = ({ history }) => {
           <SelectField
             control={control}
             error={errors}
-            inputwidth="100%"
+            inputwidth="50rem"
             inputheight="4rem"
             label="Country"
             name="country"
