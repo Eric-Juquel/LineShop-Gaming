@@ -57,7 +57,7 @@ const UserItem = ({ user, userInfo, deleteUser, editUser }) => {
           <FaUserMinus />
         </button>
       </div>
-      <Modal ref={modalRef} height="20%" width="30%">
+      <Modal ref={modalRef} height="20rem" width="60rem">
         <div className={classes.modal}>
           <h4>
             Delete{" "}

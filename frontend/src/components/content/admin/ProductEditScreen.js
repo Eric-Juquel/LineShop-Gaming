@@ -202,7 +202,7 @@ const ProductEditScreen = ({ match, history }) => {
               rows={6}
               cols={10}
               inputwidth="100%"
-              inputheight="19rem"
+              inputheight="100%"
               label="Description"
               name="description"
               placeholder="Enter Description"

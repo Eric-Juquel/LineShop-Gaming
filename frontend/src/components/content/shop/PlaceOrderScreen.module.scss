@@ -5,16 +5,36 @@
   width: 80%;
   height: 90%;
   @include container;
+
+  @media screen and (max-width:$bp-mobile-land) {
+    width:90%;
+  }
 }
 
 .content {
   width: 95%;
-  height: 95%;
+  height: 90%;
 
   display: grid;
   grid-template-columns: 72% 28%;
   grid-template-rows: repeat(2, 20%) repeat(2, 30%);
   grid-column-gap: 5%;
+
+  @media screen and (max-width:$bp-mobile-land) {
+    
+    display:flex;
+    flex-direction:column;
+    overflow:auto;
+    width: 100%;
+
+    & h2{
+      font-size:2rem;
+    }
+
+    & h3 {
+      font-size:1.8rem;
+    }
+  }
 
   & > div {
     padding: 1.5rem;
@@ -34,17 +54,20 @@
   grid-column: 1 / 2;
   grid-row: 1 / 2;
   border-bottom: 1px solid $color-blue-mid;
+  
 }
 
 .payment {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
   border-bottom: 1px solid $color-blue-mid;
+  
 }
 
 .order {
   grid-column: 1 / 2;
   grid-row: 3 / -1;
+  width:100%;
 
   & .items {
     display: flex;
@@ -60,7 +83,7 @@
       justify-content: space-between;
       align-items: center;
       max-width: 100%;
-      height: 33%;
+      min-height: 33%;
       padding: 0.5rem;
 
       & img {
@@ -94,6 +117,13 @@
   & h5 {
     text-transform: uppercase;
   }
+
+  @media screen and (max-width:$bp-mobile-land) {
+    width:60rem;
+    min-height:40rem;
+    margin:0 auto;
+  }
+
 }
 
 .card {

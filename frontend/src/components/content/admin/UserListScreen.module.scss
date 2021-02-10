@@ -3,12 +3,16 @@
 
 .container {
   width: 80%;
-  max-height: 95%; 
+  max-height: 100%; 
   @include container;
 
   & h1 {
     text-align: start;
     margin-bottom: 2rem;
+
+    @media screen and (max-width:$bp-mobile-land) {
+      margin:-2rem 0 .5rem 0;
+    }
   }
 }
 

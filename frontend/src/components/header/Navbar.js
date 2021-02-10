@@ -1,18 +1,22 @@
 import { set } from "mongoose";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import classes from "./Navbar.module.scss";
 import { useSelector } from "react-redux";
 
-const Navbar = ({ setIsChecked = null }) => {
+const Navbar = ({ isChecked, setIsChecked = null }) => {
   const [isAdmin, setIsAdmin] = useState(false);
 
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
+  useEffect (() => {
+    isChecked && setIsAdmin(false)
+  },[isChecked])
+
 
   return (
-    <div className={classes.navigationContainer}>
+    <div className={classes.navigationContainer} >
       <nav className={classes.navigation}>
         <ul className={classes.list}>
           {isAdmin === false ? (

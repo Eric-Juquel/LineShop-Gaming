@@ -23,7 +23,7 @@ const BurgerNavigation = () => {
       </label>
       <div className={classes.background}>&nbsp;</div>
       <div className={classes.navbar}>
-        <Navbar setIsChecked={setIsChecked} />
+        <Navbar setIsChecked={setIsChecked} isChecked={isChecked}/>
       </div>
     </div>
   );

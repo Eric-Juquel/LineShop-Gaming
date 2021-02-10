@@ -30,6 +30,10 @@
       height: 80%;
       margin-bottom:5px;
 
+      @media screen and (max-width:$bp-mobile-land) {
+        margin-top:-2.5rem;
+      }
+
       & button {
         @include btn3d($color-yellow-light);
         height: 4rem;

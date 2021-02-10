@@ -1,20 +1,20 @@
 @import "../auth/RegisterScreen.module.scss";
 
 .container {
-  height: 60%;
+  height: 35rem;
+  width: 100rem;
   display: flex;
   flex-direction: column;
   & h1 {
-    height:10%;
+    height: 10%;
     align-self: flex-start;
   }
 }
 
 .form {
-
-  padding:1rem;
-  height:90%;
-  
+  padding: 1rem;
+  height: 90%;
+  grid-template-rows: repeat(2, 30%) 10%;
 
   & .submit {
     grid-column: 1 / 2;
@@ -35,7 +35,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  
+
     & svg {
       font-size: 3rem;
     }
