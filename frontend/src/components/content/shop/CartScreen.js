@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { IoIosReturnLeft } from "react-icons/io";
-import { FaTrash } from "react-icons/fa";
 import { GiEmptyMetalBucketHandle } from "react-icons/gi";
 import classes from "./CartScreen.module.scss";
 import Meta from "../../Meta";

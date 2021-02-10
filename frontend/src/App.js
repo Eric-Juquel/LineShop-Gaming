@@ -43,6 +43,8 @@ const App = () => {
     xy: [0, 0],
     config: { mass: 10, tension: 550, friction: 140 },
   }));
+
+const stars = [1,2,4,5]
   return (
     <Router>
       <div className="App">
@@ -62,6 +64,13 @@ const App = () => {
             className={classes.card3}
             style={{ transform: props.xy.interpolate(trans3) }}
           />
+          <div className={classes.night} >
+            {stars.map((star, i) => {
+              return (
+                <div key={i} className={classes.shootingStar}></div>
+              )
+            })}
+          </div>
           <div className="container">
             <header className="header">
               <Header />

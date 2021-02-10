@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import classes from "./ProductListScreen.module.scss";
 import { FaRegEdit } from "react-icons/fa";
-import { FaTrash } from "react-icons/fa";
 import { GiEmptyMetalBucketHandle } from "react-icons/gi";
 
 import Modal from "../../Modal";

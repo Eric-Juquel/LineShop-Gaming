@@ -3,7 +3,6 @@
 
 .navigationContainer {
   grid-column: nav-start / nav-end;
- 
 }
 
 .navigation {
@@ -34,7 +33,13 @@
       display: none;
       @media screen and (max-width: $bp-mobile-land) {
         display: flex;
-        margin:1rem;
+        margin: 1rem;
+      }
+
+      &.portrait {
+        @media screen and (max-width: $bp-mobile-vert) {
+          display: none;
+        }
       }
     }
   }
@@ -63,7 +68,7 @@
 
       @media screen and (max-width: $bp-mobile-land) {
         clip-path: none;
-        font-size:4rem;
+        font-size: 4rem;
       }
     }
 

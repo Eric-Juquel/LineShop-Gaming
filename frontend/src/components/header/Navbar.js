@@ -1,4 +1,4 @@
-import { set } from "mongoose";
+
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import classes from "./Navbar.module.scss";
@@ -81,7 +81,7 @@ const Navbar = ({ isChecked, setIsChecked = null }) => {
               ) : (
                 <>
                   {userInfo.isAdmin && (
-                    <li className={`${classes.item} ${classes.mobile}`}>
+                    <li className={`${classes.item} ${classes.mobile} ${classes.portrait}`}>
                       <Link
                         className={classes.link}
                         to="#"
