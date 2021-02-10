@@ -6,6 +6,10 @@
   max-height: 100%; 
   @include container;
 
+  @media screen and (max-width: $bp-mobile-vert) {
+    width:95%;
+  }
+
   & h1 {
     text-align: start;
     margin-bottom: 2rem;
@@ -18,6 +22,7 @@
 
 .usersTable {
   @include tableScroll;
+
 }
 
 .row,

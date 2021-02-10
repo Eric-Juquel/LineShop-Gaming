@@ -11,9 +11,18 @@
   grid-template-rows: [back-start] 10% [back-end image-start] repeat(4, 20%) [image-end ];
   grid-gap: 2%;
 
-  @media screen and (max-width:$bp-mobile-land) {
+  @media screen and (max-width: $bp-mobile-land) {
     grid-template-columns: [image-start] repeat(2, 15%) [image-end detail-start] 32% [detail-end add-start] 32% [add-end];
     grid-template-rows: [back-start] 10% [back-end image-start] repeat(3, 22%) 14%[image-end ];
+  }
+
+  @media screen and (max-width: $bp-mobile-vert) {
+    width: 95%;
+
+    grid-template-columns:
+      [image-start] repeat(2, 20%) [image-end detail-start] repeat(2, 27.5%)
+      [detail-end];
+    grid-template-rows: [back-start] 10% [back-end image-start] repeat(3, 10%) [image-end write-start] 10% [write-end add-start] 35% [add-end];
   }
 }
 
@@ -21,8 +30,8 @@
   grid-column: 1 / 2;
   grid-row: back-start / back-end;
 
-  width: 50%;
-  height: 80%;
+  width: 16rem;
+  height: 5rem;
 
   @include btn3d($color-grey-light-1);
 
@@ -34,7 +43,7 @@
     font-size: 3rem;
 
     @media only screen and (max-width: $bp-small) {
-      display:none;
+      display: none;
     }
   }
 }
@@ -43,17 +52,33 @@
   grid-column: image-start / image-end;
   grid-row: image-start/ image-end;
 
+  @media screen and (max-width: $bp-mobile-vert) {
+    grid-column: image-start / image-end;
+    grid-row: image-start/ image-end;
+  }
+
   @include flexCenter;
 
   & img {
     width: auto;
     height: 90%;
+
+    @media screen and (max-width: $bp-mobile-vert) {
+      width: 90%;
+      height: auto;
+    }
   }
 }
 
 .details {
-  grid-column: detail-start / detail-end;
+  grid-column: back-start / detail-end;
   grid-row: 1 / 5;
+
+  @media screen and (max-width: $bp-mobile-vert) {
+    grid-column: detail-start / detail-end;
+    grid-row: back-start / write-end;
+    justify-content: flex-start;
+  }
 
   display: flex;
   flex-direction: column;
@@ -63,17 +88,31 @@
   & hr {
     width: 70%;
     color: $color-purple-mid;
+
+    @media screen and (max-width: $bp-mobile-vert) {
+      margin:1rem 0;
+    }
+  
   }
 
   & p {
     text-align: justify;
-    overflow:auto;
+    overflow-y: auto;
+
+    @media screen and (max-width: $bp-mobile-vert) {
+      margin-top:1rem;
+    }
   }
 }
 
 .add {
   grid-column: add-start / add-end;
   grid-row: 1/ 4;
+
+  @media screen and (max-width: $bp-mobile-vert) {
+    grid-column: detail-start / detail-end;
+    grid-row: add-start / add-end;
+  }
 
   width: 80%;
   height: 85%;
@@ -103,7 +142,7 @@
   }
 
   & strong {
-    font-weight:600;
+    font-weight: 600;
   }
 
   & .qty {
@@ -150,6 +189,11 @@
   grid-column: detail-start / detail-end;
   grid-row: 5 / image-end;
 
+  @media screen and (max-width: $bp-mobile-vert) {
+    grid-column: image-start / image-end;
+    grid-row: write-start / write-end;
+  }
+
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -163,7 +207,7 @@
   & button {
     text-transform: uppercase;
     height: 5rem;
-    width: 60%;
+    width: 20rem;
     @include btn3d;
   }
 
@@ -178,6 +222,11 @@
   grid-column: add-start / add-end;
   grid-row: 4 / image-end;
 
+  @media screen and (max-width: $bp-mobile-vert) {
+    grid-column: image-start / image-end;
+    grid-row: add-start / add-end;
+  }
+
   border: 1px solid $color-blue-mid;
   border-radius: 4px;
   display: flex;
@@ -188,12 +237,12 @@
   & h2 {
     height: 20%;
     width: 100%;
-    position:relative;
+    position: relative;
     & span {
-      color:$color-blue-mid;
+      color: $color-blue-mid;
       font-size: 1.8rem;
-      display:inline-block;
-      transform:translateY(-2px)
+      display: inline-block;
+      transform: translateY(-2px);
     }
   }
 
@@ -256,6 +305,10 @@
     justify-content: space-evenly;
     align-items: center;
 
+    @media screen and (max-width: $bp-mobile-vert) {
+      height:90%;
+    }
+
     & .formGroup,
     & .btnGroup {
       width: 100%;
@@ -269,6 +322,10 @@
         height: 100%;
         width: 40%;
         margin: auto;
+
+        @media screen and (max-width: $bp-mobile-vert) {
+          height:4rem;
+        }
 
         &.submit {
           @include btn3d($color-success);

@@ -5,6 +5,10 @@
   height: 10%;
   margin: auto;
 
+  @media screen and (max-width: $bp-mobile-vert) {
+    width:48rem;
+  }
+
   & .list {
     width: 100%;
     display: flex;

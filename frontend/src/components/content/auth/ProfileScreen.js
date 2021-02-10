@@ -6,6 +6,7 @@ import Moment from "react-moment";
 import { useForm } from "react-hook-form";
 import classes from "./ProfileScreen.module.scss";
 import { GiSplitCross } from "react-icons/gi";
+import { BsEye } from "react-icons/bs";
 import Spinner from "../../Spinner";
 import ErrorComponent from "../../ErrorComponent";
 import TextField from "../forms/TextField";
@@ -267,7 +268,10 @@ const ProfileScreen = ({ history }) => {
                     </div>
                     <div className={classes.cell}>
                       <Link to={`/order/${order._id}`}>
-                        <button>Details</button>
+                        <button>
+                          <BsEye />
+                          <p>Detail</p>
+                        </button>
                       </Link>
                     </div>
                   </div>

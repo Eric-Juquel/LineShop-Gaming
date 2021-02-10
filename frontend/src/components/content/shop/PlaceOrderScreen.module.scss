@@ -6,9 +6,14 @@
   height: 90%;
   @include container;
 
-  @media screen and (max-width:$bp-mobile-land) {
-    width:90%;
+  @media screen and (max-width: $bp-mobile-land) {
+    width: 90%;
   }
+
+  @media screen and (max-width: $bp-mobile-vert) {
+    height:95%;
+  }
+  
 }
 
 .content {
@@ -20,19 +25,18 @@
   grid-template-rows: repeat(2, 20%) repeat(2, 30%);
   grid-column-gap: 5%;
 
-  @media screen and (max-width:$bp-mobile-land) {
-    
-    display:flex;
-    flex-direction:column;
-    overflow:auto;
+  @media screen and (max-width: $bp-mobile-land) {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
     width: 100%;
 
-    & h2{
-      font-size:2rem;
+    & h2 {
+      font-size: 2rem;
     }
 
     & h3 {
-      font-size:1.8rem;
+      font-size: 1.8rem;
     }
   }
 
@@ -54,20 +58,18 @@
   grid-column: 1 / 2;
   grid-row: 1 / 2;
   border-bottom: 1px solid $color-blue-mid;
-  
 }
 
 .payment {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
   border-bottom: 1px solid $color-blue-mid;
-  
 }
 
 .order {
   grid-column: 1 / 2;
   grid-row: 3 / -1;
-  width:100%;
+  width: 100%;
 
   & .items {
     display: flex;
@@ -78,6 +80,10 @@
     overflow-y: auto;
     scrollbar-width: thin !important;
 
+    @media screen and (max-width: $bp-mobile-vert) {
+      height: 30rem;
+    }
+
     & .item {
       display: flex;
       justify-content: space-between;
@@ -85,6 +91,13 @@
       max-width: 100%;
       min-height: 33%;
       padding: 0.5rem;
+
+      @media screen and (max-width: $bp-mobile-vert) {
+        margin-top:1rem;
+        min-height:4rem;
+        max-height:4rem;
+        
+       }
 
       & img {
         height: 100%;
@@ -118,12 +131,17 @@
     text-transform: uppercase;
   }
 
-  @media screen and (max-width:$bp-mobile-land) {
-    width:60rem;
-    min-height:40rem;
-    margin:0 auto;
+  @media screen and (max-width: $bp-mobile-land) {
+    width: 60rem;
+    min-height: 40rem;
+    margin: 0 auto;
   }
 
+  @media screen and (max-width: $bp-mobile-vert) {
+    width: 90%;
+   min-height: 35rem;
+    
+   }
 }
 
 .card {
@@ -162,7 +180,7 @@
     }
 
     & .price {
-      font-weight:600;
+      font-weight: 600;
     }
 
     & button {

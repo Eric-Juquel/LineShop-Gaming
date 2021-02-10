@@ -7,6 +7,10 @@
   @include container;
   text-align: start;
 
+  @media screen and (max-width: $bp-mobile-vert) {
+    width:90%;
+   }
+
   & h1 {
     height: 10%;
   }

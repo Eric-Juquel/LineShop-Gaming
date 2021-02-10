@@ -2,14 +2,16 @@ import React from "react";
 import classes from "./OrderListScreen.module.scss";
 import Moment from "react-moment";
 import { GiSplitCross } from "react-icons/gi";
+import { BsEye } from "react-icons/bs";
 
 const OrderItem = ({ order, orderDetail }) => {
-
-    console.log('order', order) 
+  console.log("order", order);
   return (
     <div className={classes.row}>
       <div className={classes.cell}>{order._id}</div>
-      <div className={classes.cell}>{order.user && order.user.firstName}{' '}{order.user && order.user.lastName}</div>
+      <div className={classes.cell}>
+        {order.user && order.user.firstName} {order.user && order.user.lastName}
+      </div>
       <div className={classes.cell}>
         <Moment format="YYYY/MM/DD">{order.createdAt}</Moment>
       </div>
@@ -36,7 +38,8 @@ const OrderItem = ({ order, orderDetail }) => {
           className={classes.detail}
           onClick={() => orderDetail(`/order/${order._id}`)}
         >
-          Detail
+          <BsEye />
+          <p>Detail</p>
         </button>
       </div>
     </div>
