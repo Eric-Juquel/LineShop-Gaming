@@ -41,7 +41,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  
+  z-index: 1500;
   transition: all 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 
   width: 0;
@@ -58,7 +58,7 @@
   }
 
   &:checked ~ .navbar {
-    z-index: 1500;
+    
     margin-left:0;
     width: 100%;
     opacity: 1;
