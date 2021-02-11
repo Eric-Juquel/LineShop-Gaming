@@ -10,7 +10,8 @@
     "client": "npm start --prefix frontend",
     "dev": "concurrently \"yarn server\" \"yarn client\"",
     "data:import": "node backend/seeder",
-    "data:destroy": "node backend/seeder -d"
+    "data:destroy": "node backend/seeder -d",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn install --prefix frontend && yarn build --prefix frontend"
   },
   "repository": "https://github.com/Eric-Juquel/LineShop-Gaming.git",
   "author": "Eric J <ejuquel@yahoo.fr>",
