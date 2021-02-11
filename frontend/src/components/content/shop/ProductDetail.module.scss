@@ -71,7 +71,7 @@
 }
 
 .details {
-  grid-column: back-start / detail-end;
+  grid-column: detail-start / detail-end;
   grid-row: 1 / 5;
 
   @media screen and (max-width: $bp-mobile-vert) {
