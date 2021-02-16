@@ -10,7 +10,7 @@ const Footer = () => {
       {active === true ? (
         <div className={classes.demo}>
         <div className={classes.marquee}>
-          <p>This is a DEMO store for testing e-commerce fullStack MERN project using modern React Hooks - Redux - Sass - Flex - Grid , full responsive ...</p>
+          <p>This is a DEMO store for testing e-commerce fullStack MERN project using modern React Hooks - Redux - Sass - Flex - Grid , full responsive(Chrome and Firefox) ...</p>
           </div>
         <button onClick={() => setActive(false)}>X</button>
         </div>
