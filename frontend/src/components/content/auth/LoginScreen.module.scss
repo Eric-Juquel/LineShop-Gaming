@@ -11,6 +11,10 @@
   font-size: 1.5rem;
   border-radius: 4px;
 
+  @media screen and (max-width:$bp-mobile-land) {
+    height:100%;
+  }
+
   & h1 {
     height: 15%;
   }
@@ -34,7 +38,7 @@
 
   & button {
     margin: 0 auto;
-    height: 4rem;
+    min-height: 4rem;
     width: 10rem;
     @include btn3d;
     letter-spacing: 1px;

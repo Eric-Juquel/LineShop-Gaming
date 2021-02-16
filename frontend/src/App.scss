@@ -7,7 +7,7 @@ body,
 #root {
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow: hidden !important;
 }
 
 #root {
@@ -30,13 +30,15 @@ a {
 }
 
 .container {
+  overflow: hidden;
+
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
 
   display: grid;
   grid-template-rows: [header-start] 10% [header-end main-start]repeat(4, 1fr) [main-end footer-start] 5% [footer-end];
@@ -46,7 +48,6 @@ a {
 
   @media screen and (max-width: $bp-mobile-land) {
     grid-template-rows: [header-start] 20% [header-end main-start]repeat(4, 1fr) [main-end footer-start] 7% [footer-end];
-
   }
 
   @media screen and (max-width: $bp-mobile-vert) {
@@ -70,5 +71,3 @@ a {
     grid-column: 1 / -1;
   }
 }
-
-

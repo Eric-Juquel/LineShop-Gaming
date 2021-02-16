@@ -21,7 +21,7 @@ const BurgerNavigation = () => {
       <label htmlFor="navi" className={classes.btn} onClick={checkHandler}>
         <span className={classes.icon}>&nbsp;</span>
       </label>
-      <div className={classes.background}>&nbsp;</div>
+      <div className={classes.background}></div>
       <div className={classes.navbar}>
         <Navbar setIsChecked={setIsChecked} isChecked={isChecked}/>
       </div>

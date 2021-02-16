@@ -46,7 +46,7 @@
 
   width: 0;
   opacity: 0;
-  margin-left:-20rem;
+  margin-left: -20rem;
 }
 
 // FUNCTIONALITY
@@ -54,12 +54,11 @@
   display: none;
 
   &:checked ~ .background {
-    transform: scale(50);
+    transform: scale(80) 
   }
 
   &:checked ~ .navbar {
-    
-    margin-left:0;
+    margin-left: 0;
     width: 100%;
     opacity: 1;
   }

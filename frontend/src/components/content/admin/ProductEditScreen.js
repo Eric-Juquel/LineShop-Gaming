@@ -214,7 +214,7 @@ const ProductEditScreen = ({ match, history }) => {
           <button className={classes.submit} type="submit">
             Update
           </button>
-          <button className={classes.back} onClick={goBackHandler}>
+          <button className={classes.back} type="button" onClick={goBackHandler}>
             <IoIosReturnLeft />
             &nbsp;
             <span className={classes.text}> Go Back</span>

@@ -96,7 +96,7 @@ const RegisterScreen = ({ location, history }) => {
             mandatory={true}
           />
         </div>
-        <div className={classes.formGroup}></div>
+        <div className={`${classes.formGroup} ${classes.empty}`}></div>
         <div className={classes.formGroup}>
           <TextField
             type="password"
