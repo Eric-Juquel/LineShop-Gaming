@@ -116,7 +116,7 @@
 
   align-items: stretch;
   width: 91%;
-  margin: -15% auto 0 auto;
+  margin: 0 auto 0 auto;
   background-color: white;
   border-radius: 4px;
   box-shadow: $box-shadow-dark;
@@ -134,7 +134,7 @@
 }
 
 .content .paypalBtn {
-  height: 120%;
+  height: 100%;
   overflow-y: auto;
   scrollbar-width: none;
 
