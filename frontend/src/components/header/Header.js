@@ -7,7 +7,6 @@ import Searchbar from "./SearchBar";
 import UserAction from "./UserAction";
 
 const Header = () => {
-  const screenWidth = window.innerWidth;
 
   return (
     <div className={classes.container}>
