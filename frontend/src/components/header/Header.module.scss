@@ -20,3 +20,9 @@
 
   align-content: center;
 }
+
+.navigation {
+  @media screen and (max-width:$bp-mobile-land) {
+    display:none;
+  }
+}

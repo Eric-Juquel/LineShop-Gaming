@@ -13,7 +13,9 @@ const Header = () => {
     <div className={classes.container}>
       <Logo />
 
-      {screenWidth > 960 && <Navbar />}
+      <div className={classes.navigation}>
+        <Navbar />
+      </div>
 
       <Searchbar />
 

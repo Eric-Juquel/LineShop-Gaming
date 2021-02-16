@@ -1,22 +1,20 @@
 @import "../../sass/variables";
 @import "../../sass/mixins";
-@import './Navbar.module.scss';
-
+@import "./Navbar.module.scss";
 
 .actionContainer {
   grid-column: action-start / action-end;
-  grid-row:1 / 2;
-  display:flex;
-  justify-content:space-between;
-
+  grid-row: 1 / 2;
+  display: flex;
+  justify-content: space-between;
 }
 
 .userCart {
   width: 5rem;
   @include flexCenter;
 
-  @media screen and (max-width: $bp-mobile-land){
-    width:25%;
+  @media screen and (max-width: $bp-mobile-land) {
+    width: 25%;
   }
 
   & a {
@@ -48,12 +46,16 @@
   align-items: center;
   justify-content: space-evenly;
 
-  @media screen and (max-width: $bp-mobile-land){
-    width:20%;
+  @media screen and (max-width: $bp-mobile-land) {
+    width: 20%;
   }
 }
 
-
+.navigation {
+  @media screen and (max-width: $bp-mobile-land) {
+    display: none;
+  }
+}
 
 .empty {
   width: 13rem;
@@ -77,11 +79,11 @@
 
 .noAvatar {
   @include flexCenter;
-  text-transform:uppercase;
-  font-size:1.8rem;
-  color:$color-secondary;
-  font-weight:600;
-  background-color:$color-blue-light;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  color: $color-secondary;
+  font-weight: 600;
+  background-color: $color-blue-light;
   cursor: pointer;
   width: 4.5rem;
   height: 4.5rem;
@@ -96,31 +98,29 @@
 }
 
 .burger {
-  display:none;
+  display: none;
 
   @media only screen and (max-width: $bp-mobile-land) {
-    display:block;
-    width:40%;
+    display: block;
+    width: 40%;
   }
 }
 
 .actionContainer .navigation {
   @media only screen and (max-width: $bp-mobile-land) {
-    width:50%;
+    width: 50%;
   }
 }
 
 .item.desktop {
   @media only screen and (max-width: $bp-mobile-land) {
-    display:none;
+    display: none;
   }
-  
 }
 
-.admin, 
+.admin,
 .user {
   @media only screen and (max-width: $bp-mobile-land) {
-    display:none;
+    display: none;
   }
 }
-

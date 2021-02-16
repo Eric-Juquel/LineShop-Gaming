@@ -16,12 +16,11 @@
     @media screen and (max-width: $bp-mobile-land) {
       width: 80%;
       height:90%;
-      margin:1rem 0;
+      margin:1rem 0 0 -1rem;
     }
 
     @media screen and (max-width: $bp-mobile-vert) {
       width: 70%;
-      margin: 2rem 6rem 0 0;
     }
   }
 }

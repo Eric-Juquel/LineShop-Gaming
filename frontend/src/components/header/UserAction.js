@@ -7,7 +7,6 @@ import DropdownButton from "./DropdownButton";
 import BurgerNavigation from "./BurgerNavigation";
 
 const UserAction = () => {
-  const screenWidth = window.innerWidth;
 
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
@@ -28,7 +27,7 @@ const UserAction = () => {
           )}
         </Link>
       </div>
-      {!userInfo && screenWidth > 960 ? (
+      {!userInfo  ? (
         <nav className={classes.navigation}>
           <ul className={classes.list}>
             <li className={`${classes.item} ${classes.desktop}`}>
@@ -43,9 +42,7 @@ const UserAction = () => {
             </li>
           </ul>
         </nav>
-      ) : !userInfo && screenWidth <= 960 ? (
-        ""
-      ) : (
+      ) :  (
         <div className={classes.userLoged}>
           <div className={classes.admin}>
             {userInfo && userInfo.isAdmin ? (

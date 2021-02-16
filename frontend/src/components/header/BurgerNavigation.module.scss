@@ -16,6 +16,8 @@
 
   @media screen and (max-width: $bp-mobile-vert) {
     top: 2%;
+    height:6rem;
+    width:6rem;
   }
 }
 
@@ -32,6 +34,8 @@
 
   @media screen and (max-width: $bp-mobile-vert) {
     top: 2.5%;
+    height:5rem;
+    width:5rem;
   }
 }
 
@@ -68,6 +72,11 @@
 .icon {
   position: relative;
   margin-top: 3.3rem;
+
+  @media screen and (max-width: $bp-mobile-vert) {
+    margin-top: 2.9rem;
+  }
+  
   &,
   &::before,
   &::after {
