@@ -22,6 +22,7 @@
 }
 
 .navigation {
+  margin:auto;
   @media screen and (max-width:$bp-mobile-land) {
     display:none;
   }
