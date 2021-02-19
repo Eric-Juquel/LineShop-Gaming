@@ -52,7 +52,7 @@ const stars = [1,2,4,5]
           className={classes.container}
           onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}
         >
-          <animated.div
+          {/* <animated.div
             className={classes.card1}
             style={{ transform: props.xy.interpolate(trans1) }}
           />
@@ -63,7 +63,7 @@ const stars = [1,2,4,5]
           <animated.div
             className={classes.card3}
             style={{ transform: props.xy.interpolate(trans3) }}
-          />
+          /> */}
           <div className={classes.night} >
             {stars.map((star, i) => {
               return (
