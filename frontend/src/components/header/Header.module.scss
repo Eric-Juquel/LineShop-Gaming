@@ -22,7 +22,8 @@
 }
 
 .navigation {
-  margin:auto;
+  grid-column: nav-start / nav-end;
+  margin: auto 0;
   @media screen and (max-width:$bp-mobile-land) {
     display:none;
   }
