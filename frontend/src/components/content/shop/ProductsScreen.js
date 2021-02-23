@@ -25,16 +25,20 @@ const ProductsScreen = ({ match }) => {
   return (
     <>
       <Meta />
-      { error ? (
+      {error ? (
         <ErrorComponent err={error} />
       ) : (
         <div className={classes.container}>
           <div className={classes.cardsContainer}>
-            {products.map((product) => (
-              <div key={product._id} className={classes.cardContainer}>
-                <ProductCard product={product} loading={loading}/>
-              </div>
-            ))}
+            {loading ? (
+              <Spinner />
+            ) : (
+              products.map((product) => (
+                <div key={product._id} className={classes.cardContainer}>
+                  <ProductCard product={product} />
+                </div>
+              ))
+            )}
           </div>
           <div className={classes.paginate}>
             <Paginate

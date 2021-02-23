@@ -21,9 +21,11 @@
   grid-column: 1 / -1;
   align-self: flex-start;
   margin-top: -4px;
+  transition:all 0.2s;
 
-  &:hover {
-    text-decoration: underline;
+  & h3:hover {
+    
+    color:$color-blue-light;
   }
 }
 
