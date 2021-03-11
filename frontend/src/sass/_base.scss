@@ -4,13 +4,13 @@
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+  scrollbar-width: thin !important;
+  scrollbar-color: $color-secondary-light $color-blue-mid;
 }
 
 html {
   box-sizing: border-box;
   font-size: 62.5%; // 10px/16px = 62.5% -> 1rem = 10px
-  scrollbar-width: thin !important;
-  scrollbar-color: $color-secondary-light $color-blue-mid;
 
   @media only screen and (max-width: $bp-largest) {
     font-size: 60%;
@@ -27,7 +27,6 @@ html {
   // @media only screen and (max-width: $bp-mobile-land) {
   //   font-size: 40%;
   // }
-
 }
 
 body {
@@ -45,13 +44,11 @@ body {
   // user-select: none;
   ::selection {
     background: rgba(0, 0, 0, 0.534); /* WebKit/Blink Browsers */
-    color:white;
+    color: white;
   }
   ::-moz-selection {
     background: rgba(0, 0, 0, 0.514); /* Gecko Browsers */
-    color:white;
+    color: white;
   }
   cursor: default;
 }
-
-
