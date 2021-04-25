@@ -2,20 +2,15 @@
 
 .carousel3d {
   perspective: 5000px;
-  margin: 10% auto auto auto ;
-  grid-row: 2 / span 2;
+  margin: 10% auto auto auto;
 
-  @media screen and (max-width:$bp-mobile-land) {
-    margin:5% auto;;
+  @media screen and (max-width: $bp-mobile-land) {
+    margin: 5% auto;
   }
 
-  @media screen and (max-width:$bp-mobile-vert) {
-    margin:30% auto;;
+  @media screen and (max-width: $bp-mobile-vert) {
+    margin: 30% auto;
   }
-
-  
-
- 
 }
 
 .allPlan {
@@ -26,24 +21,22 @@
   animation: Carousel 20s infinite linear;
   -webkit-animation: Carousel 20s infinite linear;
 
-  
-
   & img {
     position: absolute;
     height: 250px;
     width: 250px;
     text-align: center;
 
-    @media screen and (max-width:$bp-mobile-land) {
-      width:150px;
-      height:150px;
+    @media screen and (max-width: $bp-mobile-land) {
+      width: 150px;
+      height: 150px;
     }
   }
 
   & .p1 {
     transform: translateZ(380px);
 
-    @media screen and (max-width:$bp-mobile-land) {
+    @media screen and (max-width: $bp-mobile-land) {
       transform: translateZ(200px);
     }
   }
@@ -51,7 +44,7 @@
   & .p2 {
     transform: rotateY(60deg) translateZ(350px);
 
-    @media screen and (max-width:$bp-mobile-land) {
+    @media screen and (max-width: $bp-mobile-land) {
       transform: rotateY(60deg) translateZ(180px);
     }
   }
@@ -59,7 +52,7 @@
   & .p3 {
     transform: rotateY(120deg) translateZ(350px);
 
-    @media screen and (max-width:$bp-mobile-land) {
+    @media screen and (max-width: $bp-mobile-land) {
       transform: rotateY(120deg) translateZ(180px);
     }
   }
@@ -67,7 +60,7 @@
   & .p4 {
     transform: rotateY(180deg) translateZ(350px);
 
-    @media screen and (max-width:$bp-mobile-land) {
+    @media screen and (max-width: $bp-mobile-land) {
       transform: rotateY(180deg) translateZ(180px);
     }
   }
@@ -75,7 +68,7 @@
   & .p5 {
     transform: rotateY(240deg) translateZ(350px);
 
-    @media screen and (max-width:$bp-mobile-land) {
+    @media screen and (max-width: $bp-mobile-land) {
       transform: rotateY(240deg) translateZ(180px);
     }
   }
@@ -83,7 +76,7 @@
   & .p6 {
     transform: rotateY(300deg) translateZ(350px);
 
-    @media screen and (max-width:$bp-mobile-land) {
+    @media screen and (max-width: $bp-mobile-land) {
       transform: rotateY(300deg) translateZ(180px);
     }
   }

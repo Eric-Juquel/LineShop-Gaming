@@ -13,8 +13,6 @@ const ProductCard = ({ product }) => {
     history.push(`/cart/${_id}?qty=${1}`);
   };
 
-  console.log(window.innerWidth)
-
   return (
     <div className={classes.card}>
       <div className={classes.title}>
