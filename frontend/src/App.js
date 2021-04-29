@@ -1,36 +1,36 @@
-import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import "./App.scss";
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import './App.scss';
 
-import { useSpring, animated } from "react-spring";
-import classes from "./ParallaxBack.module.scss";
+import { useSpring, animated } from 'react-spring';
+import classes from './ParallaxBack.module.scss';
 
+import Header from './components/header/Header';
 
-import Header from "./components/header/Header";
+import Carousel3d from './components/content/Carousel3d';
+import ProductGallery from './components/content/ProductGallery';
 
-import Carousel3d from "./components/content/Carousel3d";
-import ProductGallery from "./components/content/ProductGallery"
+import LoginScreen from './components/content/auth/LoginScreen';
+import logout from './components/content/auth/Logout';
+import RegisterScreen from './components/content/auth/RegisterScreen';
+import ProfileScreen from './components/content/auth/ProfileScreen';
 
-import LoginScreen from "./components/content/auth/LoginScreen";
-import logout from "./components/content/auth/Logout";
-import RegisterScreen from "./components/content/auth/RegisterScreen";
-import ProfileScreen from "./components/content/auth/ProfileScreen";
+import UserListScreen from './components/content/admin/UserListScreen';
+import UserEditScreen from './components/content/admin/UserEditScreen';
+import ProductListScreen from './components/content/admin/ProductListScreen';
+import ProductEditScreen from './components/content/admin/ProductEditScreen';
+import OrderListScreen from './components/content/admin/OrderListScreen';
 
-import UserListScreen from "./components/content/admin/UserListScreen";
-import UserEditScreen from "./components/content/admin/UserEditScreen";
-import ProductListScreen from './components/content/admin/ProductListScreen'
-import ProductEditScreen from "./components/content/admin/ProductEditScreen";
-import OrderListScreen from './components/content/admin/OrderListScreen'
+import ProductsScreen from './components/content/shop/ProductsScreen';
+import ProductDetail from './components/content/shop/ProductDetail';
+import CartScreen from './components/content/shop/CartScreen';
+import ShippingScreen from './components/content/shop/ShippingScreen';
+import PaymentScreen from './components/content/shop/PaymentScreen';
+import PlaceOrderScreen from './components/content/shop/PlaceOrderScreen';
+import OrderScreen from './components/content/shop/OrderScreen';
 
-import ProductsScreen from "./components/content/shop/ProductsScreen";
-import ProductDetail from "./components/content/shop/ProductDetail";
-import CartScreen from "./components/content/shop/CartScreen";
-import ShippingScreen from "./components/content/shop/ShippingScreen";
-import PaymentScreen from "./components/content/shop/PaymentScreen";
-import PlaceOrderScreen from "./components/content/shop/PlaceOrderScreen";
-import OrderScreen from "./components/content/shop/OrderScreen";
-
-import Footer from "./components/footer/Footer";
+import Footer from './components/footer/Footer';
+import ErrorComponent from './components/ErrorComponent';
 
 const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
 const trans1 = (x, y) => `translate3d(${x / 10}px,${y / 10}px,0)`;
@@ -44,7 +44,7 @@ const App = () => {
     config: { mass: 10, tension: 550, friction: 140 },
   }));
 
-const stars = [1,2,4,5]
+  const stars = [1, 2, 4, 5];
   return (
     <Router>
       <div className="App">
@@ -64,11 +64,9 @@ const stars = [1,2,4,5]
             className={classes.card3}
             style={{ transform: props.xy.interpolate(trans3) }}
           /> */}
-          <div className={classes.night} >
+          <div className={classes.night}>
             {stars.map((star, i) => {
-              return (
-                <div key={i} className={classes.shootingStar}></div>
-              )
+              return <div key={i} className={classes.shootingStar}></div>;
             })}
           </div>
           <div className="container">
@@ -76,28 +74,74 @@ const stars = [1,2,4,5]
               <Header />
             </header>
             <main className="main">
-              <Route exact path="/" component={Carousel3d} />
-              <Route exact path="/gallery" component={ProductGallery} />
-              <Route exact path="/products/page/:pageNumber" component={ProductsScreen} />
-              <Route exact path="/products" component={ProductsScreen} />
-              <Route exact path="/products/search/:keyword" component={ProductsScreen} />
-              <Route exact path="/products/search/:keyword/page/:pageNumber" component={ProductsScreen} />
-              <Route path="/product/:id" component={ProductDetail} />
-              <Route path="/cart/:id?" component={CartScreen} />
-              <Route path="/shipping" component={ShippingScreen} />
-              <Route path="/payment" component={PaymentScreen} />
-              <Route path="/placeorder" component={PlaceOrderScreen} />
-              <Route path="/order/:id" component={OrderScreen} />
-              <Route path="/login" component={LoginScreen} />
-              <Route path="/logout" component={logout} />
-              <Route path="/register" component={RegisterScreen} />
-              <Route path="/profile" component={ProfileScreen} />
-              <Route path="/admin/userlist" component={UserListScreen} />
-              <Route path="/admin/user/:id/edit" component={UserEditScreen} />
-              <Route exact path='/admin/productlist' component={ProductListScreen} />
-              <Route exact path='/admin/productlist/:pageNumber' component={ProductListScreen} />
-              <Route path="/admin/product/:id/edit" component={ProductEditScreen} />
-              <Route path="/admin/orderlist" component={OrderListScreen} />
+              <Switch>
+                <Route exact path="/" component={Carousel3d} />
+                <Route exact path="/gallery" component={ProductGallery} />
+                <Route
+                  exact
+                  path="/products/page/:pageNumber"
+                  component={ProductsScreen}
+                />
+                <Route exact path="/products" component={ProductsScreen} />
+                <Route
+                  exact
+                  path="/products/search/:keyword"
+                  component={ProductsScreen}
+                />
+                <Route
+                  exact
+                  path="/products/search/:keyword/page/:pageNumber"
+                  component={ProductsScreen}
+                />
+                <Route exact path="/product/:id" component={ProductDetail} />
+                <Route exact path="/cart/:id?" component={CartScreen} />
+                <Route exact path="/shipping" component={ShippingScreen} />
+                <Route exact path="/payment" component={PaymentScreen} />
+                <Route exact path="/placeorder" component={PlaceOrderScreen} />
+                <Route exact path="/order/:id" component={OrderScreen} />
+                <Route exact path="/login" component={LoginScreen} />
+                <Route exact path="/logout" component={logout} />
+                <Route exact path="/register" component={RegisterScreen} />
+                <Route exact path="/profile" component={ProfileScreen} />
+                <Route
+                  exact
+                  path="/admin/userlist"
+                  component={UserListScreen}
+                />
+                <Route
+                  exact
+                  path="/admin/user/:id/edit"
+                  component={UserEditScreen}
+                />
+                <Route
+                  exact
+                  path="/admin/productlist"
+                  component={ProductListScreen}
+                />
+                <Route
+                  exact
+                  path="/admin/productlist/:pageNumber"
+                  component={ProductListScreen}
+                />
+                <Route
+                  exact
+                  path="/admin/product/:id/edit"
+                  component={ProductEditScreen}
+                />
+                <Route
+                  exact
+                  path="/admin/orderlist"
+                  component={OrderListScreen}
+                />
+                <Route
+                  render={(props) => (
+                    <ErrorComponent
+                      {...props}
+                      err="The page you are looking for does not exists ..."
+                    />
+                  )}
+                />
+              </Switch>
             </main>
             <footer className="footer">
               <Footer />
