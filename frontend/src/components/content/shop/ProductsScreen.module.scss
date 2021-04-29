@@ -55,6 +55,10 @@
   }
 }
 
+.noProduct {
+  @include centerElement
+}
+
 .paginate {
   height: 5%;
 }

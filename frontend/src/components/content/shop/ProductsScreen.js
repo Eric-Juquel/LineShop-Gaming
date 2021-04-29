@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import classes from "./ProductsScreen.module.scss";
-import ProductCard from "./ProductCard";
-import Meta from "../../Meta";
-import Spinner from "../../Spinner";
-import ErrorComponent from "../../ErrorComponent";
-import Paginate from "./Paginate";
-import { listProducts } from "../../../actions/productActions";
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import classes from './ProductsScreen.module.scss';
+import ProductCard from './ProductCard';
+import Meta from '../../Meta';
+import Spinner from '../../Spinner';
+import ErrorComponent from '../../ErrorComponent';
+import Paginate from './Paginate';
+import { listProducts } from '../../../actions/productActions';
 
 const ProductsScreen = ({ match }) => {
   const keyword = match.params.keyword;
@@ -32,6 +32,10 @@ const ProductsScreen = ({ match }) => {
           <div className={classes.cardsContainer}>
             {loading ? (
               <Spinner />
+            ) : products.length === 0 ? (
+              <div className={classes.noProduct}>
+                <h3>No Product Found...</h3>
+              </div>
             ) : (
               products.map((product) => (
                 <div key={product._id} className={classes.cardContainer}>
@@ -44,7 +48,7 @@ const ProductsScreen = ({ match }) => {
             <Paginate
               pages={pages}
               page={page}
-              keyword={keyword ? keyword : ""}
+              keyword={keyword ? keyword : ''}
             />
           </div>
         </div>
