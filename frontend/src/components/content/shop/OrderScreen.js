@@ -1,22 +1,22 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import Moment from "react-moment";
-import { PayPalButton } from "react-paypal-button-v2";
-import StripeButton from "./StripeButton";
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import classes from "./OrderScreen.module.scss";
-import ErrorComponent from "../../ErrorComponent";
-import Spinner from "../../Spinner";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import Moment from 'react-moment';
+import { PayPalButton } from 'react-paypal-button-v2';
+import StripeButton from './StripeButton';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import classes from './OrderScreen.module.scss';
+import ErrorComponent from '../../ErrorComponent';
+import Spinner from '../../Spinner';
 import {
   getOrderDetails,
   payOrder,
   deliverOrder,
-} from "../../../actions/orderActions";
+} from '../../../actions/orderActions';
 import {
   ORDER_PAY_RESET,
   ORDER_DELIVER_RESET,
-} from "../../../constants/orderConstants";
+} from '../../../constants/orderConstants';
 
 const OrderScreen = ({ match, history }) => {
   const orderId = match.params.id;
@@ -46,13 +46,13 @@ const OrderScreen = ({ match, history }) => {
 
   useEffect(() => {
     if (!userInfo) {
-      history.push("/login");
+      history.push('/login');
     }
 
     const addPayPalScript = async () => {
-      const { data: clientId } = await axios.get("/api/config/paypal");
-      const script = document.createElement("script");
-      script.type = "text/javascript";
+      const { data: clientId } = await axios.get('/api/config/paypal');
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
       script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}`;
       script.async = true;
       script.onload = () => {
@@ -96,7 +96,7 @@ const OrderScreen = ({ match, history }) => {
         <div className={classes.orderShipping}>
           <h2>Shipping</h2>
           <div className={classes.contact}>
-            <strong>Contact: </strong> {order.user.firstName}{" "}
+            <strong>Contact: </strong> {order.user.firstName}{' '}
             {order.user.lastName}
             <a href={`mailto:${order.user.email}`} title="send email">
               {order.user.email}
@@ -104,8 +104,8 @@ const OrderScreen = ({ match, history }) => {
           </div>
           <div className={classes.address}>
             <strong>Address: </strong>
-            {order.shippingAddress.address}, {order.shippingAddress.city}{" "}
-            {order.shippingAddress.postalCode},{" "}
+            {order.shippingAddress.address}, {order.shippingAddress.city}{' '}
+            {order.shippingAddress.postalCode},{' '}
             {order.shippingAddress.country.label.toUpperCase()}
           </div>
           {order.isDelivered ? (
@@ -115,7 +115,7 @@ const OrderScreen = ({ match, history }) => {
             </div>
           ) : (
             <div className={classes.statusDanger}>
-              {loadingDeliver ? <Spinner /> : "Not Delivered"}
+              {loadingDeliver ? <Spinner /> : 'Not Delivered'}
             </div>
           )}
         </div>
@@ -147,7 +147,7 @@ const OrderScreen = ({ match, history }) => {
                     <h3>{item.name}</h3>
                   </Link>
                   <p>
-                    {item.qty} x {item.price} € ={" "}
+                    {item.qty} x {item.price} € ={' '}
                     <span>
                       {new Intl.NumberFormat().format(item.qty * item.price)} €
                     </span>
@@ -183,7 +183,7 @@ const OrderScreen = ({ match, history }) => {
           </div>
         </div>
         {!order.isPaid &&
-          (order.paymentMethod === "PayPal" ? (
+          (order.paymentMethod === 'PayPal' ? (
             <div className={classes.paypalBtn}>
               {loadingPay && <Spinner />}
               {!sdkReady ? (

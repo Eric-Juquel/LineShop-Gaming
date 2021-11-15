@@ -63,7 +63,6 @@ const ProfileScreen = ({ history }) => {
   }, [dispatch, history, userInfo, user]);
 
   const onSubmit = async (data) => {
-    console.log("data", data);
 
     let payload = {
       id: user._id,
